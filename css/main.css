@@ -588,6 +588,8 @@ ul.sub-menu {
 .pricing {
   position: absolute;
   right: 40%;
+  max-width: 60%;
+  height: auto;
   top: 52%;
 }
 
