@@ -1,0 +1,23 @@
+ 
+ *****CREDENZIALI*****
+
+
+HOST:tweb2.dii.univpm.it
+
+Utente HTTP:
+ Username:prog_twb
+ Password:twex20
+ URL progetto:tweb2.dii.univpm.it/~grp_14/laraProject/public
+
+Utente SSH:
+ Username:grp_14
+ Password:dzqH2PMx
+ Dir. home:/home/grp_14
+ Dir. Web:/home/grp_14/www
+ Dir. Progetto Laravel:/home/grp_14/www/laraProject
+
+Utente MYSQL:
+ Username:grp_14
+ Password:gPTnHNcs
+ phpMyAdmin:http://tweb2.dii.univpm.it/phpMyAdmin
+ Nome DB:grp_14_db
