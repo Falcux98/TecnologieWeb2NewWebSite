@@ -3,6 +3,8 @@
 /*Per il momento è ancora tutto vuoto perchè non so come 
 implementeremo le classi del database */
 
+namespace App\Http\controllers;
+
 use App\Http\Controllers\Controller;
 
 class PublicController extends Controller{
