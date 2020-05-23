@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicController@showSubCatCatalog') -> name('subCategory');
+
+Route::get('/categories/{categoriesID}', 'PublicController@showCatCatalog') -> name('Category');
+
+Route::get('/Catalog', 'PublicController@showMainCatalog') -> name('Catalog');
+
+Route::get('/AreaPersonale', 'PublicController@showPrivateArea') ->name('PrivateArea');
+
+Route::view('/DoveSiamo', 'DoveSiamo') -> name('Dove Siamo');
+
+Route::view('/ChiSiamo', 'ChiSiamo') -> name('Chi Siamo');
+
+Route::view('/LoginRegistrati', 'LoginRegistrati') -> name('Login Registrati');
