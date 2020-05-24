@@ -8,6 +8,7 @@
 <h2 class="title text-center">Privacy <strong>Policy</strong></h2>    			    				    				
 					
 					</div>	
+       <h3>Privacy Policy </h3>
 		<p><strong>Informativa ai sensi dell'art. 13 del Codice della Privacy</strong></p>
 		<p><b>Ai sensi dell'articolo 13 del codice della D.Lgs. 196/2003, vi rendiamo le seguenti informazioni.</b></p>
 		<p>Noi di <strong><span id="sito"></span></strong> riteniamo che la privacy dei nostri visitatori sia estremamente importante. Questo documento descrive dettagliatamente i tipi di informazioni personali raccolti e registrati dal nostro sito e come essi vengano utilizzati.</p>
