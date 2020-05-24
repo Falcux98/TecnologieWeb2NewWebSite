@@ -12,28 +12,17 @@ use App\SubCategory;
 
 class PublicController extends Controller{
 
-    protected $_categories;
-    protected $_subCategories;
-    protected $_products;
-
-    public function __construct()
-    {
-        $this->_categories = new Category;
-        $this->_subCategories = new SubCategory;
-        $this->_products = new Product;
-    }
-
     /*chiamata accesso al catalogo totale senza selezione di categoria, ritorna la vista con tutte le categorie */
     public function showMainCatalog(){
-        $selectedProducts = $this->_products::all();
+        $selectedProducts = Product::all();
         return view('catalog')
             ->with('prods', $selectedProducts);  
     }
 
     /* ritorna solo i prodotti della categoria selezionata e la categoria selezionata */
     public function showCatCatalog($categoryID){
-        $selectedCategory = $this->_categories->getCategoryByID($categoryID);
-        $selectedProducts = $this->_products->getProdsByCategoryID($categoryID);
+        $selectedCategory = Category::where('codCategoria', $categoryID)->get();
+        $selectedProducts = Product::where('categoria', $categoryID)->get();
 
         return view('catalog')
             ->with('category', $selectedCategory)
@@ -42,9 +31,9 @@ class PublicController extends Controller{
 
     /*ritorna i prodotti della sottocategiora selezionata, la categoria e la sottocategoria selezionate */
     public function showSubCatCatalog($categoryID, $subCategoryID){
-        $selectedCategory = $this->_categories->getCategoryByID($categoryID);
-        $selectedProducts = $this->_products->getProdsByCategoryID($categoryID);
-        $selectedSubCategory = $this->_subCategories->getSubCategoryByID($subCategoryID);
+        $selectedCategory = Category::where('codCategoria', $categoryID)->get();
+        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->get();
+        $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
 
         return view('catalog')
             ->with('category', $selectedCategory)
