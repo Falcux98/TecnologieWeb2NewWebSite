@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="{{ asset('css\price-range.css') }}">
     <link rel="stylesheet" href="{{ asset('css\price-range.css') }}">
     <link rel="stylesheet" href="{{ asset('css\responsive.css') }}">
-    <title>TecWeb | @yeld('title', 'Home')</title>
+    <title>TecWeb | @yield('title', 'Home')</title>
 </head>
 <body>
     
+    <header id="header">
+        @include('layouts\_navpublic')
+    </header>
 </body>
 </html>
