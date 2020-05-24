@@ -2,7 +2,7 @@
 
 @section('title', 'Home')
 @section('content')
-	
+<div>
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
@@ -64,8 +64,12 @@
 					</div>
 					
 				</div>
+                            
 			</div>
 		</div>
+            <hr>
 	</section><!--/slider-->
+</div>
+	
  @endsection       
 
