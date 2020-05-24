@@ -3,6 +3,8 @@
 @section('title', 'Home')
 @section('content')
 <div>
+   
+    
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
@@ -55,7 +57,7 @@
 							
 						</div>
 						
-						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+						<a href= "#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
 						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
