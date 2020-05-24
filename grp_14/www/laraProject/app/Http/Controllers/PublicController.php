@@ -33,7 +33,7 @@ class PublicController extends Controller{
     /* ritorna solo i prodotti della categoria selezionata e la categoria selezionata */
     public function showCatCatalog($categoryID){
         $selectedCategory = $this->_categories->getCategoryByID($categoryID);
-        $selectedProducts = $this->_products::;
+        $selectedProducts = $this->_products->getProdsByCategoryID($categoryID);
 
         return view('catalog')
             ->with('category', $selectedCategory)
