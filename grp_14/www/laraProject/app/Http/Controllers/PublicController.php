@@ -25,7 +25,7 @@ class PublicController extends Controller{
 
     /*chiamata accesso al catalogo totale senza selezione di categoria, ritorna la vista con tutte le categorie */
     public function showMainCatalog(){
-        $selectedProducts = $this->_products->getAll();
+        $selectedProducts = $this->_products::all();
         return view('catalog')
             ->with('prods', $selectedProducts);  
     }
@@ -33,7 +33,7 @@ class PublicController extends Controller{
     /* ritorna solo i prodotti della categoria selezionata e la categoria selezionata */
     public function showCatCatalog($categoryID){
         $selectedCategory = $this->_categories->getCategoryByID($categoryID);
-        $selectedProducts = $this->_products->getProdsByCategoryID($categoryID);
+        $selectedProducts = $this->_products::;
 
         return view('catalog')
             ->with('category', $selectedCategory)
