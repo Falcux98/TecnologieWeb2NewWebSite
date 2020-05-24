@@ -23,6 +23,8 @@ Route::get('/AreaPersonale', 'PublicController@showPrivateArea') ->name('Private
 
 Route::view('/', 'Home') -> name('Home');
 
+Route::view('/PrivacyPolicy', 'PrivacyPolicy') -> name('Privacy Policy');
+
 Route::view('/DoveSiamo', 'DoveSiamo') -> name('Dove Siamo');
 
 Route::view('/ChiSiamo', 'ChiSiamo') -> name('Chi Siamo');
