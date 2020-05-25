@@ -15,7 +15,7 @@
 <body>
     
     <header id="header">
-        @include('layouts\_navpublic')
+        @include('layouts._navpublic')
     </header>
     
     <div>

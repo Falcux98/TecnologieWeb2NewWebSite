@@ -21,7 +21,7 @@ Route::get('/Catalog', 'PublicController@showMainCatalog') -> name('Catalog');
 
 Route::get('/AreaPersonale', 'PublicController@showPrivateArea') ->name('PrivateArea');
 
-Route::view('/', 'Home') -> name('Home');
+Route::view('/', 'home') -> name('Home');
 
 Route::view('/PrivacyPolicy', 'PrivacyPolicy') -> name('Privacy Policy');
 
