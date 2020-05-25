@@ -1,13 +1,10 @@
 <?php
 
-/*Per il momento è ancora tutto vuoto perchè non so come 
-implementeremo le classi del database */
-
 namespace App\Http\controllers;
 
 use App\Http\Controllers\Controller;
-use App\Category;
 use App\Product;
+use App\Category;
 use App\SubCategory;
 
 class PublicController extends Controller{
