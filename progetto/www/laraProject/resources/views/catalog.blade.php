@@ -48,6 +48,37 @@
 		</div>	
 	</div>
         
+        <!--INIZIO CATALOGO-->
+ <div class="col-sm-9 padding-right">
+     <h2 class="title text-center">Caratteristiche Articoli</h2>
+    
+     @isset($prods)
+     @foreach($prods as $products)
+      <div class="features_items"><!--features_items-->
+		
+		<div class="col-sm-6">
+			<div class="product-image-wrapper">
+				<div class="single-products">
+	
+					<div class="productinfo text-center">
+				@include('helpers/productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
+			       <!--<h2>Qui ci va l'include del prezzo</h2>-->
+					<h1>Prodotto: {{$products->nome}}</h1>
+                                        <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
+                                        <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
+				
+						
+						</div>
+     </div>
+	
+							</div>
+						</div>
+					</div>
+@endforeach
+@endisset()
+
+					</div><!--FINE CATALOGO-->
+				     
  
 @endsection
 
