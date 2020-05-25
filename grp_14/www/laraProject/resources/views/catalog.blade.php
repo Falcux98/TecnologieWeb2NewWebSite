@@ -3,10 +3,10 @@
 @section('title', 'Catalog')
 @section('content')
 	
-	
+	<!-- Sezione CATEGORIE E SOTTOCATEGORIE laterale -->
 	<div class="left-sidebar">
 		<h2>Categorie</h2>
-		<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+		<div class="panel-group category-products" id="accordian">
 
 			@isset($categories)
 			@foreach ($categories as $category)
@@ -36,6 +36,9 @@
 			</div>	
 			@endforeach
 			@endisset
+
+			<!-- CATALOGO -->
+			
 
 		</div>	
 	</div>

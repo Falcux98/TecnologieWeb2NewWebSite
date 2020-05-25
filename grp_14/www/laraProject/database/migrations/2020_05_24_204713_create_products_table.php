@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id('codProdotto');
             $table->string('nome', 30);
             $table->string('descrizioneBreve', 30);
-            $table->string('descrizioneEstesa', 120);
+            $table->string('descrizioneEstesa', 500);
             $table->double('prezzo');
             $table->string('foto', 50);
             $table->integer('percentualeSconto');

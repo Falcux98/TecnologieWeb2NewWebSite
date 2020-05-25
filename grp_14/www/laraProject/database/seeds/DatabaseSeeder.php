@@ -14,30 +14,29 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          DB::table('categories')->insert([
-              ['codCategoria' => 1, 'descrizione' =>'Computer'],
-              ['codCategoria' => 2, 'descrizione' =>'Smartphone & Tablet'],
-              ['codCategoria' => 3, 'descrizione' =>'Accessori'],
+              ['codCategoria' => 1, 'nome' =>'Computer'],
+              ['codCategoria' => 2, 'nome' =>'Smartphone & Tablet'],
+              ['codCategoria' => 3, 'nome' =>'Accessori'],
               ]);
+              
          DB::table('sub_categories')->insert([
-             ['codSottocategoria' => 1, 'descrizione' =>'Desktop','categoria'=>'Computer'],
-             ['codSottocategoria' => 2, 'descrizione' =>'Laptop','categoria'=>'Computer'],
-             ['codSottocategoria' => 3, 'descrizione' =>'2 in 1','categoria'=>'Computer'],
+             ['codSottocategoria' => 1, 'nome' =>'Desktop','categoria'=> 1],
+             ['codSottocategoria' => 2, 'nome' =>'Laptop','categoria'=> 1],
+             ['codSottocategoria' => 3, 'nome' =>'2 in 1','categoria'=> 1],
              
-             ['codSottocategoria' => 4, 'descrizione' =>'Apple','categoria'=>'Smartphone & Tablet'],
-             ['codSottocategoria' => 5, 'descrizione' =>'Samsung','categoria'=>'Smartphone & Tablet'],
-             ['codSottocategoria' => 6, 'descrizione' =>'Huawei','categoria'=>'Smartphone & Tablet'],
-             ['codSottocategoria' => 7, 'descrizione' =>'Xiaomi','categoria'=>'Smartphone & Tablet'],
+             ['codSottocategoria' => 4, 'nome' =>'Apple','categoria'=> 2],
+             ['codSottocategoria' => 5, 'nome' =>'Samsung','categoria'=> 2],
+             ['codSottocategoria' => 6, 'nome' =>'Huawei','categoria'=> 2],
+             ['codSottocategoria' => 7, 'nome' =>'Xiaomi','categoria'=> 2],
              
-              ['codSottocategoria' => 8, 'descrizione' =>'Archiviazione','categoria'=>'Accessorit'],
-              ['codSottocategoria' => 9, 'descrizione' =>'Input','categoria'=>'Accessori'], 
+              ['codSottocategoria' => 8, 'nome' =>'Archiviazione','categoria'=> 3],
+              ['codSottocategoria' => 9, 'nome' =>'Input','categoria'=> 3], 
              ]);
          
-         DB::table('product')->insert([
-         ['codProdotto' => '1', 'nome' => 'Desktop1', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
-           'prezzo' =>1000, 'foto' =>'margherita-50kalo.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=>'Computer', 'sottoCategoria'=>'Desktop' ],
-             
-              
-             ]);
+         DB::table('products')->insert([
+         ['codProdotto' => 1, 'nome' => 'Desktop1', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>1000, 'foto' =>'margherita-50kalo.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 1, 'sottoCategoria'=> 1 ],
+         ]);
         // $this->call(UserSeeder::class);
     }
 }
