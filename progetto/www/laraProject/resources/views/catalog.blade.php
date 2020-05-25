@@ -26,7 +26,7 @@
 							@isset($subCategories)
 							@foreach ($subCategories as $subCategory)
 							    @if ($subCategory->categoria == $category->codCategoria)
-								<li><a href="#">{{ $subCategory->nome}} </a></li>
+								<li><a href="{{ route('subCategory', [$category->codCategoria, $subCategory->codSottocategoria]) }}">{{ $subCategory->nome}} </a></li>
 							    @endif
 							@endforeach		
 							@endisset														
