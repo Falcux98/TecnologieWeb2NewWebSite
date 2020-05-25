@@ -22,8 +22,8 @@ class CreateProductsTable extends Migration
             $table->string('foto', 50);
             $table->integer('percentualeSconto');
             $table->boolean('inPromozione');
-            $table->string('categoria', 30);
-            $table->string('sottoCategoria', 30);
+            $table->integer('categoria');
+            $table->integer('sottoCategoria');
             $table->timestamps();
         });
     }
