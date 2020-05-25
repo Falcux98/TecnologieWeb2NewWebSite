@@ -23,9 +23,9 @@
 				<div id="sportswear" class="panel-collapse collapse">
 					<div class="panel-body">
 						<ul>
-							@isset($subCategory)
-							@foreach ($subCategories as $subcategory)
-							    @if ($subCategory->categoria == $category->codCategria)
+							@isset($subCategories)
+							@foreach ($subCategories as $subCategory)
+							    @if ($subCategory->categoria == $category->codCategoria)
 								<li><a href="#">{{ $subCategory->nome}} </a></li>
 							    @endif
 							@endforeach		

@@ -54,5 +54,12 @@
 		</div>
 		
 	</footer><!--/Footer-->
+
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquey.prettyPhoto.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/price-range.js') }}"></script>
 </body>
 </html>
