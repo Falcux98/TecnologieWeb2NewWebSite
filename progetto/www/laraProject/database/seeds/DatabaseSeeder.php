@@ -36,7 +36,26 @@ class DatabaseSeeder extends Seeder
          DB::table('products')->insert([
          ['codProdotto' => 1, 'nome' => 'Desktop1', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
            'prezzo' =>1000, 'foto' =>'margherita-50kalo.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 1, 'sottoCategoria'=> 1 ],
+             
+          ['codProdotto' => 2, 'nome' => 'Desktop2', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>2000, 'foto' =>'diavola.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 1, 'sottoCategoria'=> 1 ],
+             
+             ['codProdotto' => 3, 'nome' => 'Smartphone1', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>400, 'foto' =>'diavola.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 2, 'sottoCategoria'=> 4  ],
+             
+             ['codProdotto' => 4, 'nome' => 'Smartphone2', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>400, 'foto' =>'diavola.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 2, 'sottoCategoria'=> 4  ],
+         
+           ['codProdotto' => 5, 'nome' => 'Smartphone2', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>400, 'foto' =>'diavola.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 2, 'sottoCategoria'=> 5  ],
+             
+              ['codProdotto' => 6, 'nome' => 'Accessorio1', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>30, 'foto' =>'diavola.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 3, 'sottoCategoria'=> 8  ],
+             
+             ['codProdotto' => 7, 'nome' => 'Input1', 'descrizioneBreve' => 'Descrizionebreve', 'descrizioneEstesa' =>self::DESCPROD,
+           'prezzo' =>40, 'foto' =>'diavola.jpg', 'percentualeSconto'=>0,'inPromozione'=>'0', 'categoria'=> 3, 'sottoCategoria'=> 9  ]
          ]);
+         
         // $this->call(UserSeeder::class);
     }
 }
