@@ -1,6 +1,6 @@
-@extends('layouts\public')
+@extends('layouts.public')
 
-@section('title', 'Catalog')
+@section('title', 'Catalogo')
 @section('content')
 	
 	<!-- Sezione CATEGORIE E SOTTOCATEGORIE laterale -->

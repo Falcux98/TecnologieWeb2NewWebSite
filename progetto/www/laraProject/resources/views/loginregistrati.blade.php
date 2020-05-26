@@ -1,4 +1,4 @@
-@extends('layouts\public')
+@extends('layouts.public')
 
 @section('title', 'Login Registrati')
 @section('content')
