@@ -17,7 +17,7 @@
 					<h4 class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordian" href="#{{ str_replace(array(' ', '&') , '_',$category->nome) }}">
 							<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-							{{ $category->descrizione}}
+							{{ $category->nome}}
 						</a>
 					</h4>
 				</div>
@@ -27,7 +27,7 @@
 							@isset($subCategories)
 							@foreach ($subCategories as $subCategory)
 							    @if ($subCategory->categoria == $category->codCategoria)
-								<li><a href="{{ route('subCategory', [$category->codCategoria, $subCategory->codsottocategoria]) }}">{{ $subCategory->descrizione}} </a></li>
+								<li><a href="{{ route('subCategory', [$category->codCategoria, $subCategory->codSottocategoria]) }}">{{ $subCategory->nome}} </a></li>
 							    @endif
 							@endforeach		
 							@endisset														

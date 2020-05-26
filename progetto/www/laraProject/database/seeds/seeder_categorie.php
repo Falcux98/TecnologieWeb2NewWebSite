@@ -11,6 +11,19 @@ class seeder_categorie extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('categoria')->insert([
+            'codCategoria' => '01',
+            'nome' => 'Computer'
+        ]);
+
+        DB::table('categoria')->insert([
+            'codCategoria' => '02',
+            'nome' => 'Arredamento'
+        ]);
+
+        DB::table('categoria')->insert([
+            'codCategoria' => '03',
+            'nome' => 'TV'
+        ]);
     }
 }
