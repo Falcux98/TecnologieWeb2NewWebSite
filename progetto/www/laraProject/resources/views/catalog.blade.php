@@ -53,7 +53,7 @@
         <!--INIZIO CATALOGO-->
         
     <div class="col-sm-9 ">
-    <h2 class="title text-center">Caratteristiche Articoli</h2>
+    <h2 class="title text-center">Elenco prodotti</h2>
 	
 	<div class="features_items"><!--features_items-->
     @isset($prods)    
@@ -65,12 +65,12 @@
 			
 	
 				<div class="productinfo text-center">
-				@include('helpers/productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
+				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
 			       <!--<h2>Qui ci va l'include del prezzo</h2>-->
 					<h2>Prodotto: {{$products->nome}}</h1>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                     <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-				    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+				    <a href="#" class="btn btn-default add-to-cart"></i>Visualizza prodotto</a>
 				</div>
             </div>
         </div>
