@@ -13,17 +13,17 @@ class CreateProdottoTable extends Migration
      */
     public function up()
     {
-        Schema::create('prodotto', function (Blueprint $table) {
-            $table->string('codprodotto')->unique();
+        Schema::create('products', function (Blueprint $table) {
+            $table->integer('codprodotto')->unique();
             $table->string('nome');
-            $table->string('descbreve');
-            $table->string('descestesa');
+            $table->string('descrizionebreve');
+            $table->string('descrizioneestesa');
             $table->double('prezzo');
             $table->string('foto');
             $table->integer('percentualesconto');
             $table->boolean('inpromozione');
-            $table->string('categoria');
-            $table->string('sottocategoria');
+            $table->integer('categoria');
+            $table->integer('sottocategoria');
             $table->id();
             $table->timestamps();
         });
