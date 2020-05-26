@@ -63,10 +63,10 @@
 					<div class="productinfo text-center">
 				@include('helpers/productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
 			       <!--<h2>Qui ci va l'include del prezzo</h2>-->
-					<h1>Prodotto: {{$products->nome}}</h1>
+					<h2>Prodotto: {{$products->nome}}</h1>
                                         <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                                         <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-				
+				                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 						
 						</div>
      </div>
