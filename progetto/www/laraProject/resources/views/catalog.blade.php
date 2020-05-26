@@ -51,14 +51,18 @@
         <!--INIZIO CATALOGO-->
  <div class="col-sm-9 padding-right">
      <h2 class="title text-center">Caratteristiche Articoli</h2>
-    
+     <div class="features_items"><!--features_items-->
+        
      @isset($prods)
+    
      @foreach($prods as $products)
-      <div class="features_items"><!--features_items-->
+     
 		
-		<div class="col-sm-6">
-			<div class="product-image-wrapper">
+		  <div class="col-sm-6">
+              <div class="product-image-wrapper">
+                  
 				<div class="single-products">
+			
 	
 					<div class="productinfo text-center">
 				@include('helpers/productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
@@ -67,19 +71,23 @@
                                         <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                                         <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
 				
-						
-						</div>
-     </div>
+                                        </div>					
+					
+     
 	
-							</div>
-						</div>
+							
 					</div>
+</div>
+ </div>
+         </div>		
+					
 @endforeach
+
 @endisset()
 
 					</div><!--FINE CATALOGO-->
 				     
- 
+
 @endsection
 
 
