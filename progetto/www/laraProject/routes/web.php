@@ -17,16 +17,16 @@ Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicCo
 
 Route::get('/categories/{categoriesID}', 'PublicController@showCatCatalog') -> name('Category');
 
-Route::get('/Catalog', 'PublicController@showMainCatalog') -> name('Catalog');
+Route::get('/catalog', 'PublicController@showMainCatalog') -> name('Catalog');
 
-Route::get('/AreaPersonale', 'PublicController@showPrivateArea') ->name('PrivateArea');
+Route::get('/areaPersonale', 'PublicController@showPrivateArea') ->name('PrivateArea');
 
 Route::view('/', 'home') -> name('Home');
 
-Route::view('/PrivacyPolicy', 'PrivacyPolicy') -> name('Privacy Policy');
+Route::view('/privacyPolicy', 'privacypolicy') -> name('Privacy Policy');
 
-Route::view('/DoveSiamo', 'DoveSiamo') -> name('Dove Siamo');
+Route::view('/doveSiamo', 'dovesiamo') -> name('Dove Siamo');
 
-Route::view('/ChiSiamo', 'ChiSiamo') -> name('Chi Siamo');
+Route::view('/chiSiamo', 'chisiamo') -> name('Chi Siamo');
 
-Route::view('/LoginRegistrati', 'LoginRegistrati') -> name('Login Registrati');
+Route::view('/loginRegistrati', 'loginregistrati') -> name('Login Registrati');
