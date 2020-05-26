@@ -33,3 +33,8 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
+
+
+
+Route::get('/staff', 'StaffController@index') ->name('StaffHome');
+
