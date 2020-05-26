@@ -55,8 +55,8 @@
     <h2 class="title text-center">Caratteristiche Articoli</h2>
 	
 	<div class="features_items"><!--features_items-->
-     @isset($prods)
-     @foreach($prods as $products)
+    @isset($prods)
+    @foreach($prods as $products)
       
 		
 		<div class="col-sm-6">
@@ -74,8 +74,8 @@
             </div>
         </div>
 	</div>
-@endforeach
-@endisset()
+    @endforeach
+    @endisset()
 	</div>
 	</div><!--FINE CATALOGO-->
 				     
