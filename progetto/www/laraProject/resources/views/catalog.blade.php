@@ -4,7 +4,8 @@
 @section('content')
 	
 	<!-- Sezione CATEGORIE E SOTTOCATEGORIE laterale -->
-	<div class="left-sidebar">
+	<div class="col-sm-3">
+	 <div class="left-sidebar">
 		<h2>Categorie</h2>
 		<div class="panel-group category-products" id="accordian">
 
@@ -47,37 +48,36 @@
 			
 		</div>	
 	</div>
+</div>
         
         <!--INIZIO CATALOGO-->
- <div class="col-sm-9 padding-right">
-     <h2 class="title text-center">Caratteristiche Articoli</h2>
-    
+    <div class="col-sm-9 ">
+    <h2 class="title text-center">Caratteristiche Articoli</h2>
+	
+	<div class="features_items"><!--features_items-->
      @isset($prods)
      @foreach($prods as $products)
-      <div class="features_items"><!--features_items-->
+      
 		
 		<div class="col-sm-6">
 			<div class="product-image-wrapper">
 				<div class="single-products">
 	
-					<div class="productinfo text-center">
+				<div class="productinfo text-center">
 				@include('helpers/productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
 			       <!--<h2>Qui ci va l'include del prezzo</h2>-->
 					<h2>Prodotto: {{$products->nome}}</h1>
-                                        <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
-                                        <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-				                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-						
-						</div>
-     </div>
-	
-							</div>
-						</div>
-					</div>
+                    <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
+                    <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
+				    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+				</div>
+            </div>
+        </div>
+	</div>
 @endforeach
 @endisset()
-
-					</div><!--FINE CATALOGO-->
+	</div>
+	</div><!--FINE CATALOGO-->
 				     
  
 @endsection

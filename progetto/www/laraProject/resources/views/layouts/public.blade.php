@@ -17,10 +17,15 @@
     <header id="header">
         @include('layouts._navpublic')
     </header>
-    
-    <div>
-        @yield ('content')
-    </div>
+	
+	<section>
+    <div class="container">
+		<div class="row">
+            @yield ('content')
+		</div>
+        
+	</div>
+</section>
     
     
     
