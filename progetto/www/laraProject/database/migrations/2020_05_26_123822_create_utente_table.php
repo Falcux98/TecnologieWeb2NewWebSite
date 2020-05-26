@@ -14,11 +14,12 @@ class CreateUtenteTable extends Migration
     public function up()
     {
         Schema::create('utente', function (Blueprint $table) {
-            $table->string('codutente')->unique();
+            $table->string('codUtente')->unique();
             $table->string('nome');
             $table->string('cognome');
-            $table->date('datanascita');
+            $table->date('dataNascita');
             $table->string('occupazione');
+            $table->string('residenza');
             $table->string('username');
             $table->string('password');
             $table->id();

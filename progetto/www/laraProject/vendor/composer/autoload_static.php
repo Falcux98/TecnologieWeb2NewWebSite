@@ -455,6 +455,7 @@ class ComposerStaticInit8650143b10ad870d8c6a3e4c39f8b97a
     );
 
     public static $classMap = array (
+        'App\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -477,6 +478,7 @@ class ComposerStaticInit8650143b10ad870d8c6a3e4c39f8b97a
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\Utente' => __DIR__ . '/../..' . '/app/Models/Utente.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
@@ -4764,6 +4766,10 @@ class ComposerStaticInit8650143b10ad870d8c6a3e4c39f8b97a
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'seeder_amministrazione' => __DIR__ . '/../..' . '/database/seeds/seeder_amministrazione.php',
+        'seeder_categorie' => __DIR__ . '/../..' . '/database/seeds/seeder_categorie.php',
+        'seeder_prodotti' => __DIR__ . '/../..' . '/database/seeds/seeder_prodotti.php',
+        'seeder_sottocategorie' => __DIR__ . '/../..' . '/database/seeds/seeder_sottocategorie.php',
         'seeder_utenti' => __DIR__ . '/../..' . '/database/seeds/seeder_utenti.php',
         'voku\\helper\\ASCII' => __DIR__ . '/..' . '/voku/portable-ascii/src/voku/helper/ASCII.php',
     );
