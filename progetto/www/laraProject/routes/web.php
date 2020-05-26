@@ -33,3 +33,4 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
+Route::get('/admin, AdminController@index') ->name('admin');
