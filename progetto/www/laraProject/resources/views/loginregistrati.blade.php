@@ -26,7 +26,7 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>Registrati!</h2>
-						<form action="#">
+						<form action="{{ URL::to('/') }}" method="post">
 							<input type="username" placeholder="Username"/>
 							<input type="text" placeholder="Nome"/>
 							<input type="text" placeholder="Cognome"/>
