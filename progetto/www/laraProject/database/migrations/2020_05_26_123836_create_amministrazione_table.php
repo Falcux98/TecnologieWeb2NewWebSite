@@ -14,10 +14,10 @@ class CreateAmministrazioneTable extends Migration
     public function up()
     {
         Schema::create('amministrazione', function (Blueprint $table) {
-            $table->string('codadmin')->unique();
+            $table->string('codAdmin')->unique();
             $table->string('nome');
             $table->string('cognome');
-            $table->boolean('isadmin');
+            $table->boolean('isAdmin');
             $table->string('username');
             $table->string('password');
             $table->id();
