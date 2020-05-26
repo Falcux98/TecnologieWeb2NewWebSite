@@ -9,11 +9,11 @@ class AdminController extends Controller {
     protected $_adminModel;
 
     public function __construct() {
-        $this->_adminModel = new Admin;
+     //   $this->_adminModel = new Admin;
     }
 
     public function index() {
-        return view('admin');
+        return view('layouts.admin');
     }
 
 }

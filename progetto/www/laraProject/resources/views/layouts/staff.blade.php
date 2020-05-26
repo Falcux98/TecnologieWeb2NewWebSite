@@ -13,8 +13,16 @@
     <title>TecWeb | @yield('title', 'Home')</title>
 </head>
 <body>
-        
     
+    @include('layouts._navstaff')
+
+    <section>
+        <div class="container">
+            <div class="row">
+                @yield ('content')
+            </div>            
+        </div>
+    </section>
     
     
     	<footer id="footer"><!--Footer-->

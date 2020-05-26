@@ -33,12 +33,15 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
-<<<<<<< HEAD
-
 
 
 Route::get('/staff', 'StaffController@index') ->name('StaffHome');
 
-=======
-Route::get('/admin, AdminController@index') ->name('admin');
->>>>>>> 92fad87f26c5cd2a9d890efa286fd28c17fa7b3f
+Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
+
+Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
+
+Route::get('staff/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
+
+Route::get('/admin', 'AdminController@index') ->name('admin');
+
