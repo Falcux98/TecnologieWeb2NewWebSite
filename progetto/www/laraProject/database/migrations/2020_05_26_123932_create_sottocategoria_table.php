@@ -13,7 +13,7 @@ class CreateSottocategoriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_categories', function (Blueprint $table) {
+        Schema::create('sottocategoria', function (Blueprint $table) {
             $table->integer('codSottocategoria')->unique();
             $table->string('nome');
             $table->integer('categoria');
