@@ -70,7 +70,7 @@
 					<h2>Prodotto: {{$products->nome}}</h1>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                     <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-				    <a href="#" class="btn btn-default add-to-cart"></i>Visualizza prodotto</a>
+				   
 				</div>
             </div>
         </div>
