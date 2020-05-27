@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
@@ -66,5 +67,34 @@ class StaffController extends Controller
         return view('staffArea')
         ->with('categories', $this->_categories)
         ->with('subCategories', $this->_subCategories);
+    }
+
+    public function storeNewProduct(NewProductRequest $request){
+
+        if($request->hasFile('foto')){
+            $image = $request->file('foto');
+            $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = NULL;
+        }
+
+        $product = new Product;
+        $product->fill($request->validated());
+        $product->foto = $imageName;
+        $product->save();
+
+        if($product->percentualeSconto != 0){
+            $product->inPromozione = TRUE;
+        } else {
+            $product->inPromozione = FALSE;
+        }
+
+
+        if(!is_null($imageName)){
+            $path = public_path() . 'images/products';
+            $image->move($path, $imageName);
+        }
+
+        return redirect()->action('StaffController@showMainCatalog');
     }
 }
