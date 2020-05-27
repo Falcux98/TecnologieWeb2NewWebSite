@@ -32,7 +32,8 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('PrivateArea') }}" title="Area Privata"><i class="fa fa-user"></i> Area personale</a></li>
+                        <li><a href="{{ route('PrivateArea') }}" title="Area Amministratore"><i class="fa fa-user"></i> Area Amministratore</a></li>
+                        <li><a href="{{ route('Login Registrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>

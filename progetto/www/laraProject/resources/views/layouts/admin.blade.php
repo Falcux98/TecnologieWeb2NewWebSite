@@ -15,15 +15,27 @@
 <body>
 
     <header id="header">
-        @include('layouts._navpublic')
+        @include('layouts._navadmin')
     </header>
 
 	<section>
     <div class="container">
 		<div class="row">
             @yield ('content')
+            <div id="contact-page" class="container">
+                <div class="bg">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="title text-center">Benvenuto <strong>Amministratore</strong></h2>
+                            <div id="gmap" class="contact-map">
+                                <p>Entra nell'area amministratore per gestire lo staff.</p>
+                                <p>Puoi inserire nuovo personale o eventualmente cancellarlo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+		    </div>
 		</div>
-
 	</div>
 </section>
 
