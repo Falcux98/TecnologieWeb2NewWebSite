@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicController@showSubCatCatalog') -> name('subCategory');
 
-Route::get('/categories/{categoriesID}', 'PublicController@showCatCatalog') -> name('Category');
-
 Route::get('/catalog', 'PublicController@showMainCatalog') -> name('Catalog');
 
 Route::get('/areapersonale', 'PublicController@showPrivateArea') ->name('PrivateArea');
@@ -41,7 +39,7 @@ Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCa
 
 Route::get('/staff/catalog/remove/{removeID}', 'staffController@removeElementConfirm') ->name('removeElementConf');
 
-Route::post('staff/catalog/{removeID}', 'StaffController@removeElement') ->name('removeElement');
+Route::delete('/staff/catalog', 'StaffController@removeElement') ->name('removeElement');
 
 Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
 

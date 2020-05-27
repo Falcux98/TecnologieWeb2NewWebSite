@@ -50,11 +50,13 @@ class StaffController extends Controller
             ->with('prod', $product);
     }
 
-    public function removeElement($codProdotto){
-        Product::where('codeProdotto', $codProdotto)->delete();
+    public function removeElement(){
+        $codProdotto = request('delete');
+        Product::where('codprodotto', $codProdotto)->delete();
 
         $selectedProducts = Product::paginate(2);
-        return redirect('staffCat')
+
+        return view('staffCat')
         ->with('prods', $selectedProducts)
         ->with('categories', $this->_categories)
         ->with('subCategories', $this->_subCategories);
