@@ -61,4 +61,10 @@ class StaffController extends Controller
         ->with('categories', $this->_categories)
         ->with('subCategories', $this->_subCategories);
     }
+
+    public function showStaffArea(){
+        return view('staffArea')
+        ->with('categories', $this->_categories)
+        ->with('subCategories', $this->_subCategories);
+    }
 }
