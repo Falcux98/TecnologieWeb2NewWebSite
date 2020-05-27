@@ -35,7 +35,6 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
 
-
 Route::get('/staff', 'StaffController@index') ->name('StaffHome');
 
 Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
@@ -48,5 +47,16 @@ Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
 
 Route::get('staff/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
 
-Route::get('/admin', 'AdminController@index') ->name('admin');
+Route::get('/admin', 'AdminController@index') ->name('admin')->middleware('can:isUser');
 
+Route::get('/user', 'UserController@index')
+        ->name('user')->middleware('can:isUser'); // per attivare l'autorizzazione
+
+// Rotte per l'autenticazione
+Route::get('login', 'Auth\LoginController@showLoginForm')
+        ->name('login');
+
+Route::post('login', 'Auth\LoginController@login');
+
+Route::post('logout', 'Auth\LoginController@logout')
+        ->name('logout');
