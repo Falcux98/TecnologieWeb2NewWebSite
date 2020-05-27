@@ -1,12 +1,13 @@
 @extends('layouts.public')
+@extends('layouts.user')
 
 @section('title', 'Home')
 @section('content')
 <div>
-   
-    
+
+
 	<section id="slider"><!--slider-->
-		<div class="container"> 
+		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
@@ -15,7 +16,7 @@
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 						</ol>
-						
+
 
 						<!--Elementi slider-->
 						<div class="carousel-inner">
@@ -42,7 +43,7 @@
 									<img src="images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
-							
+
 							<div class="item">
 								<div class="col-sm-6">
 									<h1><span>Tecnologie</span>-WEB</h1>
@@ -54,9 +55,9 @@
 									<img src="images/home/store3.png" class="store img-responsive" alt="" />
 								</div>
 							</div>
-							
+
 						</div>
-						
+
 						<a href= "#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
@@ -64,14 +65,14 @@
 							<i class="fa fa-angle-right"></i>
 						</a>
 					</div>
-					
+
 				</div>
-                            
+
 			</div>
 		</div>
             <hr>
 	</section><!--/slider-->
 </div>
-	
- @endsection       
+
+ @endsection
 

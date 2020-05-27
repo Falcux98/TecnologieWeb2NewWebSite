@@ -44,11 +44,10 @@ Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
 
 Route::get('staff/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
 
-Route::get('/admin', 'AdminController@index') ->name('admin');
+Route::get('/admin', 'AdminController@index') ->name('admin')->middleware('can:isUser');
 
-/*Route::get('/user', 'UserController@index')
-        ->name('user')->middleware('can:isUser');
-*/
+Route::get('/user', 'UserController@index')
+        ->name('user')->middleware('can:isUser'); // per attivare l'autorizzazione
 
 // Rotte per l'autenticazione
 Route::get('login', 'Auth\LoginController@showLoginForm')
