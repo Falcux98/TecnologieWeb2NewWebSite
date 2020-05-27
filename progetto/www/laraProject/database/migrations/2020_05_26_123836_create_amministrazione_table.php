@@ -18,7 +18,7 @@ class CreateAmministrazioneTable extends Migration
             $table->string('nome');
             $table->string('cognome');
             $table->boolean('isAdmin');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('password');
             $table->id();
             $table->timestamps();

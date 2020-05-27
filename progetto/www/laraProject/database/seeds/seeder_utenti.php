@@ -12,12 +12,24 @@ class seeder_utenti extends Seeder
     public function run()
     {
         DB::table('utente')->insert([
-            'codutente' => 'U001',
-            'nome' => 'mario',
-            'cognome' => 'rossi',
-            'datanascita' => '1997-08-25',
-            'occupazione' => 'macellaio',
+            'codUtente' => '001',
+            'nome' => 'Mario',
+            'cognome' => 'Rossi',
+            'dataNascita' => '1997-08-25',
+            'occupazione' => 'Macellaio',
+            'residenza' => 'Ancona',
             'username' => 'useruser',
+            'password' => 'useruser'
+        ]);
+
+        DB::table('utente')->insert([
+            'codUtente' => '002',
+            'nome' => 'Luigi',
+            'cognome' => 'Bianchi',
+            'dataNascita' => '1997-08-25',
+            'occupazione' => 'Giardiniere',
+            'residenza' => 'Senigallia',
+            'username' => 'useruser1',
             'password' => 'useruser'
         ]);
     }

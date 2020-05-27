@@ -20,7 +20,7 @@ class CreateUtenteTable extends Migration
             $table->date('dataNascita');
             $table->string('occupazione');
             $table->string('residenza');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('password');
             $table->id();
             $table->timestamps();
