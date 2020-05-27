@@ -32,8 +32,9 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('PrivateArea') }}" title="Area Privata"><i class="fa fa-user"></i> Area Staff</a></li>
+                        <li><a href="{{ route('PrivateArea') }}" title="Area Privata"><i class="fa fa-user"></i> Area personale</a></li>
                         <li><a href="{{ route('Login Registrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
+                    </ul>
                     </ul>
                 </div>
             </div>
@@ -55,9 +56,9 @@
                 </div>
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li><a href="{{ route('StaffHome') }}" title="Home" class="{{ (Request::route()->getName() === 'Home') ? 'active': '' }}">HOME</a></li>
-                        <li><a href="{{ route('StaffCatalog') }}" title="Catalogo" class="{{ (Request::route()->getName() === 'Catalog') ? 'active': '' }}">CATALOGO</a></li>
-                        <li><a href="{{ route('DoveSiamoStaff') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'Dove Siamo') ? 'active': '' }}">DOVE SIAMO</a></li>
+                        <li><a href="{{ route('Home') }}" title="Home" class="{{ (Request::route()->getName() === 'Home') ? 'active': '' }}">HOME</a></li>
+                        <li><a href="{{ route('Catalog') }}" title="Catalogo" class="{{ (Request::route()->getName() === 'Catalog') ? 'active': '' }}">CATALOGO</a></li>
+                        <li><a href="{{ route('Dove Siamo') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'Dove Siamo') ? 'active': '' }}">DOVE SIAMO</a></li>
                         <li><a href="{{ route('Chi Siamo') }}" title="Chi Siamo" class="{{ (Request::route()->getName() === 'Chi Siamo') ? 'active': '' }}">CHI SIAMO</a></li>
                     </ul>
                 </div>

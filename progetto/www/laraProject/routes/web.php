@@ -34,7 +34,6 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
 
-
 Route::get('/staff', 'StaffController@index') ->name('StaffHome');
 
 Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
@@ -47,3 +46,15 @@ Route::get('staff/categories/{categoriesID}/subCategories/{subCategories}', 'Sta
 
 Route::get('/admin', 'AdminController@index') ->name('admin');
 
+/*Route::get('/user', 'UserController@index')
+        ->name('user')->middleware('can:isUser');
+*/
+
+// Rotte per l'autenticazione
+Route::get('login', 'Auth\LoginController@showLoginForm')
+        ->name('login');
+
+Route::post('login', 'Auth\LoginController@login');
+
+Route::post('logout', 'Auth\LoginController@logout')
+        ->name('logout');
