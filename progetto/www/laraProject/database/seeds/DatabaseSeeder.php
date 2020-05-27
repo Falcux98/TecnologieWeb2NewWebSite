@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
       $this->call('seeder_prodotti');
       $this->call('seeder_categorie');
       $this->call('seeder_sottocategorie');
-      //$this->call('seeder_amministrazione');
-      //$this->call('seeder_utenti');
+      $this->call('seeder_amministrazione');
+      $this->call('seeder_utenti');
     }
 }
