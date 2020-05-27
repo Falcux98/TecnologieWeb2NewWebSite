@@ -19,7 +19,7 @@ class PublicController extends Controller{
 
     /*chiamata accesso al catalogo totale senza selezione di categoria, ritorna la vista con tutte le categorie */
     public function showMainCatalog(){
-        $selectedProducts = Product::all();
+        $selectedProducts = Product::paginate(2);
         return view('catalog')
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
@@ -41,7 +41,7 @@ class PublicController extends Controller{
     /*ritorna i prodotti della sottocategiora selezionata, la categoria e la sottocategoria selezionate */
     public function showSubCatCatalog($categoryID, $subCategoryID){
         $selectedCategory = Category::where('codCategoria', $categoryID)->get();
-        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->get();
+        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
         $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
 
         return view('catalog')

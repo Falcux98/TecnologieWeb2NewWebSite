@@ -68,6 +68,7 @@
 				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
 			       <!--<h2>Qui ci va l'include del prezzo</h2>-->
 					<h2>Prodotto: {{$products->nome}}</h1>
+                                        <h4>Prezzo: {{$products->prezzo}}</h4>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                     <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
 				   
@@ -75,9 +76,12 @@
             </div>
         </div>
 	</div>
+     
     @endforeach
     @endisset()
 	</div>
+     <!--paginazione-->
+    @include ('pagination.paginator', ['paginator' => $prods])
 	</div><!--FINE CATALOGO-->
 				     
 
