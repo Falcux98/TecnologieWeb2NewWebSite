@@ -23,7 +23,7 @@ class StaffController extends Controller
     }
 
     public function showMainCatalog(){
-        $selectedProducts = Product::all();
+        $selectedProducts = Product::paginate(2);
         return view('staffCat')
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
@@ -32,15 +32,22 @@ class StaffController extends Controller
 
     public function showSubCatCatalog($categoryID, $subCategoryID){
         $selectedCategory = Category::where('codCategoria', $categoryID)->get();
-        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->get();
+        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
         $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
 
         return view('staffCat')
-            ->with('selCategory', $selectedCategory)
-            ->with('selSubCategory', $selectedSubCategory)
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
 
+    }
+
+    public function removeElement($elementID){
+
+        Product::find($elementID)->delete();
+        return view('staffCat')
+            ->with('prods', Product::paginate(2))
+            ->with('categories', $this->_categories)
+            ->with('subCategories', $this->_subCategories);
     }
 }

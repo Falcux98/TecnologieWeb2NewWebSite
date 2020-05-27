@@ -70,14 +70,15 @@
 					<h2>Prodotto: {{$products->nome}}</h1>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                     <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-				    <a href="#" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
+                    <a href="{{ route('removeElement', [$products->id]) }}" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
 				</div>
             </div>
         </div>
 	</div>
     @endforeach
     @endisset()
-	</div>
+    </div>
+    @include('pagination.paginator', ['paginator'=> $prods])
 	</div><!--FINE CATALOGO-->
 				     
 

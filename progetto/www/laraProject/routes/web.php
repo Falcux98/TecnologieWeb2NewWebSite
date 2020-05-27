@@ -39,6 +39,8 @@ Route::get('/staff', 'StaffController@index') ->name('StaffHome');
 
 Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
 
+Route::get('/staff/catalog/remove/{removeID}', 'staffController@removeElement') ->name('removeElement');
+
 Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
 
 Route::get('staff/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
