@@ -22,7 +22,7 @@ Route::get('/areapersonale', 'PublicController@showPrivateArea') ->name('Private
 
 Route::view('/loginregistrati', 'loginregistrati') ->name('Login Registrati');
 
-Route::post('/LoginRegistrati', 'Auth\LoginController@Login') ->name('Login Registrati');
+//oute::get('/LoginRegistrati', 'Auth\LoginController@Login') ->name('Login Registrati');
 
 Route::view('/', 'home') -> name('Home');
 
