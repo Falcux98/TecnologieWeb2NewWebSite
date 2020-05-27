@@ -7,9 +7,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
+
+
+
+
+
+				@if(isset(Auth::user()->username))
+    				<script>window.location="/accesso/loginok";</script>
+   				@endif
+					
+					
 					<div class="login-form"><!--login form-->
 						<h2>Collegati al tuo account!</h2>
-						<form action="#">
+						<form method="post" action="{{url('/accesso/gestiscilogin')}}">
+						{{ csrf_field() }}
 							<input type="username" placeholder="Username" />
 							<input type="password" placeholder="Password" />
 							<span>
@@ -19,6 +30,13 @@
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
+				
+				
+				
+				
+				
+				
+				
 				</div>
 				<div class="col-sm-1">
 					<h2 class="or">O</h2>

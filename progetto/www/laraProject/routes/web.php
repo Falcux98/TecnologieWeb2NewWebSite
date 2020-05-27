@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//AREA PUBBLICA
 Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicController@showSubCatCatalog') -> name('subCategory');
 
 Route::get('/catalog', 'PublicController@showMainCatalog') -> name('Catalog');
 
-Route::view('/loginregistrati', 'loginregistrati') ->name('Login Registrati');
-
-//oute::get('/LoginRegistrati', 'Auth\LoginController@Login') ->name('Login Registrati');
+Route::get('/loginregistrati', 'AccessoController@mostraLogin') ->name('Login Registrati');
 
 Route::view('/', 'home') -> name('Home');
 
@@ -31,7 +31,12 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
 
+Route::post('/accesso/gestiscilogin', 'AccessoController@gestisciLogin');
+Route::get('/accesso/loginok', 'AccessoController@loginok');
 
+
+
+//AREA STAFF
 Route::get('/staff', 'StaffController@index') ->name('StaffHome');
 
 Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
@@ -49,7 +54,7 @@ Route::get('/staff/areaStaff', 'StaffController@showStaffArea') -> name('StaffAr
 Route::post('/staff/areaStaff', 'StaffController@storeNewProduct') -> name('StaffArea.store');
 
 
-
+//AREA ADMIN
 Route::get('/admin', 'AdminController@index') ->name('admin');
 
 
