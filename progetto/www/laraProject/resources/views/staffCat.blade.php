@@ -57,7 +57,7 @@
 	
 	<div class="features_items"><!--features_items-->
     @isset($prods)    
-     @foreach($prods as $products)		
+     @foreach($prods as $product)		
 		  <div class="col-sm-6">
               <div class="product-image-wrapper">
                   
@@ -65,12 +65,12 @@
 			
 	
 				<div class="productinfo text-center">
-				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
+				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $product->foto])
 			       <!--<h2>Qui ci va l'include del prezzo</h2>-->
-					<h2>Prodotto: {{$products->nome}}</h1>
-                    <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
-                    <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-                    <a href="{{ route('removeElement', [$products->id]) }}" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
+					<h2>Prodotto: {{$product->nome}}</h1>
+                    <p>Descrizione breve: {{$product->descrizioneBreve}}</p>
+                    <p>Descrizione estesa: {!!$product->descrizioneEstesa!!}</p>
+                    <a href="{{ route('removeElementConf', [$product->codProdotto]) }}" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
 				</div>
             </div>
         </div>

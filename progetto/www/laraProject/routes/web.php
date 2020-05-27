@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,9 @@ Route::get('/staff', 'StaffController@index') ->name('StaffHome');
 
 Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
 
-Route::get('/staff/catalog/remove/{removeID}', 'staffController@removeElement') ->name('removeElement');
+Route::get('/staff/catalog/remove/{removeID}', 'staffController@removeElementConfirm') ->name('removeElementConf');
+
+Route::post('staff/catalog/{removeID}', 'StaffController@removeElement') ->name('removeElement');
 
 Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
 
