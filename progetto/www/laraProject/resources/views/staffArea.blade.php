@@ -4,9 +4,8 @@
 
 <div class="col-sm-9">
     <div class="signup-form"><!--sign up form-->
-        <h1>Nuovo Prodotto</h1>
-        <!--<form action="{{ route('StaffArea.store') }}" method="post" enctype="multipart/form-data">-->
-            {{ Form::open(array('route' => 'StaffArea.store', 'file' => true, ))}}
+        <h1>Aggiungi Prodotto</h1>
+            {{ Form::open(array('route' => 'StaffArea.store', 'files' => true ))}}
             @csrf
             <div>
                 {{ Form::label('nome', 'Nome Prodotto')}}
@@ -21,64 +20,72 @@
             </div>
             
 
-            <input type="text" placeholder="Descrizione Breve" name="descrizioneBreve" value="{{ old('descrizioneBreve') }}"/>
+            <div>
+                {{ Form::label('descrizioneBreve', 'Descrizione Breve') }}
+                {{ Form::text('descrizioneBreve', '', ['id' => 'descrizioneBreve'])}}
+                @if($errors->first('descrizioneBreve'))
+                <ul>
+                    @foreach ($errors->get('descrizioneBreve') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+            
 
-            @if($errors->first('descrizioneBreve'))
-            <ul>
-                @foreach ($errors->get('descrizioneBreve') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
 
-            <input type="text" placeholder="Descrizione Estesa" name="descrizioneEstesa" value="{{ old('descrizioneEstesa') }}"/>
-            @if($errors->first('descrizioneEstesa'))
-            <ul>
-                @foreach ($errors->get('descrizioneEstesa') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+            <div>
+                {{ Form::label('descrizioneEstesa', 'Descrizione Estesa') }}
+                {{ Form::text('descrizioneEstesa', '', ['id' => 'descrizioneEstesa'])}}
+                @if($errors->first('descrizioneEstesa'))
+                <ul>
+                    @foreach ($errors->get('descrizioneEstesa') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+           
+            <div>
+                {{ Form::label('prezzo', 'Prezzo')}}
+                {{ Form::number('prezzo', '', ['id' => 'prezzo'])}}
+                @if($errors->first('prezzo'))
+                <ul>
+                    @foreach ($errors->get('prezzo') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
 
-            <input type="number" placeholder="Prezzo" name="prezzo" value="{{ old('prezzo') }}"/>
-            @if($errors->first('prezzo'))
-            <ul>
-                @foreach ($errors->get('prezzo') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
-
-            <label for="foto" style="margin-top: 3%;">Foto</label>
-            <input id="foto" name="foto" type="file" style="background:none;"/>
-            @if($errors->first('foto'))
-            <ul>
+            <div>
+                {{ Form::label('foto', 'Foto')}}
+                {{ Form::file('foto', ['id' => 'foto', 'style' => 'background: none'])}}
+                @if($errors->first('foto'))
+                <ul>
                 @foreach ($errors->get('foto') as $message)
                     <li>{{ $message }}</li>
                 @endforeach
-            </ul>
-            @endif
+                </ul>
+                @endif
+            </div>
             
-            
-           <label  for="inPromozione">In Sconto</label>
-            <select class="input" name="inPromozione" id="inPromozione">
-              <option value="1" {{ old('inPromozione') == 1 ? 'selected' : '' }}>Si</option>
-               <option value="0" {{ old('inPromozione') == 0 ? 'selected' : '' }}>No</option>
-              </select>
-                
+            <div>
+                {{ Form::label('percentualeSconto', ' Percentuale Sconto (se in sconto)')}}
+                {{ Form::number('percentualeSconto', '', ['id' => 'percentualeSconto', 'min' => '0', 'max' => '100'])}}
+                @if($errors->first('percentualeSconto'))
+                <ul>
+                    @foreach ($errors->get('percentualeSconto') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>           
            
-            <input type="number" min="0" placeholder="Percentuale sconto" name="percentualeSconto" value="{{ old('percentualeSconto') }}"/>
-            @if($errors->first('percentualeSconto'))
-            <ul>
-                @foreach ($errors->get('percentualeSconto') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
 
             <div>
                 <label for="sottocategoria">Categoria</label>
-                <select name="sottocattegoria" id="sottocategoria" style="margin-bottom: 3%">
+                <select name="sottocategoria" id="sottocategoria" style="margin-bottom: 3%">
                     @foreach ($categories as $category)
                        <optgroup label="{{ $category->nome }}">
                             @foreach ($subCategories as $subCategory)
@@ -89,6 +96,14 @@
                         </optgroup>                        
                     @endforeach
                 </select>
+
+                @if($errors->first('sottocategoria'))
+                <ul>
+                    @foreach ($errors->get('sottocategoria') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
             </div>
 
             <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Aggiungi Prodotto">Crea Prodotto</button>
