@@ -13,7 +13,11 @@ class AdminController extends Controller {
     }
 
     public function index() {
-        return view('layouts.admin');
+        return view('layoutsAdmin.admin');
+    }
+
+    public function showAdminArea(){
+        return view('viewsAdmin.areaAdmin');
     }
 
 }
