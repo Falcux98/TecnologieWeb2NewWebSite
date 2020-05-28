@@ -33,7 +33,7 @@
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('StaffArea') }}" title="areaStaff"><i class="fa fa-user"></i> Area Staff</a></li>
-                        <li><a href="{{ route('Login Registrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
+                        <li><a href="{{ route('loginregistrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>
