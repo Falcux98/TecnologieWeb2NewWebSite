@@ -21,12 +21,12 @@ class StaffController extends Controller
     }
 
     public function index(){
-        return view('layouts.staff');
+        return view('layoutsStaff.staff');
     }
 
     public function showMainCatalog(){
         $selectedProducts = Product::paginate(2);
-        return view('staffCat')
+        return view('viewsStaff.staffCat')
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
@@ -37,7 +37,7 @@ class StaffController extends Controller
         $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
         $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
 
-        return view('staffCat')
+        return view('viewsStaff.staffCat')
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
@@ -47,7 +47,7 @@ class StaffController extends Controller
     public function removeElementConfirm($elementID){
 
         $product = Product::where('codProdotto', $elementID)->first();
-        return view('removeConfirm')
+        return view('viewsStaff.removeConfirm')
             ->with('prod', $product);
     }
 
@@ -57,14 +57,14 @@ class StaffController extends Controller
 
         $selectedProducts = Product::paginate(2);
 
-        return view('staffCat')
+        return view('viewsStaff.staffCat')
         ->with('prods', $selectedProducts)
         ->with('categories', $this->_categories)
         ->with('subCategories', $this->_subCategories);
     }
 
     public function showStaffArea(){
-        return view('staffArea')
+        return view('viewsStaff.staffArea')
         ->with('categories', $this->_categories)
         ->with('subCategories', $this->_subCategories);
     }
@@ -96,7 +96,7 @@ class StaffController extends Controller
         $product->save();
 
         if(strcmp($imageName, 'noImage.jpg') != 0){
-            $path = public_path() . 'images/products';
+            $path = public_path() . '/images/products';
             $image->move($path, $imageName);
         }
 

@@ -53,7 +53,13 @@ Route::post('/staff/areaStaff', 'StaffController@storeNewProduct') -> name('Staf
 
 
 //AREA ADMIN
-Route::get('/admin', 'AdminController@index') ->name('admin')->middleware('isAdmin');
+Route::get('/admin', 'AdminController@index') ->name('AdminHome');
+
+Route::get('/admin/areaAdmin', 'AdminController@showAdminArea') -> name('AdminArea');
+
+Route::post('/admin/areadAdmin', 'AdminController@addNewStaffMemeber') -> name('AdminArea.addStaff');
+
+Route::post('/admin/areaAdmin', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
 
 
 

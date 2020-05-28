@@ -13,25 +13,18 @@
     <title>TecWeb | @yield('title', 'Home')</title>
 </head>
 <body>
+    
+    @include('layoutsStaff._navstaff')
 
-    <header id="header">
-        @include('layouts._navadmin')
-    </header>
-
-	<section>
-        <div id="page">
-            <div id="page-bgtop">
-                <div id="page-bgbtm">
-                    @yield('content')
-                    <div style="clear: both;">&nbsp;</div>
-                </div>
-            </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                @yield ('content')
+            </div>            
         </div>
     </section>
-
-
-
-
+    
+    
     	<footer id="footer"><!--Footer-->
 		<div class="footer-widget">
 			<div class="container">
@@ -47,11 +40,11 @@
 						</div>
 					</div>
 
-
+					
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
@@ -59,11 +52,11 @@
 				</div>
 			</div>
 		</div>
-
+		
 	</footer><!--/Footer-->
 
 	<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>	
 	<script type="text/javascript" src="{{ asset('js/jquey.prettyPhoto.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
