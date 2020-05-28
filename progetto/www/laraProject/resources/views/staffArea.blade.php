@@ -52,7 +52,15 @@
                 @endforeach
             </ul>
             @endif
-
+            
+            
+           <label  for="inPromozione">In Sconto</label>
+            <select class="input" name="inPromozione" id="inPromozione">
+              <option value="1" {{ old('inPromozione') == 1 ? 'selected' : '' }}>Si</option>
+               <option value="0" {{ old('inPromozione') == 0 ? 'selected' : '' }}>No</option>
+              </select>
+                
+           
             <input type="number" min="0" placeholder="Percentuale sconto" name="percentualeSconto" value="{{ old('percentualeSconto') }}"/>
             @if($errors->first('percentualeSconto'))
             <ul>
@@ -69,7 +77,7 @@
                        <optgroup label="{{ $category->nome }}">
                             @foreach ($subCategories as $subCategory)
                                 @if($subCategory->categoria == $category->codCategoria)
-                                <option value="{{ $subCategory->codSottocategoria }}"> {{ $subCategory->nome}}</option>
+                                <option value="{{ $subCategory->codSottocategoria }}" {{ old('codSottocategoria') == $subCategory->codSottocategoria ? 'selected' : '' }}> {{ $subCategory->nome}}</option>
                                 @endif
                             @endforeach
                         </optgroup>                        
