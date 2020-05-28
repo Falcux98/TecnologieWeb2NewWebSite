@@ -5,7 +5,7 @@
 <div class="col-sm-9">
     <div class="signup-form"><!--sign up form-->
         <h1>Aggiungi Prodotto</h1>
-            {{ Form::open(array('route' => 'StaffArea.store', 'file' => true, ))}}
+            {{ Form::open(array('route' => 'StaffArea.store', 'files' => true ))}}
             @csrf
             <div>
                 {{ Form::label('nome', 'Nome Prodotto')}}
