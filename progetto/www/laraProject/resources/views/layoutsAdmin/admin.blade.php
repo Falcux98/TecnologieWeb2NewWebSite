@@ -19,13 +19,10 @@
     </header>
 
 	<section>
-        <div id="page">
-            <div id="page-bgtop">
-                <div id="page-bgbtm">
-                    @yield('content')
-                    <div style="clear: both;">&nbsp;</div>
-                </div>
-            </div>
+        <div class="container">
+            <div class="row">
+                @yield ('content')
+            </div>            
         </div>
     </section>
 
