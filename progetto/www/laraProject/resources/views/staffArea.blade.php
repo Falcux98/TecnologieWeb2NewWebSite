@@ -85,7 +85,7 @@
 
             <div>
                 <label for="sottocategoria">Categoria</label>
-                <select name="sottocattegoria" id="sottocategoria" style="margin-bottom: 3%">
+                <select name="sottocategoria" id="sottocategoria" style="margin-bottom: 3%">
                     @foreach ($categories as $category)
                        <optgroup label="{{ $category->nome }}">
                             @foreach ($subCategories as $subCategory)
@@ -96,6 +96,14 @@
                         </optgroup>                        
                     @endforeach
                 </select>
+
+                @if($errors->first('sottocategoria'))
+                <ul>
+                    @foreach ($errors->get('sottocategoria') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
             </div>
 
             <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Aggiungi Prodotto">Crea Prodotto</button>

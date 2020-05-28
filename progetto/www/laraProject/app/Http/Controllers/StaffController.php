@@ -75,7 +75,7 @@ class StaffController extends Controller
             $image = $request->file('foto');
             $imageName = $image->getClientOriginalName();
         } else {
-            $imageName = NULL;
+            $imageName = 'noImage.jpg';
         }
 
         $product = new Product;
@@ -89,17 +89,17 @@ class StaffController extends Controller
             $product->inPromozione = FALSE;
         }
 
-        $category = SubCategory::where('sottocategoria', $product->sottocategoria)->get();
+        $subCategory = SubCategory::where('codSottocategoria', $product->sottocategoria)->first();
 
-        $product->categoria = $category->codCategoria;
+        $product->categoria = $subCategory->categoria;
 
         $product->save();
 
-        if(!is_null($imageName)){
+        if(strcmp($imageName, 'noImage.jpg') != 0){
             $path = public_path() . 'images/products';
             $image->move($path, $imageName);
         }
 
-        return view('StaffHome');
+        return redirect()->action('StaffController@showMainCatalog');
     }
 }

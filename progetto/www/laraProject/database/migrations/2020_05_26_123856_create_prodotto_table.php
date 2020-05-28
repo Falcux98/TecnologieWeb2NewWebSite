@@ -14,7 +14,7 @@ class CreateProdottoTable extends Migration
     public function up()
     {
         Schema::create('prodotto', function (Blueprint $table) {
-            $table->integer('codProdotto')->unique();
+            $table->id('codProdotto')->autoIncrement();
             $table->string('nome');
             $table->string('descrizioneBreve');
             $table->string('descrizioneEstesa');
@@ -24,7 +24,6 @@ class CreateProdottoTable extends Migration
             $table->boolean('inPromozione');
             $table->integer('categoria');
             $table->integer('sottocategoria');
-            $table->id();
             $table->timestamps();
         });
     }

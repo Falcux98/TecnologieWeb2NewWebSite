@@ -12,7 +12,6 @@ class seeder_prodotti extends Seeder
     public function run()
     {
         DB::table('prodotto')->insert([
-            'codProdotto' => '01',
             'nome' => 'Laptop 1',
             'descrizioneBreve' => 'Descrizione breve',
             'descrizioneEstesa' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit dolor. Vivamus eu pulvinar purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec placerat risus turpis, in interdum lacus facilisis sit amet.',
@@ -26,7 +25,6 @@ class seeder_prodotti extends Seeder
 
 
         DB::table('prodotto')->insert([
-            'codProdotto' => '02',
             'nome' => 'Laptop 2',
             'descrizioneBreve' => 'Descrizione breve',
             'descrizioneEstesa' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit dolor. Vivamus eu pulvinar purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec placerat risus turpis, in interdum lacus facilisis sit amet.',
@@ -39,7 +37,6 @@ class seeder_prodotti extends Seeder
         ]);
         
         DB::table('prodotto')->insert([
-            'codProdotto' => '03',
             'nome' => 'Desktop1',
             'descrizioneBreve' => 'Descrizione breve',
             'descrizioneEstesa' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit dolor. Vivamus eu pulvinar purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec placerat risus turpis, in interdum lacus facilisis sit amet.',
@@ -52,7 +49,6 @@ class seeder_prodotti extends Seeder
         ]);
         
          DB::table('prodotto')->insert([
-            'codProdotto' => '04',
             'nome' => 'Desktop2',
             'descrizioneBreve' => 'Descrizione breve',
             'descrizioneEstesa' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit dolor. Vivamus eu pulvinar purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec placerat risus turpis, in interdum lacus facilisis sit amet.',
@@ -65,7 +61,6 @@ class seeder_prodotti extends Seeder
         ]);
     
          DB::table('prodotto')->insert([
-            'codProdotto' => '05',
             'nome' => 'Armadio1',
             'descrizioneBreve' => 'Descrizione breve',
             'descrizioneEstesa' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit dolor. Vivamus eu pulvinar purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec placerat risus turpis, in interdum lacus facilisis sit amet.',
