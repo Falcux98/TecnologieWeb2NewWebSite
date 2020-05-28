@@ -3,39 +3,52 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class LoginController extends Controller
-{
+class LoginController extends Controller {
     /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+      |--------------------------------------------------------------------------
+      | Login Controller
+      |--------------------------------------------------------------------------
+      |
+      | This controller handles authenticating users for the application and
+      | redirecting them to your home screen. The controller uses a trait
+      | to conveniently provide its functionality to your applications.
+      |
+     */
 
-    use AuthenticatesUsers;
+use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected function redirectTo(){
+//    protected $redirectTo = '/home';
+
+    /**
+     * Override:: definisce la homepage per i diversi utenti.
+     *
+     * @var string
+     */
+    protected function redirectTo() {
         $role = auth()->user()->role;
-        switch($role){
-            case 'admin' : return '/admin'; break;
-            case 'user' : return '/user'; break;
-            default : return '/';
-        }
+        switch ($role) {
+            case 'admin': return '/admin';
+                break;
+            case 'staff': return '/staff';
+                break;
+            case 'user': return '/user';
+                break;
+            default: return '/';
+        };
     }
 
-    public function username(){
+    /**
+     * Override:: Login con 'username' al posto di 'email'.
+     *
+     */
+    public function username() {
         return 'username';
     }
 
@@ -44,8 +57,8 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('guest')->except('logout');
     }
+
 }

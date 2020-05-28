@@ -17,7 +17,7 @@ class CreateAmministrazioneTable extends Migration
             $table->string('codAdmin')->unique();
             $table->string('nome');
             $table->string('cognome');
-            $table->boolean('isAdmin');
+            $table->string('role',10)->default('staff');
             $table->string('username')->unique();
             $table->string('password');
             $table->id();

@@ -12,31 +12,28 @@
 
 
 
-				@if(isset(Auth::user()->username))
-    				<script>window.location="/accesso/loginok";</script>
-   				@endif
-					
-					
+
+
 					<div class="login-form"><!--login form-->
 						<h2>Collegati al tuo account!</h2>
-						<form method="post" action="{{url('/accesso/gestiscilogin')}}">
+						<form method="post" action="{{url('Auth/LoginController')}}">
 						{{ csrf_field() }}
 							<input type="username" placeholder="Username" />
 							<input type="password" placeholder="Password" />
 							<span>
-								<input type="checkbox" class="checkbox"> 
+								<input type="checkbox" class="checkbox">
 								Rimani collegato
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
-				
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
+
 				</div>
 				<div class="col-sm-1">
 					<h2 class="or">O</h2>

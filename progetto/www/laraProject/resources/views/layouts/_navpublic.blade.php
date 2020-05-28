@@ -32,7 +32,9 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('Login Registrati') }}" title="Login Registrati"><i class="fa fa-lock"></i> Login | Registrati</a></li>
+                        @guest
+                        <li><a href="{{ route('loginregistrati') }}" title="Login Registrati"><i class="fa fa-lock"></i> Login | Registrati</a></li>
+                        @endguest
                     </ul>
                 </div>
             </div>

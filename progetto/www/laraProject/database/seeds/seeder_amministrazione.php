@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class seeder_amministrazione extends Seeder
 {
@@ -15,7 +16,7 @@ class seeder_amministrazione extends Seeder
             'codAdmin' => '001',
             'nome' => 'Matteo',
             'cognome' => 'Mori',
-            'isAdmin' => '1',
+            'role' => 'admin',
             'username' => 'adminadmin',
             'password' => 'adminadmin'
         ]);
@@ -24,7 +25,7 @@ class seeder_amministrazione extends Seeder
             'codAdmin' => '002',
             'nome' => 'Matteo',
             'cognome' => 'Rossi',
-            'isAdmin' => '0',
+            'role' => 'staff',
             'username' => 'staffstaff',
             'password' => 'staffstaff'
         ]);

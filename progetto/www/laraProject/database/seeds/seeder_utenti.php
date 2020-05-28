@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class seeder_utenti extends Seeder
 {
@@ -19,6 +20,7 @@ class seeder_utenti extends Seeder
             'occupazione' => 'Macellaio',
             'residenza' => 'Ancona',
             'username' => 'useruser',
+            'role' => 'user',
             'password' => 'useruser'
         ]);
 
@@ -30,6 +32,7 @@ class seeder_utenti extends Seeder
             'occupazione' => 'Giardiniere',
             'residenza' => 'Senigallia',
             'username' => 'useruser1',
+            'role' => 'user',
             'password' => 'useruser'
         ]);
     }

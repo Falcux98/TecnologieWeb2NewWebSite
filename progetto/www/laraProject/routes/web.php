@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StaffController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicCo
 
 Route::get('/catalog', 'PublicController@showMainCatalog') -> name('Catalog');
 
-Route::get('/loginregistrati', 'AccessoController@mostraLogin') ->name('Login Registrati');
+//Route::get('/loginregistrati', 'Auth\LoginController@showLoginForm') ->name('Login Registrati');
 
 Route::view('/', 'home') -> name('Home');
 
@@ -30,9 +31,6 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
-
-Route::post('/accesso/gestiscilogin', 'AccessoController@gestisciLogin');
-Route::get('/accesso/loginok', 'AccessoController@loginok');
 
 
 
@@ -55,10 +53,31 @@ Route::post('/staff/areaStaff', 'StaffController@storeNewProduct') -> name('Staf
 
 
 //AREA ADMIN
-Route::get('/admin', 'AdminController@index') ->name('admin');
+Route::get('/admin', 'AdminController@index') ->name('admin')->middleware('isAdmin');
 
 
 
 Route::get('/user', 'UserController@index')
         ->name('user'); // per attivare l'autorizzazione
 
+
+
+//Area AUTENTICAZIONE
+
+//Auth::routes();
+
+Route::get('loginregistrati', 'Auth\LoginController@showLoginForm')
+        ->name('loginregistrati');
+
+Route::post('loginregistrati', 'Auth\LoginController@login');
+
+Route::post('logout', 'Auth\LoginController@logout')
+        ->name('logout');
+
+//Route::post('/accesso/gestiscilogin', 'AccessoController@gestisciLogin');
+//Route::get('/accesso/loginok', 'AccessoController@loginok');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

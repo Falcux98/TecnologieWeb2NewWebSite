@@ -21,6 +21,7 @@ class CreateUtenteTable extends Migration
             $table->string('occupazione');
             $table->string('residenza');
             $table->string('username')->unique();
+            $table->string('role',10)->default('user');
             $table->string('password');
             $table->id();
             $table->timestamps();
