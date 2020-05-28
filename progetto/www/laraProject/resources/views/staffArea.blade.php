@@ -2,18 +2,24 @@
 @section('title', 'Area Staff')
 @section('content')
 
+<div class="col-sm-9">
     <div class="signup-form"><!--sign up form-->
-        <h2>Nuovo Prodotto</h2>
-        <form action="{{ route('StaffArea.store') }}" method="post" enctype="multipart/form-data">
+        <h1>Nuovo Prodotto</h1>
+        <!--<form action="{{ route('StaffArea.store') }}" method="post" enctype="multipart/form-data">-->
+            {{ Form::open(array('route' => 'StaffArea.store', 'file' => true, ))}}
             @csrf
-            <input type="text" placeholder="Nome Prodotto" name="nome" value="{{ old('nome') }}"/>
-            @if($errors->first('nome'))
-            <ul>
+            <div>
+                {{ Form::label('nome', 'Nome Prodotto')}}
+                {{ Form::text('nome', '', ['id' => 'nome'])}}
+                @if($errors->first('nome'))
+                <ul>
                 @foreach ($errors->get('nome') as $message)
                     <li>{{ $message }}</li>
                 @endforeach
-            </ul>
-            @endif
+                </ul>
+                 @endif
+            </div>
+            
 
             <input type="text" placeholder="Descrizione Breve" name="descrizioneBreve" value="{{ old('descrizioneBreve') }}"/>
 
@@ -63,8 +69,8 @@
             @endif
 
             <div>
-                <label for="catId">Categoria</label>
-                <select name="catId" id="catId" name="sottoCategoria" style="margin-bottom: 3%">
+                <label for="sottocategoria">Categoria</label>
+                <select name="sottocattegoria" id="sottocategoria" style="margin-bottom: 3%">
                     @foreach ($categories as $category)
                        <optgroup label="{{ $category->nome }}">
                             @foreach ($subCategories as $subCategory)
@@ -77,8 +83,9 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-default" style="margin-bottom: 5%;">Crea Prodotto</button>
+            <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Aggiungi Prodotto">Crea Prodotto</button>
         </form>
-    </div><!--/sign up form-->
+    </div>
+</div>
 
 @endsection

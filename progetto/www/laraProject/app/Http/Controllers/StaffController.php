@@ -81,7 +81,7 @@ class StaffController extends Controller
         $product = new Product;
         $product->fill($request->validated());
         $product->foto = $imageName;
-        $product->save();
+        
 
         if($product->percentualeSconto != 0){
             $product->inPromozione = TRUE;
@@ -89,12 +89,17 @@ class StaffController extends Controller
             $product->inPromozione = FALSE;
         }
 
+        $category = SubCategory::where('sottocategoria', $product->sottocategoria)->get();
+
+        $product->categoria = $category->codCategoria;
+
+        $product->save();
 
         if(!is_null($imageName)){
             $path = public_path() . 'images/products';
             $image->move($path, $imageName);
         }
 
-        return redirect()->action('StaffController@showMainCatalog');
+        return view('StaffHome');
     }
 }
