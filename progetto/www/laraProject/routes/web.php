@@ -84,6 +84,8 @@ Route::post('logout', 'Auth\LoginController@logout')
 //Route::get('/accesso/loginok', 'AccessoController@loginok');
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Rotte inseritee dal comando artisan "ui vue --auth"
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
