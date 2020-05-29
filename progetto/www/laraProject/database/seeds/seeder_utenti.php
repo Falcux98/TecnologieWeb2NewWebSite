@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Hash;
 class seeder_utenti extends Seeder
 {
     /**
@@ -12,8 +12,22 @@ class seeder_utenti extends Seeder
      */
     public function run()
     {
-        DB::table('utente')->insert([
-            'codUtente' => '001',
+        DB::table('users')->insert([
+            'nome' => 'Matteo',
+            'cognome' => 'Mori',
+            'role' => 'admin',
+            'username' => 'adminadmin',
+            'password' => Hash::make('adminadmin')
+        ]);
+
+        DB::table('users')->insert([
+            'nome' => 'Matteo',
+            'cognome' => 'Rossi',
+            'role' => 'staff',
+            'username' => 'staffstaff',
+            'password' => Hash::make('staffstaff')
+        ]);
+        DB::table('users')->insert([
             'nome' => 'Mario',
             'cognome' => 'Rossi',
             'dataNascita' => '1997-08-25',
@@ -21,11 +35,10 @@ class seeder_utenti extends Seeder
             'residenza' => 'Ancona',
             'username' => 'useruser',
             'role' => 'user',
-            'password' => 'useruser'
+            'password' => Hash::make('useruser')
         ]);
 
-        DB::table('utente')->insert([
-            'codUtente' => '002',
+        DB::table('users')->insert([
             'nome' => 'Luigi',
             'cognome' => 'Bianchi',
             'dataNascita' => '1997-08-25',
@@ -33,7 +46,9 @@ class seeder_utenti extends Seeder
             'residenza' => 'Senigallia',
             'username' => 'useruser1',
             'role' => 'user',
-            'password' => 'useruser'
+            'password' => Hash::make('useruser')
         ]);
+
+
     }
 }
