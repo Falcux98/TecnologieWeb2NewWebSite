@@ -66,7 +66,7 @@ Route::post('/admin/removeStaffConfirm', 'AdminController@removeStaffMember') ->
 
 
 Route::get('/user', 'UserController@index')
-        ->name('user'); // per attivare l'autorizzazione
+        ->name('user')->middleware('can:isUser'); // per attivare l'autorizzazione
 
 
 
@@ -77,7 +77,7 @@ Route::get('/user', 'UserController@index')
 Route::get('loginregistrati', 'Auth\LoginController@showLoginForm')
         ->name('loginregistrati');
 
-Route::post('loginregistrati', 'Auth\LoginController@login');
+Route::post('loginregistrati', 'Auth\LoginController@redirectPath')->name('login');
 
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');

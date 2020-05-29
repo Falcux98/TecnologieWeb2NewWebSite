@@ -11,13 +11,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class StaffController extends Controller
-{    
+{
     protected $_categories, $_subCategories;
+
 
     public function __construct()
     {
         $this->_categories = Category::all();
         $this->_subCategories = SubCategory::all();
+        $this->middleware('can:isStaff');
+    ;
     }
 
     public function index(){
@@ -81,7 +84,7 @@ class StaffController extends Controller
         $product = new Product;
         $product->fill($request->validated());
         $product->foto = $imageName;
-        
+
 
         if($product->percentualeSconto != 0){
             $product->inPromozione = TRUE;

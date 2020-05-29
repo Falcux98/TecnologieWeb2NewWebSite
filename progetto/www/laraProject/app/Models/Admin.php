@@ -11,4 +11,6 @@ class Admin extends Model
 
     protected $guarded = ['codUtente'];
     protected $timeStamps = false;
+
+
 }

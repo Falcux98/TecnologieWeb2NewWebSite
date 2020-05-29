@@ -16,11 +16,33 @@
 
 					<div class="login-form"><!--login form-->
 						<h2>Collegati al tuo account!</h2>
-						<form method="post" action="{{url('Auth/LoginController')}}">
-						{{ csrf_field() }}
-							<input type="username" placeholder="Username" />
-							<input type="password" placeholder="Password" />
-							<span>
+						{{ Form::open(array('route' => 'login'))}}
+                        {{ csrf_field() }}
+                        <div>
+                            {{ Form::label('username', 'Username')}}
+                            {{ Form::text('username', '', ['id' => 'username'])}}
+                            @if($errors->first('username'))
+                            <ul>
+                                @foreach ($errors->get('username') as $message)
+                                    <li>{{ $message }}</li>
+                                @endforeach
+                            </ul>
+                            @endif
+                        </div>
+
+                        <div>
+                            {{ Form::label('password', 'Password')}}
+                            {{ Form::password('password', ['id' => 'password'])}}
+                            @if($errors->first('password'))
+                            <ul>
+                                @foreach ($errors->get('password') as $message)
+                                    <li>{{ $message }}</li>
+                                @endforeach
+                            </ul>
+                            @endif
+                        </div>
+
+            				<span>
 								<input type="checkbox" class="checkbox">
 								Rimani collegato
 							</span>
