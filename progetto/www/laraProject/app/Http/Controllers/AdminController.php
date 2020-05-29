@@ -24,6 +24,20 @@ class AdminController extends Controller {
             ->with('staffs', $staff);
     }
 
+    public function removeConfermation($staffUsername){
+        $staff = Admin::where('username', $staffUsername)->first();
+
+        return view('viewsAdmin.removeStaffConf')
+            ->with('staff', $staff);
+    }
+
+    public function removeStaffMember(){
+        $username = request('delete');
+        Admin::where('username', $username)->delete();
+
+        return redirect()->action('AdminController@showAdminArea');
+    }
+
     public function addNewStaffMemeber(newStaffRequest $request){
 
         $staffMemeber = new Admin;
@@ -34,7 +48,7 @@ class AdminController extends Controller {
 
         $staffMemeber->save();
 
-        return redirect()->action('AdminController@index');
+        return redirect()->action('AdminController@showAdminArea');
 
     }
 

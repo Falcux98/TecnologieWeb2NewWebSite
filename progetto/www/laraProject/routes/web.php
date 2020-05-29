@@ -55,11 +55,13 @@ Route::post('/staff/areaStaff', 'StaffController@storeNewProduct') -> name('Staf
 //AREA ADMIN
 Route::get('/admin', 'AdminController@index') ->name('AdminHome');
 
+Route::get('/admin/removeStaffConf/{staffUsername}', 'AdminController@removeConfermation') -> name('removeStaffConf');
+
 Route::get('/admin/areaAdmin', 'AdminController@showAdminArea') -> name('AdminArea');
 
 Route::post('/admin/areadAdmin', 'AdminController@addNewStaffMemeber') -> name('AdminArea.addStaff');
 
-Route::post('/admin/areaAdmin', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
+Route::post('/admin/removeStaffConfirm', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
 
 
 

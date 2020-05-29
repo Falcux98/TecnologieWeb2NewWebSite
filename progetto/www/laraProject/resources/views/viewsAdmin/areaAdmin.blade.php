@@ -80,11 +80,13 @@
     <ul>
         @foreach ($staffs as $staffMember)
             <li>
-                <h3>{{ $staffMember->nome}} {{ $staffMember->cognome }}</h3>
+                <div class="row" style="display: flex; justify-content:space-around ; align-items:baseline; border-bottom: 2px solid rgb(200,200,200);">
+                    <h3 style="width: 50%;">{{ $staffMember->nome}} {{ $staffMember->cognome }}</h3>
+                    <a href="{{ route('removeStaffConf', [$staffMember->username]) }}" style="" class="btn btn-default add-to-cart">Rimuovi</a>
+                </div>
             </li>
         @endforeach
-    </ul>
-        
+    </ul>   
     @endif
 </div>
 
