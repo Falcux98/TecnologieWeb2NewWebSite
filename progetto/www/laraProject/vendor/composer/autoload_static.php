@@ -471,10 +471,9 @@ class ComposerStaticInit8650143b10ad870d8c6a3e4c39f8b97a
     );
 
     public static $classMap = array (
-        'App\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\AccessoController' => __DIR__ . '/../..' . '/app/Http/Controllers/AccessoController.php',
+        'App\\Http\\Controllers\\AccessoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AccessoController.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -491,7 +490,9 @@ class ComposerStaticInit8650143b10ad870d8c6a3e4c39f8b97a
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\NewProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/NewProductRequest.php',
+        'App\\Http\\Requests\\newStaffRequest' => __DIR__ . '/../..' . '/app/Http/Requests/newStaffRequest.php',
         'App\\Http\\controllers\\PublicController' => __DIR__ . '/../..' . '/app/Http/Controllers/PublicController.php',
+        'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\SubCategory' => __DIR__ . '/../..' . '/app/Models/SubCategory.php',
@@ -4813,7 +4814,6 @@ class ComposerStaticInit8650143b10ad870d8c6a3e4c39f8b97a
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
-        'seeder_amministrazione' => __DIR__ . '/../..' . '/database/seeds/seeder_amministrazione.php',
         'seeder_categorie' => __DIR__ . '/../..' . '/database/seeds/seeder_categorie.php',
         'seeder_prodotti' => __DIR__ . '/../..' . '/database/seeds/seeder_prodotti.php',
         'seeder_sottocategorie' => __DIR__ . '/../..' . '/database/seeds/seeder_sottocategorie.php',

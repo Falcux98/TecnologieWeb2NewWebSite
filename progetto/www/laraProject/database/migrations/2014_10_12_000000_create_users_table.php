@@ -17,9 +17,9 @@ class CreateUsersTable extends Migration
             $table->id('codUtente')->autoIncrement();
             $table->string('nome');
             $table->string('cognome');
-            $table->date('dataNascita');
-            $table->string('occupazione')->default(null);
-            $table->string('residenza')->default(null);
+            $table->date('dataNascita')->default(DB::raw('CURRENT_TIMESTAMP'));        
+            $table->string('occupazione')->default('');
+            $table->string('residenza')->default('');
             $table->string('username')->unique();
             $table->string('role',10)->default('user');
             $table->string('password');

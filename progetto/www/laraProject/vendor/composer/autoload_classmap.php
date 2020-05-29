@@ -6,10 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
-    'App\\Http\\Controllers\\AccessoController' => $baseDir . '/app/Http/Controllers/AccessoController.php',
+    'App\\Http\\Controllers\\AccessoController' => $baseDir . '/app/Http/Controllers/Auth/AccessoController.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -26,7 +25,9 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Requests\\NewProductRequest' => $baseDir . '/app/Http/Requests/NewProductRequest.php',
+    'App\\Http\\Requests\\newStaffRequest' => $baseDir . '/app/Http/Requests/newStaffRequest.php',
     'App\\Http\\controllers\\PublicController' => $baseDir . '/app/Http/Controllers/PublicController.php',
+    'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\SubCategory' => $baseDir . '/app/Models/SubCategory.php',
@@ -4348,7 +4349,6 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
-    'seeder_amministrazione' => $baseDir . '/database/seeds/seeder_amministrazione.php',
     'seeder_categorie' => $baseDir . '/database/seeds/seeder_categorie.php',
     'seeder_prodotti' => $baseDir . '/database/seeds/seeder_prodotti.php',
     'seeder_sottocategorie' => $baseDir . '/database/seeds/seeder_sottocategorie.php',
