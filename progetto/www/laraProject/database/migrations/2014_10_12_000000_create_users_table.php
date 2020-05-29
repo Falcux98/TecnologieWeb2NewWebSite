@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\DB;
 class CreateUsersTable extends Migration
 {
     /**
@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id('codUtente')->autoIncrement();
             $table->string('nome');
             $table->string('cognome');
-            $table->date('dataNascita')->default(DB::raw('CURRENT_TIMESTAMP'));        
+            $table->date('dataNascita')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('occupazione')->default('');
             $table->string('residenza')->default('');
             $table->string('username')->unique();

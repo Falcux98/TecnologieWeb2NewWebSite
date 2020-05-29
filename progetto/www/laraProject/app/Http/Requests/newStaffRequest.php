@@ -26,7 +26,7 @@ class newStaffRequest extends FormRequest
         return [
             "nome" => "required | max: 30",
             "cognome" => "required | max: 30",
-            "username" => "required | min: 6 | unique:amministrazione",
+            "username" => "required | min: 6 | unique:users",
             "password" => "nullable | required_with: password_confirmation | string | confirmed | min: 8"
         ];
     }

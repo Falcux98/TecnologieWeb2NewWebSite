@@ -4,14 +4,15 @@
 
 @isset($staff)
     {{ Form::open(array('route' => 'AdminArea.removeStaff'))}}
-    
+
     {{ csrf_field() }}
-        
-        <h2>Eliminare {{ $staff->nome }} ?</h2>  
-        <input type="hidden" value="{{ $staff->username }}" name="delete">  
-        <p>Eliminare definitivamenente {{ $staff->nome }} {{ $staff->cognome}} dallo staff del sito?</p>  
-        <button  type="submit" class="btn btn-default add-to-cart">Conferma</button>   
-       
+
+        <h2>Eliminare {{ $staff->nome }} ?</h2>
+        <input type="hidden" value="{{ $staff->username }}" name="delete">
+        <p>Eliminare definitivamenente {{ $staff->nome }} {{ $staff->cognome}} dallo staff del sito?</p>
+        <button  type="submit" class="btn btn-default add-to-cart" href={{route('AdminArea') }}>Annulla</button>
+        <button  type="submit" class="btn btn-default add-to-cart">Conferma</button>
+
 </form>
 @endisset
 

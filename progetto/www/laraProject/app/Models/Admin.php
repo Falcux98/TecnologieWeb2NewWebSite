@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    protected $table = 'amministrazione';
-    protected $primaryKey = 'codAdmin';
+    protected $table = 'users';
+    protected $primaryKey = 'codUtente';
 
-    protected $guarded = ['codAdmin'];
+    protected $guarded = ['codUtente'];
     protected $timeStamps = false;
 }
