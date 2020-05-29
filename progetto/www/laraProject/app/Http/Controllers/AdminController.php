@@ -19,7 +19,9 @@ class AdminController extends Controller {
     }
 
     public function showAdminArea(){
-        return view('viewsAdmin.areaAdmin');
+        $staff = Admin::where('role', 'staff')->get();
+        return view('viewsAdmin.areaAdmin')
+            ->with('staffs', $staff);
     }
 
     public function addNewStaffMemeber(newStaffRequest $request){

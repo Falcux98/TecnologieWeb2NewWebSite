@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="col-sm-9">
+<div class="col-sm-6">
     <div class="signup-form">
         <h1>Aggiungi Memebro Staff</h1>
         {{ Form::open(array('route' => 'AdminArea.addStaff'))}}
@@ -71,6 +71,21 @@
 
         <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="AggiungiMembro">Aggiungi</button>
     </div>
+</div>
+
+<div class="col-sm-6">
+
+    <h1>Lista Membri Staff</h1>
+    @if (!empty($staffs))
+    <ul>
+        @foreach ($staffs as $staffMember)
+            <li>
+                <h3>{{ $staffMember->nome}} {{ $staffMember->cognome }}</h3>
+            </li>
+        @endforeach
+    </ul>
+        
+    @endif
 </div>
 
 @endsection
