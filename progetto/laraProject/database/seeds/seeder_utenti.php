@@ -17,7 +17,9 @@ class seeder_utenti extends Seeder
             'cognome' => 'Mori',
             'role' => 'admin',
             'username' => 'adminadmin',
-            'password' => Hash::make('adminadmin')
+            'password' => Hash::make('adminadmin'),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
 
         DB::table('users')->insert([
@@ -25,7 +27,9 @@ class seeder_utenti extends Seeder
             'cognome' => 'Rossi',
             'role' => 'staff',
             'username' => 'staffstaff',
-            'password' => Hash::make('staffstaff')
+            'password' => Hash::make('staffstaff'),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
         DB::table('users')->insert([
             'nome' => 'Mario',
@@ -35,7 +39,9 @@ class seeder_utenti extends Seeder
             'residenza' => 'Ancona',
             'username' => 'useruser',
             'role' => 'user',
-            'password' => Hash::make('useruser')
+            'password' => Hash::make('useruser'),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
 
         DB::table('users')->insert([
@@ -46,7 +52,9 @@ class seeder_utenti extends Seeder
             'residenza' => 'Senigallia',
             'username' => 'useruser1',
             'role' => 'user',
-            'password' => Hash::make('useruser')
+            'password' => Hash::make('useruser'),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
 
 
