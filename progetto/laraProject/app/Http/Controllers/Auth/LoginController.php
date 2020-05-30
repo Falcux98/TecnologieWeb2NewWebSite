@@ -24,13 +24,14 @@ use AuthenticatesUsers;
      *
      * @var string
      */
-  //  public $redirectTo = '/home';
+  //public $redirectTo = '/staff';
 
     /**
      * Override:: definisce la homepage per i diversi utenti.
      *
      * @var string
      */
+
     public function redirectTo() {
         $role = auth()->user()->role;
         switch ($role) {

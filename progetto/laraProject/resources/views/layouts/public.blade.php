@@ -13,23 +13,23 @@
     <title>TecWeb | @yield('title', 'Home')</title>
 </head>
 <body>
-    
+    @csrf
     <header id="header">
         @include('layouts._navpublic')
     </header>
-	
+
 	<section>
     <div class="container">
 		<div class="row">
             @yield ('content')
 		</div>
-        
+
 	</div>
 </section>
-    
-    
-    
-    
+
+
+
+
     	<footer id="footer"><!--Footer-->
 		<div class="footer-widget">
 			<div class="container">
@@ -45,11 +45,11 @@
 						</div>
 					</div>
 
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
@@ -57,11 +57,11 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer><!--/Footer-->
 
 	<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>	
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquey.prettyPhoto.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>

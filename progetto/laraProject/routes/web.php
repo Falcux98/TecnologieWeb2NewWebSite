@@ -72,15 +72,21 @@ Route::get('/user', 'UserController@index')
 
 //Area AUTENTICAZIONE
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('loginregistrati', 'Auth\LoginController@showLoginForm')
         ->name('loginregistrati');
 
-Route::post('loginregistrati', 'Auth\LoginController@redirectPath')->name('login');
+Route::post('loginregistrati', 'Auth\LoginController@login');
 
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
+
+ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
+        ->name('register');
+
+Route::post('register', 'Auth\RegisterController@register');
+
 
 //Route::post('/accesso/gestiscilogin', 'AccessoController@gestisciLogin');
 //Route::get('/accesso/loginok', 'AccessoController@loginok');
