@@ -11,8 +11,8 @@
         <h2>Eliminare {{ $prod->nome }} ?</h2>
         <input type="hidden" value="{{ $prod->codProdotto }}" name="delete">
         <p>Questa procedura eliminerà definitivamente il prodotto dal catalogo, continuare?</p>
-        <button  type="submit" class="btn btn-default add-to-cart" href={{route('StaffCatalog') }}>Annulla</button>
-        <button  type="submit" class="btn btn-default add-to-cart">Conferma</button>
+        <a class="btn btn-default add-to-cart" href="{{route('StaffCatalog') }}">Annulla</a>
+       <button  type="submit" class="btn btn-default add-to-cart">Conferma</button>
 
 </form>
 @endisset
