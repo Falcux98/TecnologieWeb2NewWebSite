@@ -2,7 +2,12 @@
 @section('title', 'Home')
 @section('content')
 <div>
-
+    @can('isAdmin')
+    <li><a href="{{ route('admin') }}" class="highlight" title="Home Admin">Home Admin</a></li>
+@endcan
+@can('isUser')
+    <li><a href="{{ route('user') }}" class="highlight" title="Home User">Home User</a></li>
+@endcan
 
 	<section id="slider"><!--slider-->
 		<div class="container">

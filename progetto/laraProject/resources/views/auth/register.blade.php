@@ -33,6 +33,40 @@
                                     </ul>
                                     @endif
                                 </div>
+                                <div>
+                                    {{ Form::label('dataNascita', 'datadiNascita')}}
+                                    {{ Form::date('dataNascita', '', ['id' => 'dataNascita'])}}
+                                    @if($errors->first('dataNascita'))
+                                    <ul>
+                                        @foreach ($errors->get('dataNascita') as $message)
+                                            <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </div>
+                                <div>
+                                    {{ Form::label('residenza', 'residenza')}}
+                                    {{ Form::text('residenza', '', ['id' => 'residenza'])}}
+                                    @if($errors->first('residenza'))
+                                    <ul>
+                                        @foreach ($errors->get('residenza') as $message)
+                                            <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </div>
+
+                                <div>
+                                    {{ Form::label('occupazione', 'occupazione')}}
+                                    {{ Form::text('occupazione', '', ['id' => 'occupazione'])}}
+                                    @if($errors->first('occupazione'))
+                                    <ul>
+                                        @foreach ($errors->get('occupazione') as $message)
+                                            <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </div>
 
                                 <div>
                                     {{ Form::label('username', 'Username')}}
