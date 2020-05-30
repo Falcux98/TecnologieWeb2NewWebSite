@@ -66,7 +66,7 @@ Route::post('/admin/removeStaffConfirm', 'AdminController@removeStaffMember') ->
 
 
 Route::get('/user', 'UserController@index')
-        ->name('user')->middleware('can:isUser'); // per attivare l'autorizzazione
+        ->name('user');//->middleware('can:isUser'); // per attivare l'autorizzazione
 
 
 

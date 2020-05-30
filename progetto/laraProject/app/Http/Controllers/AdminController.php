@@ -11,7 +11,7 @@ class AdminController extends Controller {
     protected $_adminModel;
 
     public function __construct() {
-        $this->middleware('can:isAdmin');
+       // $this->middleware('can:isAdmin');
         $this->_adminModel = new Admin;
     }
 
