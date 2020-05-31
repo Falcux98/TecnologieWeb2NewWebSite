@@ -26,14 +26,15 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="{{ route('StaffHome') }}" title="Home"><img src="images/home/logo.png" alt="" /></a>
+                    <a href="{{ route('UserHome') }}" title="Home"><img src="images/home/logo.png" alt="" /></a>
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('StaffArea') }}" title="areaStaff"><i class="fa fa-user"></i> Area Staff</a></li>
+                        <li><a href="{{ route('AreaPersonale') }}" title="AreaPersonale"><i class="fa fa-user"></i> Area Personale</a></li>
                         <li><a href="{{ route('loginregistrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
+
                     </ul>
                 </div>
             </div>

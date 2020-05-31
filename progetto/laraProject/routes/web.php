@@ -65,8 +65,12 @@ Route::post('/admin/removeStaffConfirm', 'AdminController@removeStaffMember') ->
 
 
 
-Route::get('/user', 'UserController@index')
-        ->name('user');//->middleware('can:isUser'); // per attivare l'autorizzazione
+//AREA USER
+
+Route::get('/user', 'UserController@index')->name('UserHome');//->middleware('can:isUser'); // per attivare l'autorizzazione
+
+Route::get('/user/areaPersonale', 'UserController@showAreaPersonale') -> name('AreaPersonale');
+
 
 
 
