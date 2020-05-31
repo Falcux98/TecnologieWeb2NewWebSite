@@ -14,10 +14,10 @@ class CreateProdottoTable extends Migration
     public function up()
     {
         Schema::create('prodotto', function (Blueprint $table) {
-            $table->id('codProdotto')->autoIncrement();
-            $table->string('nome');
-            $table->string('descrizioneBreve');
-            $table->string('descrizioneEstesa');
+            $table->bigIncrements('codProdotto');        
+            $table->string('nome',25);
+            $table->string('descrizioneBreve',50);
+            $table->string('descrizioneEstesa',2500);
             $table->double('prezzo');
             $table->string('foto');
             $table->integer('percentualeSconto');

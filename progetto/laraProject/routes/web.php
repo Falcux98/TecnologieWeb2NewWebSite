@@ -72,7 +72,7 @@ Route::get('/user', 'UserController@index')
 
 //Area AUTENTICAZIONE
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('loginregistrati', 'Auth\LoginController@showLoginForm')
         ->name('loginregistrati');

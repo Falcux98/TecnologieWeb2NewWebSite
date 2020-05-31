@@ -14,7 +14,8 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id('codUtente')->autoIncrement();
+
+            $table->bigIncrements('codUtente');
             $table->string('nome');
             $table->string('cognome');
             $table->date('dataNascita')->default(DB::raw('CURRENT_TIMESTAMP'));
