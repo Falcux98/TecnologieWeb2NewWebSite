@@ -9,4 +9,5 @@ class SubCategory extends Model
     //
 
     protected $table = 'sottocategoria';
+    protected $primaryKey = 'codSottocategoria';
 }
