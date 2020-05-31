@@ -94,7 +94,7 @@
 
                                 <div>
                                     {{ Form::label('password_confirmation', 'Conferma Password') }}
-                                    {{ Form::password('password_confirmation', ['id' => 'password_confirmation'])}}
+                                    {{ Form::password('password_confirmation', ['password_confirmation'])}}
                                     @if($errors->first('password_confirmation'))
                                     <ul>
                                         @foreach ($errors->get('password_confirmation') as $message)
