@@ -4,6 +4,7 @@
 @section('title', 'Dove Siamo')
 @section('content')
 <div>
+
 <h2 class="title text-center">Dove <strong>Siamo</strong></h2>
 
 					</div>

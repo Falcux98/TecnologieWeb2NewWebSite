@@ -19,7 +19,7 @@ class StaffController extends Controller
     {
         $this->_categories = Category::all();
         $this->_subCategories = SubCategory::all();
-       // $this->middleware('can:isStaff');
+        $this->middleware('can:isStaff');
     ;
     }
 

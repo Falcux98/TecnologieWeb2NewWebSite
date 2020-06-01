@@ -33,7 +33,12 @@
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('AdminArea') }}" title="Area Amministratore"><i class="fa fa-user"></i> Area Amministratore</a></li>
-                        <li><a href="{{ route('loginregistrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
+                        @auth
+                        <li><a href="" class="fa fa-lock" title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @endauth
                     </ul>
                 </div>
             </div>
