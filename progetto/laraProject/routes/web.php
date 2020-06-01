@@ -21,8 +21,6 @@ Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicCo
 
 Route::get('/catalog', 'PublicController@showMainCatalog') -> name('Catalog');
 
-//Route::get('/loginregistrati', 'Auth\LoginController@showLoginForm') ->name('Login Registrati');
-
 Route::view('/', 'home') -> name('Home');
 
 Route::view('/privacypolicy', 'privacypolicy') -> name('Privacy Policy');
@@ -32,6 +30,16 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
 
+
+//AREA USER
+
+Route::get('/user', 'UserController@index')->name('UserHome')->middleware('can:isUser'); // per attivare l'autorizzazione
+
+Route::get('/user/areaPersonale', 'UserController@showAreaPersonale') -> name('AreaPersonale');
+
+Route::get('/user/catalog', 'UserController@showMainCatalog') -> name('UserCatalog');
+
+Route::view('/user/dovesiamo', 'dovesiamo') -> name('DoveSiamoUser');
 
 
 //AREA STAFF
@@ -65,11 +73,6 @@ Route::post('/admin/removeStaffConfirm', 'AdminController@removeStaffMember') ->
 
 
 
-//AREA USER
-
-Route::get('/user', 'UserController@index')->name('UserHome');//->middleware('can:isUser'); // per attivare l'autorizzazione
-
-Route::get('/user/areaPersonale', 'UserController@showAreaPersonale') -> name('AreaPersonale');
 
 
 
