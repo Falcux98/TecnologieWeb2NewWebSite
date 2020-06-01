@@ -30,8 +30,7 @@ class UserController extends Controller {
  }
  
  
- 
-    public function showMainCatalog(){
+   public function showMainCatalog(){
         $selectedProducts = Product::paginate(2);
         return view('catalog')
             ->with('prods', $selectedProducts)
@@ -39,15 +38,28 @@ class UserController extends Controller {
             ->with('subCategories', $this->_subCategories);
     }
 
-    public function showSubCatCatalog($categoryID, $subCategoryID){
+      public function showCatCatalog($categoryID){
+        $selectedCategory = Category::where('codCategoria', $categoryID)->get();
+        $selectedProducts = Product::where('categoria', $categoryID)->get();
+
+        return view('catalog')
+            ->with('selCategory', $selectedCategory)
+            ->with('prods', $selectedProducts)
+            ->with('categories', $this->_categories)
+            ->with('subCategories', $this->_subCategories);
+    }
+      public function showSubCatCatalog($categoryID, $subCategoryID){
         $selectedCategory = Category::where('codCategoria', $categoryID)->get();
         $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
         $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
 
-        return view('viewsStaff.staffCat')
+        return view('catalog')
+            ->with('selCategory', $selectedCategory)
+            ->with('selSubCategory', $selectedSubCategory)
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
 
     }
 }
+?>
