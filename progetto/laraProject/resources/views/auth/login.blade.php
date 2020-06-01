@@ -41,7 +41,7 @@
 								Rimani collegato
 							</span>
                             <div class="container-form-btn">
-                                <button  type="submit" class="btn btn-default add-to-cart" href={{route('loginregistrati') }}>Login</button>
+                                <button  type="submit" class="btn btn-default " href={{route('loginregistrati') }}>Login</button>
                             </div>
 
                             {{ Form::close() }}
