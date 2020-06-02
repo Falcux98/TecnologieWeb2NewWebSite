@@ -3,10 +3,11 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" style="border-bottom: 1px solid black;">
+    <h1> Staff</h1>
 <div class="col-sm-6">
     <div class="signup-form">
-        <h1>Aggiungi Memebro Staff</h1>
+        <h2>Aggiungi Membro</h2>
         {{ Form::open(array('route' => 'AdminArea.addStaff'))}}
         @csrf
 
@@ -76,7 +77,7 @@
 
 <div class="col-sm-6">
 
-    <h1>Lista Membri Staff</h1>
+    <h3>Lista Membri</h2>
     @if (!empty($staffs))
     <ul>
         @foreach ($staffs as $staffMember)
