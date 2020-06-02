@@ -4,6 +4,7 @@
 
 <div class="container">
     <div class="col-sm-6">
+        <h2>Modifica {{ $staff->nome }} {{ $staff->cognome}}</h2>
         <div class="signup-form">
             {{ Form::model($staff, array('route' => 'modificaStaff.modifica'))}}
             @csrf

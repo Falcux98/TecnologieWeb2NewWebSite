@@ -3,11 +3,11 @@
 
 @section('content')
 
-<div class="container" style="border-bottom: 1px solid black;">
-    <h1> Staff</h1>
+<div class="container">
+    <h2 class=" title text-center" style="font-size: 30px"> Staff</h1>
 <div class="col-sm-6">
+    <h2 class="title text-center">Aggiungi Membro</h2>
     <div class="signup-form">
-        <h2>Aggiungi Membro</h2>
         {{ Form::open(array('route' => 'AdminArea.addStaff'))}}
         @csrf
 
@@ -77,13 +77,13 @@
 
 <div class="col-sm-6">
 
-    <h3>Lista Membri</h2>
+    <h2 class="title text-center">Lista Membri</h2>
     @if (!empty($staffs))
     <ul>
         @foreach ($staffs as $staffMember)
             <li>
                 <div class="row" style="display: flex; justify-content:space-around ; align-items:baseline; border-bottom: 2px solid rgb(200,200,200);">
-                    <h3 style="width: 50%;">{{ $staffMember->nome}} {{ $staffMember->cognome }}</h3>
+                    <h3 class="innerh2" style="width: 50%;">{{ $staffMember->nome}} {{ $staffMember->cognome }}</h3>
                     <a href="{{ route('removeConf', [$staffMember->username]) }}" style="" class="btn btn-default add-to-cart">Rimuovi</a>
                     <a href="{{ route('showModificaStaff', [$staffMember->username]) }}" style="" class="btn btn-default add-to-cart">Modifica</a>
                 </div>
@@ -94,15 +94,16 @@
 </div>
 </div>
 
-<div class="container" style="margin-top: 5%">
-    <div class="col-sm-6">
-        <h1>Lista Utenti</h1>
+<div class="container" style="margin-top: 5%; align-content: center">
+    <h2 class="title text-center" style="font-size: 30px">Lista Utenti</h1>
+    <div class="col-sm-11">
+        
         @if (!empty($users))
         <ul>
             @foreach ($users as $user)
             <li>
                 <div class="row" style="display: flex; justify-content:space-around ; align-items:baseline; border-bottom: 2px solid rgb(200,200,200);">
-                    <h3>{{ $user->nome }} {{ $user->cognome }}</h3>
+                    <h3 class="innerh2" style="width:50%">{{ $user->nome }} {{ $user->cognome }}</h3>
                     <a href="{{ route('removeConf', [$user->username]) }}" style="" class="btn btn-default add-to-cart">Rimuovi</a>
                 </div>
             </li>                
