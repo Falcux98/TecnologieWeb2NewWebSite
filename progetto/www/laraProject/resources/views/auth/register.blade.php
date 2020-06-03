@@ -57,8 +57,16 @@
                                 </div>
 
                                 <div>
-                                    {{ Form::label('occupazione', 'occupazione')}}
-                                    {{ Form::text('occupazione', '', ['id' => 'occupazione'])}}
+                                    <div>
+                                        {{ Form::label('occupazione', 'Occupazione')}}
+                                        @isset($occupations)
+
+                                        <select name="occupazione" id="occupazione" style="margin-bottom: 3%">
+                                            @foreach ($occupations as $occupazione)
+                                               <option label="{{ $occupazione->nome }}"></option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     @if($errors->first('occupazione'))
                                     <ul>
                                         @foreach ($errors->get('occupazione') as $message)
