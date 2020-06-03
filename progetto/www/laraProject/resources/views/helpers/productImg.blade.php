@@ -7,4 +7,4 @@
         }
 
 @endphp
-<img src="{{ asset('images/areapersonale/' . $imgFile) }}" {!! $attrs !!}>
+<img src="{{ asset('images/products/' . $imgFile) }}" {!! $attrs !!}>
