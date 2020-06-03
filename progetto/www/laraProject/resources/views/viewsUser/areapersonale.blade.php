@@ -11,22 +11,17 @@
 	    		<div class="col-sm-12">
 					<h2 class="title text-center">Area <strong>Personale</strong></h2>
 
-                    <h2>{{ Auth::user()->username }}</strong></h2>
+                    <h2><i class="fa fa-user">&ensp;</i>{{ Auth::user()->username }}</h2>
                     <div id="gmap" class="contact-map">
-                        @isset($users)
-                        @foreach($user as $users)
-                        @include('helpers.areapersonaleImg' , ['attrs' => 'imagefrm', 'imgFile' =>$users ->foto])
-                        @endforeach
-                        @endisset()
                         <h4>
-                        <li>Nome:  {{ Auth::user()->nome }}</li>
-                        <li>Cognome:  {{ Auth::user()->cognome }}</li>
-                        <li>Data Di nascita: {{ Auth::user()->dataNascita }}</li>
-                        <li>Residenza: {{ Auth::user()->residenza }}</li>
-                        <li>Occupazione: {{ Auth::user()->occupazione }}</li>
+                        <p>Nome:  {{ Auth::user()->nome }}</p>
+                        <p>Cognome:  {{ Auth::user()->cognome }}</p>
+                        <p>Data Di nascita: {{ Auth::user()->dataNascita }}</p>
+                        <p>Residenza: {{ Auth::user()->residenza }}</p>
+                        <p>Occupazione: {{ Auth::user()->occupazione }}</p>
                         </h4>
-
-					</div>
+                        <a href="{{ route('showModificaUser', [Auth::user()->username]) }}" style="" class="btn btn-default add-to-cart">Modifica Profilo</a>
+                    </div>
 				</div>
             </div>
         </div>

@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    
-        
-
-        
 
 
 
-//AREA PUBBLICA  
+
+
+
+
+//AREA PUBBLICA
 
 Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicController@showSubCatCatalog') -> name('subCategory');
 
@@ -52,6 +52,10 @@ Route::prefix('user')->group(function(){
     Route::view('/dovesiamo', 'dovesiamo') -> name('DoveSiamoUser');
 
     Route::view('/chisiamo', 'chisiamo') -> name('ChiSiamoUser');
+
+    Route::get('/modificaProfilo/{username}', 'UserController@showModificaUser') -> name('showModificaUser');
+
+    Route::post('/modificaProfilo', 'UserController@modificaUser') -> name('modificaUser.modifica');
 });
 
 
@@ -86,21 +90,21 @@ Route::prefix('staff')->group(function(){
 Route::prefix('admin')->group(function(){
 
      Route::get('/', 'AdminController@index') ->name('AdminHome')->middleware('can:isAdmin');
-     
+
      Route::get('/admin/catalog', 'AdminController@showMainCatalog') -> name('AdminCatalog');
-      
+
      Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'AdminController@showSubCatCatalog') -> name('adminSubCategory');
 
      Route::get('/removeConfirm/{staffUsername}', 'AdminController@removeConfermation') -> name('removeConf');
-        
+
      Route::get('/modificaStaff/{staffUsername}', 'AdminController@showModificaStaff') -> name('showModificaStaff');
-    
+
      Route::post('/modificaStaff', 'AdminController@modificaStaff') -> name('modificaStaff.modifica');
-       
+
      Route::get('/areaAdmin', 'AdminController@showAdminArea') -> name('AdminArea');
-        
+
      Route::post('/areadAdmin', 'AdminController@addNewStaffMemeber') -> name('AdminArea.addStaff');
-        
+
      Route::post('/removeStaffConfirm', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
 
      Route::view('/dovesiamo', 'dovesiamo') -> name('AdminDoveSiamo');

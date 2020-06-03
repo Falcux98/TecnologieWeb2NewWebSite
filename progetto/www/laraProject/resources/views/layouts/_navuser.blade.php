@@ -34,7 +34,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('PrivateArea') }}" title="Area Privata"><i class="fa fa-user"></i> Area personale</a></li>
                         <li><a href="{{ route('Login Registrati') }}" title="Logout"><i class="fa fa-lock"></i> Logout</a></li>
-                    </ul>
+
                     </ul>
                 </div>
             </div>
