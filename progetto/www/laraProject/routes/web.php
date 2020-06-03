@@ -15,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+    
+        
 
-//AREA PUBBLICA
+        
+
+
+
+//AREA PUBBLICA  
+
 Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'PublicController@showSubCatCatalog') -> name('subCategory');
 
 Route::get('/catalog', 'PublicController@showMainCatalog') -> name('Catalog');
@@ -31,49 +38,56 @@ Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
 
 
+
+
 //AREA USER
 
-Route::get('/user', 'UserController@index')->name('UserHome')->middleware('can:isUser'); // per attivare l'autorizzazione
+Route::prefix('user')->group(function(){
+    Route::get('/', 'UserController@index')->name('UserHome')->middleware('can:isUser'); // per attivare l'autorizzazione
 
-Route::get('/user/areaPersonale', 'UserController@showAreaPersonale') -> name('AreaPersonale');
+    Route::get('/areaPersonale', 'UserController@showAreaPersonale') -> name('AreaPersonale');
 
-Route::get('/user/catalog', 'UserController@showMainCatalog') -> name('UserCatalog');
+    Route::get('/catalog', 'UserController@showMainCatalog') -> name('UserCatalog');
+});
 
-Route::view('/user/dovesiamo', 'dovesiamo') -> name('DoveSiamoUser');
 
 
 //AREA STAFF
-Route::get('/staff', 'StaffController@index') ->name('StaffHome');
+Route::prefix('staff')->group(function(){
+    Route::get('/', 'StaffController@index') ->name('StaffHome');
 
-Route::get('/staff/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
+    Route::get('/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
 
-Route::get('/staff/catalog/remove/{removeID}', 'staffController@removeElementConfirm') ->name('removeElementConf');
+    Route::get('/catalog/remove/{removeID}', 'staffController@removeElementConfirm') ->name('removeElementConf');
 
-Route::delete('/staff/catalog', 'StaffController@removeElement') ->name('removeElement');
+    Route::delete('/catalog', 'StaffController@removeElement') ->name('removeElement');
 
-Route::view('/staff/dovesiamo', 'dovesiamo') -> name('DoveSiamoStaff');
+    Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
 
-Route::get('staff/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
+    Route::get('/areaStaff', 'StaffController@showStaffArea') -> name('StaffArea');
 
-Route::get('/staff/areaStaff', 'StaffController@showStaffArea') -> name('StaffArea');
+    Route::post('/areaStaff', 'StaffController@storeNewProduct') -> name('StaffArea.store');
 
-Route::post('/staff/areaStaff', 'StaffController@storeNewProduct') -> name('StaffArea.store');
+});
 
 
-//AREA ADMIN
-Route::get('/admin', 'AdminController@index') ->name('AdminHome')->middleware('can:isAdmin');
+Route::prefix('Admin')->group(function(){
+     Route::get('/', 'AdminController@index') ->name('AdminHome')->middleware('can:isAdmin');
 
-Route::get('/admin/removeConfirm/{staffUsername}', 'AdminController@removeConfermation') -> name('removeConf');
+     Route::get('/removeConfirm/{staffUsername}', 'AdminController@removeConfermation') -> name('removeConf');
+        
+     Route::get('/modificaStaff/{staffUsername}', 'AdminController@showModificaStaff') -> name('showModificaStaff');
+    
+     Route::post('/modificaStaff', 'AdminController@modificaStaff') -> name('modificaStaff.modifica');
+       
+     Route::get('/areaAdmin', 'AdminController@showAdminArea') -> name('AdminArea');
+        
+     Route::post('/areadAdmin', 'AdminController@addNewStaffMemeber') -> name('AdminArea.addStaff');
+        
+     Route::post('/removeStaffConfirm', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
+});
 
-Route::get('admin/modificaStaff/{staffUsername}', 'AdminController@showModificaStaff') -> name('showModificaStaff');
 
-Route::post('admin/modificaStaff', 'AdminController@modificaStaff') -> name('modificaStaff.modifica');
-
-Route::get('/admin/areaAdmin', 'AdminController@showAdminArea') -> name('AdminArea');
-
-Route::post('/admin/areadAdmin', 'AdminController@addNewStaffMemeber') -> name('AdminArea.addStaff');
-
-Route::post('/admin/removeStaffConfirm', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
 
 
 
