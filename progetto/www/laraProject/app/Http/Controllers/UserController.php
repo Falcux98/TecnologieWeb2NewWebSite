@@ -17,7 +17,7 @@ class UserController extends Controller {
        
         $this->_categories = Category::all();
         $this->_subCategories = SubCategory::all();
-     //  $this->middleware('can:isUser');
+        $this->middleware('can:isUser');
     }
 
     public function index() {
