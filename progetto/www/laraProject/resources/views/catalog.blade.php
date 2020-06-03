@@ -1,4 +1,19 @@
-@extends('layouts.public')
+@auth
+@php
+	if(Auth::user()->role == 'user') $mainNav = 'layoutsUser.user';
+	else{
+		$mainNav = (Auth::user()->role == 'staff') ? 'layoutsStaff.staff' : 'layoutsAdmin.admin';
+	}
+@endphp    
+@endauth
+
+@guest
+@php
+	$mainNav = 'layouts.public';
+@endphp	
+@endguest
+
+@extends($mainNav)
 
 @section('title', 'Catalogo')
 @section('content')

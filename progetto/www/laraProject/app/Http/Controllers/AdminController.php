@@ -17,7 +17,7 @@ class AdminController extends Controller {
     }
 
     public function index() {
-        return view('layoutsAdmin.admin');
+        return view('home');
     }
 
     public function showAdminArea(){

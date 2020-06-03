@@ -1,6 +1,45 @@
-@extends('layouts.public')
+@auth
+@php
+	if(Auth::user()->role == 'user') $mainNav = 'layoutsUser.user';
+	else{
+		$mainNav = (Auth::user()->role == 'staff') ? 'layoutsStaff.staff' : 'layoutsAdmin.admin';
+	}
+@endphp    
+@endauth
+
+@guest
+@php
+	$mainNav = 'layouts.public';
+@endphp	
+@endguest
+
+@extends($mainNav)
 @section('title', 'Home')
 @section('content')
+<div>
+	@auth
+		<h2 class="title text-center"> Area {{ Auth::user()->role }}</h2>
+		<h3 class=" text-center"> Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }} </h3>
+		<div class="container" style="width: 80%;">
+			<p style="margin-bottom: 3%; text-align: center">  
+				Accedi all'area 
+				@if (Auth::user()->role == 'staff')
+					Staff in alto a destra per poter aggiungere, rimuovere o modificare prodotti e categorie. Buon divertimento!	
+				@elseif (Auth::user()->role == 'admin')	
+					Amministarzione	in alto a destra per poter aggiungere, rimuovere o modificare i memebri dello staff, potrai inoltre
+					rimuovere qualsiasi utente registrato nel sito. Buon Divertimento	
+				@else
+					Personale in alto a destra per consultare o modificare i tuoi dati personali. Consultando il catalogo potrai inoltre
+					vedere tutti gli sconti e le promozioni sui nostri prodotti.
+				@endif
+	
+			</p>
+		</div>
+		
+	@endauth
+</div>
+
+
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">

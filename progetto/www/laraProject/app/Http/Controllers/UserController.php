@@ -21,7 +21,7 @@ class UserController extends Controller {
     }
 
     public function index() {
-        return view('layoutsUser.user');
+        return view('home');
     }
     
    public function showAreaPersonale(){
