@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin as AppAdmin;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\EditStaffRequest;
 use App\Http\Requests\newStaffRequest;
 use App\Models\Admin;
-use App\Models\Utente;
 use App\User;
 
 class AdminController extends Controller {
@@ -53,6 +52,8 @@ class AdminController extends Controller {
         if(empty($staffMember->residenza)) $staffMember->residenza = '';
 
         $staffMember->role = "staff";
+
+        $staffMember->password = Hash::make($request->password);
 
         $staffMember->save();
 
