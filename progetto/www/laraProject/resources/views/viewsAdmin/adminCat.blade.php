@@ -1,4 +1,4 @@
-@extends('layoutsStaff.staff')
+@extends('layoutsAdmin.admin')
 
 @section('title', 'Catalogo')
 @section('content')
@@ -27,7 +27,7 @@
 							@isset($subCategories)
 							@foreach ($subCategories as $subCategory)
 							    @if ($subCategory->categoria == $category->codCategoria)
-								<li><a href="{{ route('staffSubCategory', [$category->codCategoria, $subCategory->codSottocategoria]) }}">{{ $subCategory->nome}} </a></li>
+								<li><a href="{{ route('adminSubCategory', [$category->codCategoria, $subCategory->codSottocategoria]) }}">{{ $subCategory->nome}} </a></li>
 							    @endif
 							@endforeach		
 							@endisset														
@@ -71,7 +71,7 @@
                                            <h4>@include('helpers.productPrice')</h4>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                     <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-                    <a href="{{ route('removeElementConf', [$products->codProdotto]) }}" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
+                  
 				</div>
             </div>
         </div>

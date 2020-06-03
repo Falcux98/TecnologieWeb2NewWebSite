@@ -86,6 +86,10 @@ Route::prefix('staff')->group(function(){
 Route::prefix('admin')->group(function(){
 
      Route::get('/', 'AdminController@index') ->name('AdminHome')->middleware('can:isAdmin');
+     
+     Route::get('/admin/catalog', 'AdminController@showMainCatalog') -> name('AdminCatalog');
+      
+     Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'AdminController@showSubCatCatalog') -> name('adminSubCategory');
 
      Route::get('/removeConfirm/{staffUsername}', 'AdminController@removeConfermation') -> name('removeConf');
         
