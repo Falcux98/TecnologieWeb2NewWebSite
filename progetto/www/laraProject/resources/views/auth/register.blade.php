@@ -108,7 +108,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <div class="container-form-btn">
-                                    {{ Form::submit('Registra', ['class' => 'form-btn1']) }}
+                                    {{ Form::submit('Registra', ['class' => 'btn btn-default']) }}
                                 </div>
 
                             </div>
