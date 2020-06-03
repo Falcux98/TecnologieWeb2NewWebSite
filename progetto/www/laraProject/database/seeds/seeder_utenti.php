@@ -40,7 +40,6 @@ class seeder_utenti extends Seeder
             'username' => 'useruser',
             'role' => 'user',
             'password' => Hash::make('useruser'),
-            'foto' => '/laptop1.jpg',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);
