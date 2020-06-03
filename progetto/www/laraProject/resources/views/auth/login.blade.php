@@ -154,7 +154,7 @@
                         </div>
 
 
-                        <div class="row">
+                        <div class="form-group row mb-0">
                             <div class="col-md-4 offset-md-4">
                                 <div class="container-form-btn">
                                     {{ Form::submit('Registra', ['class' => 'btn btn-default']) }}

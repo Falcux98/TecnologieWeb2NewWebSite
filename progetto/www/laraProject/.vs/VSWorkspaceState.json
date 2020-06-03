@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\helpers",
+    "\\resources\\views\\layoutsStaff",
+    "\\resources\\views\\viewsAdmin",
+    "\\resources\\views\\viewsUser"
+  ],
+  "SelectedNode": "\\resources\\views\\viewsAdmin\\areaAdmin.blade.php",
+  "PreviewInSolutionExplorer": false
+}
