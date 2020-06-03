@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admin as AppAdmin;
+use App\Http\Requests\EditStaffRequest;
 use App\Http\Requests\newStaffRequest;
 use App\Models\Admin;
 use App\Models\Utente;
@@ -14,7 +15,6 @@ class AdminController extends Controller {
 
     public function __construct() {
         $this->middleware('can:isAdmin');
-        $this->_adminModel = new Admin;
     }
 
     public function index() {
@@ -45,13 +45,16 @@ class AdminController extends Controller {
 
     public function addNewStaffMemeber(newStaffRequest $request){
 
-        $staffMemeber = new Admin;
+        $staffMember = new User;
 
-        $staffMemeber->fill($request->validated());
+        $staffMember->fill($request->validated());
 
-        $staffMemeber->role = "staff";
+        if(empty($staffMember->occupazione)) $staffMember->occupazione = '';
+        if(empty($staffMember->residenza)) $staffMember->residenza = '';
 
-        $staffMemeber->save();
+        $staffMember->role = "staff";
+
+        $staffMember->save();
 
         return redirect()->action('AdminController@showAdminArea');
 
@@ -65,8 +68,22 @@ class AdminController extends Controller {
 
     }
 
-    public function modificaStaff(){
-        
+    public function modificaStaff(EditStaffRequest $request){
+
+        $staffUpdate = new User;
+        $staffUpdate->fill($request->validated());
+
+        if(empty($staffUpdate->occupazione)) $staffUpdate->occupazione = '';
+        if(empty($staffUpdate->residenza)) $staffUpdate->residenza = '';
+
+        User::where('username', $staffUpdate->username)
+            ->update(['nome' => $staffUpdate->nome,
+                      'cognome' => $staffUpdate->cognome,
+                      'dataNascita' => $staffUpdate->dataNascita,
+                      'occupazione' => $staffUpdate->occupazione,
+                      'residenza' => $staffUpdate->residenza]);
+
+        return redirect()->action('AdminController@showAdminArea');
     }
 
 }

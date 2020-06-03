@@ -12,7 +12,7 @@
         @csrf
 
         <div>
-            {{ Form::label('nome', 'Nome')}}
+            {{ Form::label('nome', 'Nome *')}}
             {{ Form::text('nome', '', ['id' => 'nome'])}}
             @if($errors->first('nome'))
             <ul>
@@ -24,7 +24,7 @@
         </div>
 
         <div>
-            {{ Form::label('cognome', 'Cognome')}}
+            {{ Form::label('cognome', 'Cognome *')}}
             {{ Form::text('cognome', '', ['id' => 'cognome'])}}
             @if($errors->first('cognome'))
             <ul>
@@ -36,7 +36,43 @@
         </div>
 
         <div>
-            {{ Form::label('username', 'Username')}}
+            {{ Form::label('dataNascita', 'Data di Nascita') }}
+            {{ Form::date('dataNascita', '', ['id' => 'dataNascita'])}}
+            @if($errors->first('dataNascita'))
+            <ul>
+                @foreach ($errors->get('dataNascita') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
+
+        <div>
+            {{ Form::label('occupazione', 'Occupazione')}}
+            {{ Form::text('occupazione', '', ['id'=>'occupazione'])}}
+            @if($errors->first('occupazione'))
+            <ul>
+                @foreach ($errors->get('occupazione') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
+
+        <div>
+            {{ Form::label('residenza', 'Residenza')}}
+            {{ Form::text('residenza', '', ['id'=>'residenza'])}}
+            @if($errors->first('residenza'))
+            <ul>
+                @foreach ($errors->get('residenza') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
+
+        <div>
+            {{ Form::label('username', 'Username *')}}
             {{ Form::text('username', '', ['id' => 'username'])}}
             @if($errors->first('username'))
             <ul>
@@ -47,8 +83,9 @@
             @endif
         </div>
 
+
         <div>
-            {{ Form::label('password', 'Password')}}
+            {{ Form::label('password', 'Password *')}}
             {{ Form::password('password', ['id' => 'password'])}}
             @if($errors->first('password'))
             <ul>
@@ -60,7 +97,7 @@
         </div>
 
         <div>
-            {{ Form::label('password_confirmation', 'Conferma Password') }}
+            {{ Form::label('password_confirmation', 'Conferma Password *') }}
             {{ Form::password('password_confirmation', ['id' => 'password_confirmation'])}}
             @if($errors->first('password_confirmation'))
             <ul>
@@ -70,6 +107,8 @@
             </ul>
             @endif
         </div>
+
+        <p>* campo obbligatorio</p>
 
         <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="AggiungiMembro">Aggiungi</button>
     </div>

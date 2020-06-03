@@ -13,7 +13,7 @@ class EditStaffRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,6 +24,7 @@ class EditStaffRequest extends FormRequest
     public function rules()
     {
         return [
+            "username" => "required",
             "nome" => "required | max: 30",
             "cognome" => "required | max: 30",
             "dataNascita" => "required | date",

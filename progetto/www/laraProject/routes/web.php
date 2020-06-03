@@ -61,7 +61,7 @@ Route::post('/staff/areaStaff', 'StaffController@storeNewProduct') -> name('Staf
 
 
 //AREA ADMIN
-Route::get('/admin', 'AdminController@index') ->name('AdminHome');
+Route::get('/admin', 'AdminController@index') ->name('AdminHome')->middleware('can:isAdmin');
 
 Route::get('/admin/removeConfirm/{staffUsername}', 'AdminController@removeConfermation') -> name('removeConf');
 

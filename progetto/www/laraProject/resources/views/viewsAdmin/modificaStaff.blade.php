@@ -9,6 +9,8 @@
             {{ Form::model($staff, array('route' => 'modificaStaff.modifica'))}}
             @csrf
 
+            {{ Form::hidden('username', old('username'))}}
+
             <div>
                 {{ Form::label('nome', 'Nome *')}}
                 {{ Form::text('nome', old('name'), ['id' => 'nome']) }}
