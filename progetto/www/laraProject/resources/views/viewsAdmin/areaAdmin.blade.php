@@ -6,7 +6,7 @@
 <div class="container">
     <h2 class=" title text-center" style="font-size: 30px"> Staff</h1>
 <div class="col-sm-6">
-    <h2 class="title text-center">Aggiungi Membro</h2>
+    <h2 class="title text-center">Aggiungi Membro staff</h2>
     <div class="signup-form">
         {{ Form::open(array('route' => 'AdminArea.addStaff'))}}
         @csrf
@@ -116,7 +116,7 @@
 
 <div class="col-sm-6">
 
-    <h2 class="title text-center">Lista Membri</h2>
+    <h2 class="title text-center">Lista Membri staff</h2>
     @if (!empty($staffs))
     <ul>
         @foreach ($staffs as $staffMember)
@@ -134,7 +134,7 @@
 </div>
 
 <div class="container" style="margin-top: 5%; align-content: center">
-    <h2 class="title text-center" style="font-size: 30px">Lista Utenti</h1>
+    <h2 class="title text-center" style="font-size: 30px">Lista Utenti registrati</h1>
     <div class="col-sm-11">
         
         @if (!empty($users))
