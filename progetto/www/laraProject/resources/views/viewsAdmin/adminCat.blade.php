@@ -68,7 +68,7 @@
 				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
 			     
 					<h2>Prodotto: {{$products->nome}}</h1>
-                                           <h4>@include('helpers.productPrice')</h4>
+                                           <h4>{{$products->prezzo}} €</h4>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
                     <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
                   
