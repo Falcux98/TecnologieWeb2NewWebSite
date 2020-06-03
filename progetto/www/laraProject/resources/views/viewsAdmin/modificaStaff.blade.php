@@ -74,6 +74,7 @@
             <p>* campi obbligatori</p>
 
             <button  type="submit" class="btn btn-default add-to-cart">Modifica</button>
+            {{ Form::close() }}
         </div>
     </div>
 </div>

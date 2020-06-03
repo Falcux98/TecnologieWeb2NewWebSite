@@ -12,8 +12,8 @@
         <p>Eliminare definitivamenente {{ $user->nome }} {{ $user->cognome}} dagli {{ $user->role }} del sito?</p>
         <a class="btn btn-default add-to-cart" href="{{route('AdminArea') }}">Annulla</a>
         <button  type="submit" class="btn btn-default add-to-cart">Conferma</button>
-
-</form>
+    
+    {{ Form::close()}}
 @endisset
 
 @endsection

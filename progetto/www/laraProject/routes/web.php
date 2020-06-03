@@ -72,6 +72,10 @@ Route::prefix('staff')->group(function(){
 
     Route::post('/areaStaff', 'StaffController@storeNewProduct') -> name('StaffArea.store');
 
+    Route::post('/areaStaff/addCat', 'StaffController@addNewCategory') -> name('StaffArea.aggiungiCategoria');
+
+    Route::post('/areaStaff/addSubCat', 'StaffController@addNewSubCategory') -> name('StaffArea.aggiungiSottocategoria');
+
     Route::view('/dovesiamo', 'dovesiamo') -> name('StaffDoveSiamo');
 
     Route::view('/chisiamo', 'chisiamo') -> name('StaffChiSiamo');

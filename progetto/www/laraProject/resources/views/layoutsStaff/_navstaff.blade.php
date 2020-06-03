@@ -60,10 +60,10 @@
                 </div>
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li><a href="{{ route('StaffHome') }}" title="Home" class="{{ (Request::route()->getName() === 'Home') ? 'active': '' }}">HOME</a></li>
-                        <li><a href="{{ route('StaffCatalog') }}" title="Catalogo" class="{{ (Request::route()->getName() === 'Catalog') ? 'active': '' }}">CATALOGO</a></li>
-                        <li><a href="{{ route('StaffDoveSiamo') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'Dove Siamo') ? 'active': '' }}">DOVE SIAMO</a></li>
-                        <li><a href="{{ route('StaffChiSiamo') }}" title="Chi Siamo" class="{{ (Request::route()->getName() === 'Chi Siamo') ? 'active': '' }}">CHI SIAMO</a></li>
+                        <li><a href="{{ route('StaffHome') }}" title="Home" class="{{ (Request::route()->getName() === 'StaffHome') ? 'active': '' }}">HOME</a></li>
+                        <li><a href="{{ route('StaffCatalog') }}" title="Catalogo" class="{{ (Request::route()->getName() === 'StaffCatalog') ? 'active': '' }}">CATALOGO</a></li>
+                        <li><a href="{{ route('StaffDoveSiamo') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'StaffDoveSiamo') ? 'active': '' }}">DOVE SIAMO</a></li>
+                        <li><a href="{{ route('StaffChiSiamo') }}" title="Chi Siamo" class="{{ (Request::route()->getName() === 'StaffChiSiamo') ? 'active': '' }}">CHI SIAMO</a></li>
                     </ul>
                 </div>
             </div>

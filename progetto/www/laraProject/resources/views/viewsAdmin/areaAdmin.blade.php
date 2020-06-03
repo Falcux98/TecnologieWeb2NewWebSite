@@ -111,6 +111,7 @@
         <p>* campo obbligatorio</p>
 
         <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="AggiungiMembro">Aggiungi</button>
+        {{ Form::close() }}
     </div>
 </div>
 

@@ -24,7 +24,8 @@
 			<p style="margin-bottom: 3%; text-align: center">  
 				Accedi all'area 
 				@if (Auth::user()->role == 'staff')
-					Staff in alto a destra per poter aggiungere, rimuovere o modificare prodotti e categorie. Buon divertimento!	
+					Staff in alto a destra per poter aggiungere prodotti categorie e sottocategorie. Per modificare o rimuovere prodotti cerca nel catalogo
+					il prodotto che vuoi modificare/rimuovere e segui le indicazioni	
 				@elseif (Auth::user()->role == 'admin')	
 					Amministarzione	in alto a destra per poter aggiungere, rimuovere o modificare i memebri dello staff, potrai inoltre
 					rimuovere qualsiasi utente registrato nel sito. Buon Divertimento	
