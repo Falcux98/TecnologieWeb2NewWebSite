@@ -47,12 +47,6 @@ Route::prefix('user')->group(function(){
 
     Route::get('/areaPersonale', 'UserController@showAreaPersonale') -> name('AreaPersonale');
 
-    Route::get('/catalog', 'UserController@showMainCatalog') -> name('UserCatalog');
-
-    Route::view('/dovesiamo', 'dovesiamo') -> name('DoveSiamoUser');
-
-    Route::view('/chisiamo', 'chisiamo') -> name('ChiSiamoUser');
-
     Route::get('/modificaProfilo/{username}', 'UserController@showModificaUser') -> name('showModificaUser');
 
     Route::post('/modificaProfilo', 'UserController@modificaUser') -> name('modificaUser.modifica');
@@ -64,13 +58,9 @@ Route::prefix('user')->group(function(){
 Route::prefix('staff')->group(function(){
     Route::get('/', 'StaffController@index') ->name('StaffHome');
 
-    Route::get('/catalog', 'StaffController@showMainCatalog') -> name('StaffCatalog');
-
     Route::get('/catalog/remove/{removeID}', 'staffController@removeElementConfirm') ->name('removeElementConf');
 
     Route::delete('/catalog', 'StaffController@removeElement') ->name('removeElement');
-
-    Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'StaffController@showSubCatCatalog') -> name('staffSubCategory');
 
     Route::get('/areaStaff', 'StaffController@showStaffArea') -> name('StaffArea');
 
@@ -80,20 +70,12 @@ Route::prefix('staff')->group(function(){
 
     Route::post('/areaStaff/addSubCat', 'StaffController@addNewSubCategory') -> name('StaffArea.aggiungiSottocategoria');
 
-    Route::view('/dovesiamo', 'dovesiamo') -> name('StaffDoveSiamo');
-
-    Route::view('/chisiamo', 'chisiamo') -> name('StaffChiSiamo');
-
 });
 
 
 Route::prefix('admin')->group(function(){
 
      Route::get('/', 'AdminController@index') ->name('AdminHome')->middleware('can:isAdmin');
-
-     Route::get('/admin/catalog', 'AdminController@showMainCatalog') -> name('AdminCatalog');
-
-     Route::get('/categories/{categoriesID}/subCategories/{subCategories}', 'AdminController@showSubCatCatalog') -> name('adminSubCategory');
 
      Route::get('/removeConfirm/{staffUsername}', 'AdminController@removeConfermation') -> name('removeConf');
 
@@ -106,10 +88,6 @@ Route::prefix('admin')->group(function(){
      Route::post('/areadAdmin', 'AdminController@addNewStaffMemeber') -> name('AdminArea.addStaff');
 
      Route::post('/removeStaffConfirm', 'AdminController@removeStaffMember') -> name('AdminArea.removeStaff');
-
-     Route::view('/dovesiamo', 'dovesiamo') -> name('AdminDoveSiamo');
-
-    Route::view('/chisiamo', 'chisiamo') -> name('AdminChiSiamo');
 });
 
 

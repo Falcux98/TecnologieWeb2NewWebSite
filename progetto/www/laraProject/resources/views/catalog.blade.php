@@ -83,10 +83,16 @@
 				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
 			       
 					<h2>Prodotto: {{$products->nome}}</h1>
-                                        <h4>@include('helpers.productPrice')</h4>
+                    <h4>@include('helpers.productPrice')</h4>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
-                    <p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
-				   
+					<p>Descrizione estesa: {!!$products->descrizioneEstesa!!}</p>
+					@auth
+					@if (Auth::user()->role == 'staff')
+					<a href="{{ route('removeElementConf', [$products->codProdotto]) }}" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
+					<a href="{{ route('removeElementConf', [$products->codProdotto]) }}" class="btn btn-default add-to-cart">Modifica Prodotto</a>
+					@endif
+						
+					@endauth				   
 				</div>
             </div>
         </div>

@@ -32,7 +32,7 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('AdminArea') }}" title="Area Amministratore"><i class="fa fa-user"></i> Area Amministratore</a></li>
+                        <li><a href="{{ route('AdminArea') }}" title="Area Amministratore" class="{{ (Request::route()->getName() === 'AdminArea') ? 'active': '' }}"><i class="fa fa-user"></i> Area Amministratore</a></li>
                         @auth
                         <li><a href="" class="fa fa-lock" title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -60,10 +60,10 @@
                 </div>
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li><a href="{{ route('AdminHome') }}" title="Home" class="{{ (Request::route()->getName() === 'Home') ? 'active': '' }}">HOME</a></li>
-                        <li><a href="{{ route('AdminCatalog') }}" title="Catalogo" class="{{ (Request::route()->getName() === 'Catalog') ? 'active': '' }}">CATALOGO</a></li>
-                        <li><a href="{{ route('AdminDoveSiamo') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'Dove Siamo') ? 'active': '' }}">DOVE SIAMO</a></li>
-                        <li><a href="{{ route('AdminChiSiamo') }}" title="Chi Siamo" class="{{ (Request::route()->getName() === 'Chi Siamo') ? 'active': '' }}">CHI SIAMO</a></li>
+                        <li><a href="{{ route('AdminHome') }}" title="Home" class="{{ (Request::route()->getName() === 'AdminHome') ? 'active': '' }}">HOME</a></li>
+                        <li><a href="{{ route('Catalog') }}" title="Catalogo" class="{{ (Request::route()->getName() === 'Catalog') ? 'active': '' }}">CATALOGO</a></li>
+                        <li><a href="{{ route('Dove Siamo') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'Dove Siamo') ? 'active': '' }}">DOVE SIAMO</a></li>
+                        <li><a href="{{ route('Chi Siamo') }}" title="Chi Siamo" class="{{ (Request::route()->getName() === 'Chi Siamo') ? 'active': '' }}">CHI SIAMO</a></li>
                     </ul>
                 </div>
             </div>
