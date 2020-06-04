@@ -7,8 +7,10 @@ use App\Http\Requests\NewProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\EditProductRequest;
 
 class StaffController extends Controller
 {
@@ -29,7 +31,7 @@ class StaffController extends Controller
 
     public function showMainCatalog(){
         $selectedProducts = Product::paginate(2);
-        return view('viewsStaff.staffCat')
+        return view('catalog')
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
@@ -102,6 +104,39 @@ class StaffController extends Controller
             $path = public_path() . '/images/products';
             $image->move($path, $imageName);
         }
+
+        return redirect()->action('StaffController@showMainCatalog');
+    }
+
+
+
+    public function showModificaProdotto($codProdotto){
+
+        $product = Product::where('codProdotto', $codProdotto)->first();
+        return view('viewsStaff.modificaProdotto')
+            ->with('prod', $product);
+
+    }
+
+
+    public function modificaProdotto(EditProductRequest $request){
+
+        $productUpdate = new Product;
+       $productUpdate->fill($request->validated());
+
+        if(empty($productUpdate->occupazione))$productUpdate->occupazione = '';
+        if(empty($productUpdate->residenza))$productUpdate->residenza = '';
+
+        User::where('codProdotto',$productUpdate->codProdotto)
+            ->update(['nome' =>$productUpdate->nome,
+                      'descrizioneBreve' =>$productUpdate->descrizioneBreve,
+                      'descrizioneEstesa' =>$productUpdate->descrizioneEstesa,
+                      'prezzo' =>$productUpdate->prezzo,
+                      'foto' =>$productUpdate->foto,
+                      'percentualeSconto' =>$productUpdate->percentualeSconto,
+                      'inPromozione' =>$productUpdate->inPromozione,
+                      'categoria' =>$productUpdate->categoria,
+                      'sottocategoria' =>$productUpdate->sottocategoria]);
 
         return redirect()->action('StaffController@showMainCatalog');
     }

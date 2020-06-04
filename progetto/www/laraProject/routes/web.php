@@ -70,6 +70,10 @@ Route::prefix('staff')->group(function(){
 
     Route::post('/areaStaff/addSubCat', 'StaffController@addNewSubCategory') -> name('StaffArea.aggiungiSottocategoria');
 
+    Route::get('/modificaProdotto/{codProdotto}', 'staffController@showModificaProdotto') -> name('ModificaProdotto');
+
+    Route::post('/modificaProdotto', 'StaffController@modificaProdotto') -> name('modificaProdotto.modifica');
+
 });
 
 

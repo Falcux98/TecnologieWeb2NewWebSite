@@ -4,20 +4,20 @@
 	else{
 		$mainNav = (Auth::user()->role == 'staff') ? 'layoutsStaff.staff' : 'layoutsAdmin.admin';
 	}
-@endphp    
+@endphp
 @endauth
 
 @guest
 @php
 	$mainNav = 'layouts.public';
-@endphp	
+@endphp
 @endguest
 
 @extends($mainNav)
 
 @section('title', 'Catalogo')
 @section('content')
-	
+
 	<!-- Sezione CATEGORIE E SOTTOCATEGORIE laterale -->
 	<div class="col-sm-3">
 	 <div class="left-sidebar">
@@ -26,7 +26,7 @@
 
 			@isset($categories)
 			@foreach ($categories as $category)
-			
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
@@ -44,12 +44,12 @@
 							    @if ($subCategory->categoria == $category->codCategoria)
 								<li><a href="{{ route('subCategory', [$category->codCategoria, $subCategory->codSottocategoria]) }}">{{ $subCategory->nome}} </a></li>
 							    @endif
-							@endforeach		
-							@endisset														
+							@endforeach
+							@endisset
 						</ul>
 					</div>
 				</div>
-			</div>	
+			</div>
 			@endforeach
 			@endisset
 
@@ -60,28 +60,28 @@
 					 <b>€ 0</b> <b class="pull-right">€ 1600</b>
 				</div>
 			</div><!--/price-range-->
-			
-		</div>	
+
+		</div>
 	</div>
 </div>
-        
+
         <!--INIZIO CATALOGO-->
-        
+
     <div class="col-sm-9 ">
     <h2 class="title text-center">Elenco prodotti</h2>
-	
+
 	<div class="features_items"><!--features_items-->
-    @isset($prods)    
-     @foreach($prods as $products)		
+    @isset($prods)
+     @foreach($prods as $products)
 		  <div class="col-sm-6">
               <div class="product-image-wrapper">
-                  
+
 				<div class="single-products">
-			
-	
+
+
 				<div class="productinfo text-center">
 				@include('helpers.productImg' , ['attrs' => 'imagefrm', 'imgFile' => $products->foto])
-			       
+
 					<h2>Prodotto: {{$products->nome}}</h1>
                     <h4>@include('helpers.productPrice')</h4>
                     <p>Descrizione breve: {{$products->descrizioneBreve}}</p>
@@ -89,22 +89,22 @@
 					@auth
 					@if (Auth::user()->role == 'staff')
 					<a href="{{ route('removeElementConf', [$products->codProdotto]) }}" class="btn btn-default add-to-cart">Rimuovi Prodotto</a>
-					<a href="{{ route('removeElementConf', [$products->codProdotto]) }}" class="btn btn-default add-to-cart">Modifica Prodotto</a>
+					<a href="{{ route('ModificaProdotto', [$products->codProdotto]) }}" class="btn btn-default add-to-cart">Modifica Prodotto</a>
 					@endif
-						
-					@endauth				   
+
+					@endauth
 				</div>
             </div>
         </div>
 	</div>
-     
+
     @endforeach
     @endisset()
 	</div>
      <!--paginazione-->
     @include ('pagination.paginator', ['paginator' => $prods])
 	</div><!--FINE CATALOGO-->
-				     
+
 
 @endsection
 
