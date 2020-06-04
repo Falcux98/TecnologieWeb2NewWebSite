@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
-                    <ul class="nav navbar-nav"> 
+                    <ul class="nav navbar-nav">
                         <li><a href="{{ route('StaffArea') }}" title="areaStaff" class="{{ (Request::route()->getName() === 'StaffArea') ? 'active': '' }}"><i class="fa fa-user"></i> Area Staff</a></li>
                         @auth
                         <li><a href="" class="fa fa-lock" title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
@@ -65,11 +65,6 @@
                         <li><a href="{{ route('Dove Siamo') }}" title="Dove Siamo" class="{{ (Request::route()->getName() === 'Dove Siamo') ? 'active': '' }}">DOVE SIAMO</a></li>
                         <li><a href="{{ route('Chi Siamo') }}" title="Chi Siamo" class="{{ (Request::route()->getName() === 'Chi Siamo') ? 'active': '' }}">CHI SIAMO</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="search_box pull-right">
-                    <input type="text" placeholder="Cerca"/>
                 </div>
             </div>
         </div>
