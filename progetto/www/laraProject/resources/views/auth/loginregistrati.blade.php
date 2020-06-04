@@ -106,8 +106,8 @@
                                 </div>
 
                                 <div>
-                                    {{ Form::label('occupazione', 'occupazione')}}
-                                    {{ Form::text('occupazione', '', ['id' => 'occupazione'])}}
+                                    {{ Form::label('occupazione', 'Occupazione')}}
+                                    {{ Form::select('occupazione', $occupations, '', ['id' => 'occupazione'])}}
                                     @if($errors->first('occupazione'))
                                     <ul>
                                         @foreach ($errors->get('occupazione') as $message)

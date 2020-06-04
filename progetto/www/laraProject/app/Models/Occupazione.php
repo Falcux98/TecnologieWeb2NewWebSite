@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Occupazione extends Model
 {
-   //
+    //
 
-   protected $table = 'occupazione';
-   protected $primaryKey = 'codOccupazione';
+    protected $table = 'occupazione';
+    protected $primaryKey = 'codOccupazione';
 }
