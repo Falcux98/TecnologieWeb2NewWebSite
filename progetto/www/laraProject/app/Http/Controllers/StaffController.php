@@ -121,7 +121,7 @@ class StaffController extends Controller
     }
 
 
-    public function modificaProdotto(EditProductRequest $request){
+    public function modificaProdotto(NewProductRequest $request){
 
         $productUpdate = new Product;
        $productUpdate->fill($request->validated());

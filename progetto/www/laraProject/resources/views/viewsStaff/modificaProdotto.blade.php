@@ -120,12 +120,10 @@
                     </ul>
                     @endif
                 </div>
-
-
-                <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Modifica Prodotto">Modifica Prodotto</button>
+            </div>
                 <button  type="submit" class="btn btn-default add-to-cart" href="{{route ('Catalog')}}">Annulla</button>
+                <button type="submit" class="btn btn-default add-to-cart">Modifica Prodotto</button>
                 {{ Form::close()}}
-        </div>
     </div>
 
 </div>
