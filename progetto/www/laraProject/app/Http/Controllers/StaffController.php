@@ -42,7 +42,7 @@ class StaffController extends Controller
         $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
         $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
 
-        return view('viewsStaff.staffCat')
+        return view('catalog')
             ->with('prods', $selectedProducts)
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
@@ -121,15 +121,13 @@ class StaffController extends Controller
     }
 
 
-    public function modificaProdotto(NewProductRequest $request){
+    public function modificaProdotto(EditProductRequest $request){
 
         $productUpdate = new Product;
        $productUpdate->fill($request->validated());
 
-        if(empty($productUpdate->occupazione))$productUpdate->occupazione = '';
-        if(empty($productUpdate->residenza))$productUpdate->residenza = '';
 
-        User::where('codProdotto',$productUpdate->codProdotto)
+        Product::where('codProdotto',$productUpdate->codProdotto)
             ->update(['nome' =>$productUpdate->nome,
                       'descrizioneBreve' =>$productUpdate->descrizioneBreve,
                       'descrizioneEstesa' =>$productUpdate->descrizioneEstesa,

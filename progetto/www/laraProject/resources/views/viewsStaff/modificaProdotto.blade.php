@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <h2>Modifica Prodotto:<h3>&nbsp</i>{{ $prod->codProdotto }}</h3></h2>
         <div class="signup-form">
-                {{ Form::model($prod, array('route' => 'modificaProdotto.modifica'))}}
+                {{ Form::model($prod, array('route' => 'modificaProdotto.modifica', 'files' => true))}}
                 @csrf
                 <div>
                     {{ Form::label('nome', 'Nome Prodotto*')}}
@@ -37,7 +37,7 @@
 
 
                 <div>
-                    {{ Form::label('descrizioneEstesa', 'Descrizione Estesa') }}
+                    {{ Form::label('descrizioneEstesa', 'Descrizione Estesa*') }}
                     {{ Form::text('descrizioneEstesa', old('descrizioneEstesa'), ['id' => 'descrizioneEstesa'])}}
                     @if($errors->first('descrizioneEstesa'))
                     <ul>
@@ -63,13 +63,7 @@
                 <div>
                     {{ Form::label('foto', 'Foto')}}
                     {{ Form::file('foto', ['id' => 'foto', 'style' => 'background: none'])}}
-                    @if($errors->first('foto'))
-                    <ul>
-                    @foreach ($errors->get('foto') as $message)
-                        <li>{{ $message }}</li>
-                    @endforeach
-                    </ul>
-                    @endif
+
                 </div>
 
 

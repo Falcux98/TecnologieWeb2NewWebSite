@@ -25,15 +25,14 @@ class EditProductRequest extends FormRequest
     {
         return [
             'codProdotto' => "required",
-            'nome' => "required | max: 25",
-            'descrizioneBreve' => "required | max: 50",
-            'descrizioneEstesa' => "required | max: 2500",
-            'prezzo' => "required",
-            'foto' => "",
-            'percentualeSconto' => "",
-            'inPromozione' => "",
-            'categoria' =>  "required",
-            'sottocategoria' =>  "required"
+            "nome" => "required|max: 30",
+            "descrizioneBreve" => "required|max: 30",
+            "descrizioneEstesa" => "required|max: 2500",
+            "prezzo" => "required|numeric|min: 0",
+            "foto" => "image|max: 1024",
+            "percentualeSconto" => "integer| min: 0|max: 100",
+            "inPromozione" => "boolean",
+            "sottocategoria" => "required|numeric"
         ];
     }
 }

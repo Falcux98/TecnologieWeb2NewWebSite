@@ -26,7 +26,7 @@ class NewProductRequest extends FormRequest
         return [
             "nome" => "required|max: 30",
             "descrizioneBreve" => "required|max: 30",
-            "descrizioneEstesa" => "required|max: 255",
+            "descrizioneEstesa" => "required|max: 2500",
             "prezzo" => "required|numeric|min: 0",
             "foto" => "image|max: 1024",
             "percentualeSconto" => "integer| min: 0|max: 100",
