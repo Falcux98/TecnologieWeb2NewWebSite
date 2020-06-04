@@ -18,12 +18,19 @@ class seeder_categorie extends Seeder
 
         DB::table('categoria')->insert([
             'codCategoria' => '02',
-            'nome' => 'Arredamento'
+            'nome' => 'TV'
         ]);
 
         DB::table('categoria')->insert([
             'codCategoria' => '03',
-            'nome' => 'TV'
+            'nome' => 'Smartphone e tablet'
         ]);
+        
+        DB::table('categoria')->insert([
+            'codCategoria' => '04',
+            'nome' => 'Componenti PC'
+        ]);
+        
+        
     }
 }
