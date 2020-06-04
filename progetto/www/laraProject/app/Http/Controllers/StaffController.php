@@ -114,7 +114,9 @@ class StaffController extends Controller
 
         $product = Product::where('codProdotto', $codProdotto)->first();
         return view('viewsStaff.modificaProdotto')
-            ->with('prod', $product);
+            ->with('prod', $product)
+            ->with('categories', $this->_categories)
+            ->with('subCategories', $this->_subCategories);
 
     }
 

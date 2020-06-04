@@ -159,7 +159,6 @@
                                 <div class="container-form-btn">
                                     {{ Form::submit('Registra', ['class' => 'btn btn-default']) }}
                                 </div>
-
                             </div>
                         </div>
                         {{ Form::close() }}

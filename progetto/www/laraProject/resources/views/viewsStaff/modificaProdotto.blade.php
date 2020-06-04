@@ -1,8 +1,7 @@
 @extends('layoutsStaff.staff')
-@section('content')
+@section('title', 'Modifica Prodotto')
 
 @section('content')
-
 
 <div class="container">
     <div class="col-sm-6">
@@ -102,7 +101,7 @@
                 <div>
                     <label for="sottocategoria">Categoria</label>
                     <select name="sottocategoria" id="sottocategoria" style="margin-bottom: 3%">
-                        @foreach ($_categories as $category)
+                        @foreach ($categories as $category)
                            <optgroup label="{{ $category->nome }}">
                                 @foreach ($subCategories as $subCategory)
                                     @if($subCategory->categoria == $category->codCategoria)
@@ -130,3 +129,5 @@
     </div>
 
 </div>
+
+@endsection
