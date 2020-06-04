@@ -124,6 +124,7 @@
 
 
                 <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Modifica Prodotto">Modifica Prodotto</button>
+                <button  type="submit" class="btn btn-default add-to-cart" href="{{route ('Catalog')}}">Annulla</button>
                 {{ Form::close()}}
         </div>
     </div>
