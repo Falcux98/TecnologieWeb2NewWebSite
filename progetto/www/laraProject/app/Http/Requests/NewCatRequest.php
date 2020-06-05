@@ -3,6 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Contracts\Validation\Validator;
 
 class NewCatRequest extends FormRequest
 {
@@ -24,7 +27,14 @@ class NewCatRequest extends FormRequest
     public function rules()
     {
         return [
-            "nome" => "required | max: 30"
+            "nomeCategoria" => "required | max: 30"
         ];
+    }
+
+    /**
+     * genera una risposta 422 in caso di errore di validazione http
+     */
+    protected function failedValidation(Validator $validator){
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }

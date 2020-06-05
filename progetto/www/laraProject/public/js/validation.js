@@ -4,13 +4,11 @@ function getErrorHtml(elementErrors){
         return;
     }
 
-    var out = '<ul class="errors">';
+    var out = '<div id="finder"><ul class="errors">';
     for(var i=0; i<elementErrors.length; i++){
         out += '<li>' + elementErrors[i] + '</li>';
-        console.log(elementErrors[i]);
     }
-    out += '</ul>';
-    console.log(out);
+    out += '</ul></div>';
     return out;
 }
 
@@ -32,8 +30,7 @@ function elementValidation(id, action, formId){
             error: function(data){
                 if(data.status == 422){
                     var errorMessage = JSON.parse(data.responseText);
-                    console.log(errorMessage);
-                    $('#' + id).parent().find('.errors').html(' ');
+                    $('#' + id).parent().find('#finder').html(' ');
                     $("#" + id).after(getErrorHtml(errorMessage[id]));
                 }
             },
@@ -72,7 +69,7 @@ function formValidation(action, formId){
             if(data.status === 422){
                 var errorMessages = JSON.parse(data.responseText);
                 $.each(errorMessages, function(id){
-                    $("#" + id).parent().find('.errors').html(' ');
+                    $("#" + id).parent().find('#finder').html(' ');
                     $("#" + id).after(getErrorHtml(errorMessages[id]));
                 });
             }

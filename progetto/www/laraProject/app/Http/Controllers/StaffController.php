@@ -121,10 +121,10 @@ class StaffController extends Controller
     public function addNewCategory(NewCatRequest $request){
          
         $category = new Category;
-        $category->nome = $request->nome;
+        $category->nome = $request->nomeCategoria;
         $category->save();
 
-        return redirect()->action('StaffController@showStaffArea');
+        return response()->json(['redirect' => route('StaffArea')]); 
 
     }
 
@@ -132,9 +132,9 @@ class StaffController extends Controller
 
         $subCategory = new SubCategory;
         $subCategory->categoria = $request->categoria;
-        $subCategory->nome = $request->nome;
+        $subCategory->nome = $request->nomeSottoCategoria;
         $subCategory->save();
 
-        return redirect()->action('StaffController@showStaffArea');
+        return response()->json(['redirect' => route('StaffArea')]);
     }
 }

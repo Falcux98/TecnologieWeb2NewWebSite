@@ -6,6 +6,24 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+/***************************
+********Error Log***********
+***************************/
+.errors{
+  width: 100%;
+  border-radius: 0px 8px 8px 0px;
+  padding: 1%;
+  border-left: 10px solid #FE980F;
+  border-top: 1px solid #FE980F;
+  margin-left: 5%;
+  margin-top: -10px;
+}
+
+.errors li{
+  color:  #FE980F;
+  margin-left: 5px;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background:;

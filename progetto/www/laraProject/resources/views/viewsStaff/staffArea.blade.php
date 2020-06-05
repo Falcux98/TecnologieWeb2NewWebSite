@@ -9,18 +9,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(function(){
-            var actionRoute = "{{ route('StaffArea.store') }}";
-            var formId = "addProd"
+            var actionRouteProduct = "{{ route('StaffArea.store') }}";
+            var actionRouteCategory = "{{ route('StaffArea.aggiungiCategoria') }}";
+            var actionRouteSubCategory = "{{ route('StaffArea.aggiungiSottocategoria') }}"
+            var formIdProd = "addProd";
+            var formIdCat = "addCat";
+            var formIdsubCat = "addSubCat";
 
-            $(':input').on('blur', function(ebvent){
+            $('#addProd input').on('blur', function(event){
                 var elementId = $(this).attr('id');
-                console.log(elementId);
-                elementValidation(elementId, actionRoute, formId);
+                elementValidation(elementId, actionRouteProduct, formIdProd);
             });
+
+            $('#addCat input').on('blur', function(event){
+                var elementId = $(this).attr('id');
+                elementValidation(elementId, actionRouteCategory, formIdCat);
+            })
+
+            $('#addSubCat input').on('blur', function(event){
+                var elementId = $(this).attr('id');
+                elementValidation(elementId, actionRouteSubCategory, formIdsubCat);
+            })
 
             $('#addProd').on('submit', function(event){
                 event.preventDefault();
-                formValidation(actionRoute, formId);
+                formValidation(actionRouteProduct, formIdProd);
+            })
+
+            $('#addCat').on('submit', function(event){
+                event.preventDefault();
+                formValidation(actionRouteCategory, formIdCat);
+            })
+
+            $('#addSubCat').on('submit', function(event){
+                event.preventDefault();
+                formValidation(actionRouteSubCategory, formIdsubCat);
             })
         });
     </script>
@@ -97,11 +120,11 @@
     <div class="col-sm-6">
         <h2 class="title text-center">Aggiungi Categoria</h2>
         <div class="signup-form">
-            {{ Form::open(array('route' => 'StaffArea.aggiungiCategoria'))}}
+            {{ Form::open(array('route' => 'StaffArea.aggiungiCategoria', 'id' => 'addCat'))}}
 
         <div>
-            {{ Form::label('nome', 'Nome')}}
-            {{ Form::text('nome', '', ['id' => 'nome'])}}
+            {{ Form::label('nomeCategoria', 'Nome')}}
+            {{ Form::text('nomeCategoria', '', ['id' => 'nomeCategoria'])}}
         </div>
 
         <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Aggiungi Prodotto">Aggiungi</button>
@@ -113,7 +136,7 @@
     <div class="col-sm-6">
         <h2 class="title text-center">Aggiungi Sotto-Categoria</h2>
         <div class="signup-form">
-            {{ Form::open(array('route' => 'StaffArea.aggiungiSottocategoria'))}}
+            {{ Form::open(array('route' => 'StaffArea.aggiungiSottocategoria', 'id' => 'addSubCat'))}}
 
             <div>
                 {{ Form::label('categoria', 'Categoria')}}
@@ -122,25 +145,11 @@
                        <option value="{{ $category->codCategoria }}" label="{{ $category->nome }}"></option>
                     @endforeach
                 </select>
-                @if($errors->first('categoria'))
-                <ul>
-                @foreach ($errors->get('categoria') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-                </ul>
-                @endif
             </div>
 
             <div>
-                {{ Form::label('nome', 'Nome sottocategoria')}}
-                {{ Form::text('nome', '', ['id' => 'nome'])}}
-                @if($errors->first('nome'))
-                <ul>
-                @foreach ($errors->get('nome') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-                </ul>
-                @endif
+                {{ Form::label('nomeSottoCategoria', 'Nome sottocategoria')}}
+                {{ Form::text('nomeSottoCategoria', '', ['id' => 'nomeSottoCategoria'])}}
             </div>
 
             <button type="submit" class="btn btn-default" style="margin-bottom: 5%;" value="Aggiungi Prodotto">Aggiungi</button>
