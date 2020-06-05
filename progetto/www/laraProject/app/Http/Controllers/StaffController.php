@@ -7,10 +7,9 @@ use App\Http\Requests\NewProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
-use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Http\Requests\EditProductRequest;
+use App\Http\Requests\NewCatRequest;
+use App\Http\Requests\NewSubcatRequest;
 
 class StaffController extends Controller
 {
@@ -29,26 +28,6 @@ class StaffController extends Controller
         return view('home');
     }
 
-    public function showMainCatalog(){
-        $selectedProducts = Product::paginate(2);
-        return view('catalog')
-            ->with('prods', $selectedProducts)
-            ->with('categories', $this->_categories)
-            ->with('subCategories', $this->_subCategories);
-    }
-
-    public function showSubCatCatalog($categoryID, $subCategoryID){
-        $selectedCategory = Category::where('codCategoria', $categoryID)->get();
-        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
-        $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
-
-        return view('catalog')
-            ->with('prods', $selectedProducts)
-            ->with('categories', $this->_categories)
-            ->with('subCategories', $this->_subCategories);
-
-    }
-
     public function removeElementConfirm($elementID){
 
         $product = Product::where('codProdotto', $elementID)->first();
@@ -62,10 +41,7 @@ class StaffController extends Controller
 
         $selectedProducts = Product::paginate(2);
 
-        return view('viewsStaff.staffCat')
-        ->with('prods', $selectedProducts)
-        ->with('categories', $this->_categories)
-        ->with('subCategories', $this->_subCategories);
+        return redirect()->action('PublicController@showMainCatalog');
     }
 
     public function showStaffArea(){
@@ -105,7 +81,8 @@ class StaffController extends Controller
             $image->move($path, $imageName);
         }
 
-        return redirect()->action('StaffController@showMainCatalog');
+        /*return redirect()->action('PublicController@showMainCatalog');*/
+        return response()->json(['redirect' => route('StaffArea')]); 
     }
 
 
@@ -123,7 +100,7 @@ class StaffController extends Controller
 
     public function modificaProdotto(EditProductRequest $request){
 
-        $productUpdate = new Product;
+       $productUpdate = new Product;
        $productUpdate->fill($request->validated());
 
 
@@ -138,6 +115,26 @@ class StaffController extends Controller
                       'categoria' =>$productUpdate->categoria,
                       'sottocategoria' =>$productUpdate->sottocategoria]);
 
-        return redirect()->action('StaffController@showMainCatalog');
+        return redirect()->action('PublicController@showMainCatalog');
+    }
+
+    public function addNewCategory(NewCatRequest $request){
+         
+        $category = new Category;
+        $category->nome = $request->nome;
+        $category->save();
+
+        return redirect()->action('StaffController@showStaffArea');
+
+    }
+
+    public function addNewSubCategory(NewSubcatRequest $request){
+
+        $subCategory = new SubCategory;
+        $subCategory->categoria = $request->categoria;
+        $subCategory->nome = $request->nome;
+        $subCategory->save();
+
+        return redirect()->action('StaffController@showStaffArea');
     }
 }

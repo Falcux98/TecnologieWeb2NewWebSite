@@ -63,29 +63,23 @@
                 <div>
                     {{ Form::label('foto', 'Foto')}}
                     {{ Form::file('foto', ['id' => 'foto', 'style' => 'background: none'])}}
-
-                </div>
-
-
-                <div>
-                    {{ Form::label('percentualeSconto', ' Percentuale Sconto (se in sconto)')}}
-                    {{ Form::number('percentualeSconto', old('percentualeSconto'), ['id' => 'percentualeSconto', 'min' => '0', 'max' => '100'])}}
-                    @if($errors->first('percentualeSconto'))
+                    @if($errors->first('foto'))
                     <ul>
-                        @foreach ($errors->get('percentualeSconto') as $message)
+                        @foreach ($errors->get('foto') as $message)
                             <li>{{ $message }}</li>
                         @endforeach
                     </ul>
                     @endif
+
                 </div>
 
 
                 <div>
-                    {{ Form::label('inPromozione', 'in Promozione')}}
-                    {{ Form::number('inPromozione', old('inPromozione'), ['id' => 'inPromozione', 'min' => '0', 'max' => '1'])}}
-                    @if($errors->first('inPromozione'))
+                    {{ Form::label('percentualeSconto', ' Percentuale Sconto')}}
+                    {{ Form::number('percentualeSconto', old('percentualeSconto'), ['id' => 'percentualeSconto', 'min' => '0', 'max' => '100'])}}
+                    @if($errors->first('percentualeSconto'))
                     <ul>
-                        @foreach ($errors->get('inPromozione') as $message)
+                        @foreach ($errors->get('percentualeSconto') as $message)
                             <li>{{ $message }}</li>
                         @endforeach
                     </ul>

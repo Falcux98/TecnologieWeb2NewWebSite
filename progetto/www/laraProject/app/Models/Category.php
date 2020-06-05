@@ -10,4 +10,5 @@ class Category extends Model
 
    protected $table = 'categoria';
    protected $primaryKey = 'codCategoria';
+   public $incrementing = true;
 }

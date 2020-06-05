@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Symfony\Component\HttpFoundation\Response;
 
 class NewProductRequest extends FormRequest
 {
@@ -32,5 +35,12 @@ class NewProductRequest extends FormRequest
             "percentualeSconto" => "integer| min: 0|max: 100",
             "sottocategoria" => "required|numeric"
         ];
+    }
+
+    /**
+     * genera una risposta 422 in caso di errore di validazione http
+     */
+    protected function failedValidation(Validator $validator){
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }
