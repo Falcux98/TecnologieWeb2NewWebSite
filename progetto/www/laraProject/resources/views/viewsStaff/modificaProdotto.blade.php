@@ -1,13 +1,38 @@
 @extends('layoutsStaff.staff')
 @section('title', 'Modifica Prodotto')
 
+@section('scripts')
+    @parent 
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var actionRoute = "{{ route('modificaProdotto.modifica') }}";
+            var formId = "editProd";
+
+            $(':input').on('blur', function(event){
+                var elementId = $(this).attr('id');
+                elementValidation(elementId, actionRoute, formId);
+            });
+
+
+            $('#editProd').on('submit', function(event){
+                event.preventDefault();
+                formValidation(actionRoute, formId);
+            })
+
+        });
+    </script>
+    
+@endsection
+
 @section('content')
 
 <div class="container">
     <div class="col-sm-6">
         <h2>Modifica Prodotto:<h3>&nbsp</i>{{ $prod->codProdotto }}</h3></h2>
         <div class="signup-form">
-                {{ Form::model($prod, array('route' => 'modificaProdotto.modifica', 'files' => true))}}
+                {{ Form::model($prod, array('route' => 'modificaProdotto.modifica', 'id' => 'editProd', 'files' => true))}}
                 @csrf
                 <div>
                     {{ Form::label('nome', 'Nome Prodotto*')}}

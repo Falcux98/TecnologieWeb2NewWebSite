@@ -3,6 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Contracts\Validation\Validator;
 
 class EditProductRequest extends FormRequest
 {
@@ -24,7 +27,6 @@ class EditProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'codProdotto' => "required",
             "nome" => "required|max: 30",
             "descrizioneBreve" => "required|max: 50",
             "descrizioneEstesa" => "required|max: 2500",
@@ -33,5 +35,12 @@ class EditProductRequest extends FormRequest
             "percentualeSconto" => "integer| min: 0|max: 100",
             "sottocategoria" => "required|numeric"
         ];
+    }
+
+    /**
+     * genera una risposta 422 in caso di errore di validazione http
+     */
+    protected function failedValidation(Validator $validator){
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }

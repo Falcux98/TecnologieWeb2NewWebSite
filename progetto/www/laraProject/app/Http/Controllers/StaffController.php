@@ -101,7 +101,27 @@ class StaffController extends Controller
     public function modificaProdotto(EditProductRequest $request){
 
        $productUpdate = new Product;
-       $productUpdate->fill($request->validated());
+
+       if($request->hasFile('foto')){
+        $image = $request->file('foto');
+        $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = 'noImage.jpg';
+        }
+
+        $productUpdate->fill($request->validated());
+        $productUpdate->foto = $imageName;
+
+
+        if($productUpdate->percentualeSconto != 0){
+            $productUpdate->inPromozione = TRUE;
+        } else {
+            $productUpdate->inPromozione = FALSE;
+        }
+
+        $subCategory = SubCategory::where('codSottocategoria', $productUpdate->sottocategoria)->first();
+
+        $productUpdate->categoria = $subCategory->categoria;
 
 
         Product::where('codProdotto',$productUpdate->codProdotto)
@@ -115,7 +135,7 @@ class StaffController extends Controller
                       'categoria' =>$productUpdate->categoria,
                       'sottocategoria' =>$productUpdate->sottocategoria]);
 
-        return redirect()->action('PublicController@showMainCatalog');
+        return response()->json(['redirect' => route('Catalog')]);
     }
 
     public function addNewCategory(NewCatRequest $request){
