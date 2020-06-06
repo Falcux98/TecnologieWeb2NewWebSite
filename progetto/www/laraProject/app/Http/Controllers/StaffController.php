@@ -100,40 +100,47 @@ class StaffController extends Controller
 
     public function modificaProdotto(EditProductRequest $request){
 
-       $productUpdate = new Product;
-
-       if($request->hasFile('foto')){
-        $image = $request->file('foto');
+       if($request->hasFile('newfoto')){
+        $image = $request->file('newfoto');
         $imageName = $image->getClientOriginalName();
+
+        //se il prodotto aveva una foto la rimuovo
+        if(strcmp($request->foto, 'noImage.jpg') != 0){
+            //ottengo il path della vecchia foto
+            $oldImage = getcwd() . '/images/products/' . $request->foto;
+            //rimuovo la vecchia foto
+            unlink($oldImage);
+        }
+        
         } else {
-            $imageName = 'noImage.jpg';
+            $imageName = $request->foto;
         }
 
-        $productUpdate->fill($request->validated());
-        $productUpdate->foto = $imageName;
-
-
-        if($productUpdate->percentualeSconto != 0){
-            $productUpdate->inPromozione = TRUE;
+        if($request->percentualeSconto != 0){
+            $inpromozione = TRUE;
         } else {
-            $productUpdate->inPromozione = FALSE;
+            $inpromozione = FALSE;
         }
 
-        $subCategory = SubCategory::where('codSottocategoria', $productUpdate->sottocategoria)->first();
+        $subCategory = SubCategory::where('codSottocategoria', $request->sottocategoria)->first();
+        $category = $subCategory->categoria;
 
-        $productUpdate->categoria = $subCategory->categoria;
 
+        Product::where('codProdotto',$request->codProdotto)
+            ->update(['nome' =>$request->nome,
+                      'descrizioneBreve' =>$request->descrizioneBreve,
+                      'descrizioneEstesa' =>$request->descrizioneEstesa,
+                      'prezzo' =>$request->prezzo,
+                      'foto' =>$imageName,
+                      'percentualeSconto' =>$request->percentualeSconto,
+                      'inPromozione' =>$inpromozione,
+                      'categoria' =>$subCategory->categoria,
+                      'sottocategoria' =>$subCategory->codSottocategoria]);
 
-        Product::where('codProdotto',$productUpdate->codProdotto)
-            ->update(['nome' =>$productUpdate->nome,
-                      'descrizioneBreve' =>$productUpdate->descrizioneBreve,
-                      'descrizioneEstesa' =>$productUpdate->descrizioneEstesa,
-                      'prezzo' =>$productUpdate->prezzo,
-                      'foto' =>$productUpdate->foto,
-                      'percentualeSconto' =>$productUpdate->percentualeSconto,
-                      'inPromozione' =>$productUpdate->inPromozione,
-                      'categoria' =>$productUpdate->categoria,
-                      'sottocategoria' =>$productUpdate->sottocategoria]);
+        if(strcmp($imageName, 'noImage.jpg') != 0){
+            $path = public_path() . '/images/products';
+            $image->move($path, $imageName);
+        }
 
         return response()->json(['redirect' => route('Catalog')]);
     }
