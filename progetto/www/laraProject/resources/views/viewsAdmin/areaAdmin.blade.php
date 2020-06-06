@@ -1,6 +1,31 @@
 @extends('layoutsAdmin.admin')
 @section('title', 'Area Admin')
 
+@section('scripts')
+    
+    @parent
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var actionRoute = "{{ route('AdminArea.addStaff') }}";
+            var formId = "addStaff";
+            console.log('hello');
+
+            $(' :input').on('blur', function(event){
+                var elementId = $(this).attr('id');
+                elementValidation(elementId, actionRoute, formId);
+            });
+
+            $('#addStaff').on('submit', function(event){
+                event.preventDefault();
+                formValidation(actionRoute, formId);
+            });
+        });
+    </script>
+
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -8,104 +33,48 @@
 <div class="col-sm-6">
     <h2 class="title text-center">Aggiungi Membro staff</h2>
     <div class="signup-form">
-        {{ Form::open(array('route' => 'AdminArea.addStaff'))}}
+        {{ Form::open(array('route' => 'AdminArea.addStaff', 'id' => 'addStaff'))}}
         @csrf
 
         <div>
             {{ Form::label('nome', 'Nome *')}}
             {{ Form::text('nome', '', ['id' => 'nome'])}}
-            @if($errors->first('nome'))
-            <ul>
-                @foreach ($errors->get('nome') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
         <div>
             {{ Form::label('cognome', 'Cognome *')}}
             {{ Form::text('cognome', '', ['id' => 'cognome'])}}
-            @if($errors->first('cognome'))
-            <ul>
-                @foreach ($errors->get('cognome') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
         <div>
             {{ Form::label('dataNascita', 'Data di Nascita') }}
             {{ Form::date('dataNascita', '', ['id' => 'dataNascita'])}}
-            @if($errors->first('dataNascita'))
-            <ul>
-                @foreach ($errors->get('dataNascita') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
         <div>
             {{ Form::label('occupazione', 'Occupazione')}}
-            {{ Form::text('occupazione', '', ['id'=>'occupazione'])}}
-            @if($errors->first('occupazione'))
-            <ul>
-                @foreach ($errors->get('occupazione') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
+            {{ Form::select('occupazione', $occupazione, '', ['id'=>'occupazione', 'style="margin-bottom: 10px"'])}}
         </div>
 
         <div>
             {{ Form::label('residenza', 'Residenza')}}
             {{ Form::text('residenza', '', ['id'=>'residenza'])}}
-            @if($errors->first('residenza'))
-            <ul>
-                @foreach ($errors->get('residenza') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
         <div>
             {{ Form::label('username', 'Username *')}}
             {{ Form::text('username', '', ['id' => 'username'])}}
-            @if($errors->first('username'))
-            <ul>
-                @foreach ($errors->get('username') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
 
         <div>
             {{ Form::label('password', 'Password *')}}
             {{ Form::password('password', ['id' => 'password'])}}
-            @if($errors->first('password'))
-            <ul>
-                @foreach ($errors->get('password') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
         <div>
             {{ Form::label('password_confirmation', 'Conferma Password *') }}
             {{ Form::password('password_confirmation', ['id' => 'password_confirmation'])}}
-            @if($errors->first('password_confirmation'))
-            <ul>
-                @foreach ($errors->get('password_confirmation') as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
         </div>
 
         <p>* campo obbligatorio</p>

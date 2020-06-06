@@ -3,6 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Contracts\Validation\Validator;
 
 class newStaffRequest extends FormRequest
 {
@@ -32,5 +35,12 @@ class newStaffRequest extends FormRequest
             "username" => "required | min: 6 | unique:users",
             "password" => "nullable | required_with: password_confirmation | string | confirmed | min: 8"
         ];
+    }
+
+    /**
+     * genera una risposta 422 in caso di errore di validazione http
+     */
+    protected function failedValidation(Validator $validator){
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }

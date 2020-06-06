@@ -19,7 +19,7 @@
             $('#editProd').on('submit', function(event){
                 event.preventDefault();
                 formValidation(actionRoute, formId);
-            })
+            });
 
         });
     </script>

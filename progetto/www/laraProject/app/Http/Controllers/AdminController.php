@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\EditStaffRequest;
 use App\Http\Requests\newStaffRequest;
 use App\Models\Admin;
+use App\Models\Occupazione;
 use App\User;
 
 class AdminController extends Controller {
@@ -31,9 +32,17 @@ class AdminController extends Controller {
     public function showAdminArea(){
         $staff = User::where('role', 'staff')->get();
         $users = User::where('role', 'user')->get();
+        $occupations  = Occupazione::select('nome')->get();
+
+        /*riordino l'array */
+        foreach($occupations as $occ){
+            $occupation[$occ->nome] = $occ->nome;
+        }
+
         return view('viewsAdmin.areaAdmin')
             ->with('staffs', $staff)
-            ->with('users', $users);
+            ->with('users', $users)
+            ->with('occupazione', $occupation);
     }
 
     public function removeConfermation($username){
@@ -65,7 +74,7 @@ class AdminController extends Controller {
 
         $staffMember->save();
 
-        return redirect()->action('AdminController@showAdminArea');
+        return response()->json(['redirect' => route('AdminArea')]);
 
     }
 
@@ -94,23 +103,4 @@ class AdminController extends Controller {
 
         return redirect()->action('AdminController@showAdminArea');
     }
- public function showMainCatalog(){
-        $selectedProducts = Product::paginate(2);
-        return view('viewsAdmin.AdminCat')
-            ->with('prods', $selectedProducts)
-            ->with('categories', $this->_categories)
-            ->with('subCategories', $this->_subCategories);
-    }
-     public function showSubCatCatalog($categoryID, $subCategoryID){
-        $selectedCategory = Category::where('codCategoria', $categoryID)->get();
-        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
-        $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
-
-        return view('viewsAdmin.AdminCat')
-            ->with('prods', $selectedProducts)
-            ->with('categories', $this->_categories)
-            ->with('subCategories', $this->_subCategories);
-
-    }
-
 }

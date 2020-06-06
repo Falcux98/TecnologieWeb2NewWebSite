@@ -1,9 +1,7 @@
 @extends('layoutsStaff.staff')
 @section('title', 'Area Staff')
-@section('content')
 
 @section('scripts')
-
     @parent 
     <script src="{{ asset('js/validation.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -47,9 +45,9 @@
             })
         });
     </script>
-
-
 @endsection
+
+@section('content')
 
 <h2 class="title text-center" style="font-size: 25px; justify-content: space-around">Prodotti</h2>
 <div class="container" style="width:60%; margin-bottom: 3%;">
