@@ -81,8 +81,16 @@ class AdminController extends Controller {
     public function showModificaStaff($username){
 
         $staff = User::where('username', $username)->first();
+        $occupations  = Occupazione::select('nome')->get();
+
+        /*riordino l'array */
+        foreach($occupations as $occ){
+            $occupation[$occ->nome] = $occ->nome;
+        }
+
         return view('viewsAdmin.modificaStaff')
-            ->with('staff', $staff);
+            ->with('staff', $staff)
+            ->with('occupations', $occupation);
 
     }
 
@@ -101,6 +109,6 @@ class AdminController extends Controller {
                       'occupazione' => $staffUpdate->occupazione,
                       'residenza' => $staffUpdate->residenza]);
 
-        return redirect()->action('AdminController@showAdminArea');
+        return response()->json(['redirect' => route('AdminArea')]);
     }
 }

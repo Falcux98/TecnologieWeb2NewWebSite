@@ -1,12 +1,36 @@
 @extends('layoutsAdmin.admin')
 @section('title', 'Modifica Staff')
+
+@section('scripts')
+@parent 
+<script src="{{ asset('js/validation.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        var actionRoute = "{{ route('modificaStaff.modifica') }}";
+        var formId = "editStaff";
+
+        $(':input').on('blur', function(event){
+            var elementId = $(this).attr('id');
+            elementValidation(elementId, actionRoute, formId);
+        });
+
+
+        $('#editStaff').on('submit', function(event){
+            event.preventDefault();
+            formValidation(actionRoute, formId);
+        });
+    });
+</script>
+    
+@endsection
 @section('content')
 
 <div class="container">
     <div class="col-sm-6">
         <h2>Modifica {{ $staff->nome }} {{ $staff->cognome}}</h2>
         <div class="signup-form">
-            {{ Form::model($staff, array('route' => 'modificaStaff.modifica'))}}
+            {{ Form::model($staff, array('route' => 'modificaStaff.modifica', 'id' => 'editStaff'))}}
             @csrf
 
             {{ Form::hidden('username', old('username'))}}
@@ -49,14 +73,7 @@
 
             <div>
                 {{ Form::label('occupazione', 'Occupazione')}}
-                {{ Form::text('occupazione', old('occupazione'), ['id' => 'occupazione']) }}
-                @if ($errors->first('occupazione'))
-                <ul>
-                    @foreach ($errors->get('occupazione') as $message)
-                        <li>{{ $message }}</li>
-                    @endforeach
-                </ul>                    
-                @endif
+                {{ Form::select('occupazione', $occupations, old('occupazione'), ['id' => 'occupazione', 'style' => 'margin-bottom: 10px']) }}
             </div>
 
             <div>
