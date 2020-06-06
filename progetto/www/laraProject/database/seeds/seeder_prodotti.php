@@ -108,10 +108,22 @@ class seeder_prodotti extends Seeder
             'sottocategoria' => '03'
         ]);
                   
+                                          DB::table('prodotto')->insert([
+            'nome' => 'ACER Aspire C27-865',
+            'descrizioneBreve' => 'PC All-In-One',
+            'descrizioneEstesa' => ' Processore Intel® Core™ i5-8250U (1,6 GHz - 6 MB L2)SSD: 256 GB - RAM: 8 GB WiFi IEEE 802.11a/b/g/n/ac - Bluetooth 4.2 Scheda grafica: NVIDIA MX130, 2 GB dedicata Display 27" Full HD. S.O. Windows 10 Pro',
+            'prezzo' => '1099.00',
+            'foto' => '/994420.jpg',
+            'percentualeSconto' => '15',
+            'inPromozione' => '1',
+            'categoria' => '01',
+            'sottocategoria' => '04'
+        ]);
+                  
                      DB::table('prodotto')->insert([
             'nome' => 'MICROSOFT Surface Book2 ',
             'descrizioneBreve' => 'Notebook 2 in 1 da 13,5" ',
-            'descrizioneEstesa' => 'Processore Intel® Core™ I7-8650U (1,9 GHz - 16 MB L3) SSD 1000 GB - RAM 8 GB - Display 13,5" LCD WiFi IEEE 802.11a/b/g/n/ac - Bluetooth 4.1 Windows 10 Pro Scheda grafica nVidia GeForce GTX 1050(2 GB dedicata)',
+            'descrizioneEstesa' => 'Processore Intel® Core™ I7-8650U (1,9 GHz - 16 MB L3) SSD 1000 GB - RAM 8 GB - Display 13,5" LCD WiFi IEEE 802.11a/b/g/n/ac. Bluetooth 4.1 Windows 10 Pro Scheda grafica nVidia GeForce GTX 1050(2 GB)',
             'prezzo' => '2548.00',
             'foto' => '/750207.jpg',
             'percentualeSconto' => '0',
@@ -120,13 +132,15 @@ class seeder_prodotti extends Seeder
             'sottocategoria' => '03'
         ]);
                      
-                        DB::table('prodotto')->insert([
-            'nome' => 'ACER Aspire C27-865',
+
+                        
+                   DB::table('prodotto')->insert([
+            'nome' => 'LENOVO IdeaCentre',
             'descrizioneBreve' => 'PC All-In-One',
-            'descrizioneEstesa' => ' Processore Intel® Core™ i5-8250U (1,6 GHz - 6 MB L2)SSD: 256 GB - RAM: 8 GB WiFi IEEE 802.11a/b/g/n/ac - Bluetooth 4.2 Scheda grafica: NVIDIA MX130, 2 GB dedicata Display 27" Full HD',
+            'descrizioneEstesa' => 'Processore Intel® Core™ i5-9400T (1,8 GHz - 9 MB L3) HDD: 1000 GB - SSD: 256 GB - RAM: 8 GB Display LED 27" QHD WiFi IEEE 802.11a/b/g/n/ac - Bluetooth 4.0 Windows 10 Home 64 Scheda grafica: INTEL Graphics 630 Condivisa',
             'prezzo' => '1099.00',
-            'foto' => '/994420.jpg',
-            'percentualeSconto' => '15',
+            'foto' => '/116426.jpg',
+            'percentualeSconto' => '10',
             'inPromozione' => '1',
             'categoria' => '01',
             'sottocategoria' => '04'
@@ -191,18 +205,8 @@ class seeder_prodotti extends Seeder
             'categoria' => '02',
             'sottocategoria' => '07'
         ]);
-                DB::table('prodotto')->insert([
-            'nome' => 'LG OLED 65C9PLA',
-            'descrizioneBreve' => 'Smart TV 65" Ultra HD',
-            'descrizioneEstesa' => 'SMART TV OLED 65" 4K - Risoluzione: 3840 x 2160 pixel Tuner Digitale Terrestre: DVB-T2 HEVCe Satellitare DVB-S2 WiFi + Ethernet - DLNA - Casse integrate - Potenza in uscita: 40 W',
-            'prezzo' => '2199.00',
-            'foto' => '/994152.jpg',
-            'percentualeSconto' => '10',
-            'inPromozione' => '0',
-            'categoria' => '02',
-            'sottocategoria' => '07'
-        ]);
-                
+            
+                            
           DB::table('prodotto')->insert([
             'nome' => 'SAMSUNG Galaxy A71 ',
             'descrizioneBreve' => 'Smartphone Dual SIM',
@@ -214,6 +218,19 @@ class seeder_prodotti extends Seeder
             'categoria' => '03',
             'sottocategoria' => '08'
         ]);
+          
+                DB::table('prodotto')->insert([
+            'nome' => 'LG OLED 65C9PLA',
+            'descrizioneBreve' => 'Smart TV 65" Ultra HD',
+            'descrizioneEstesa' => 'SMART TV OLED 65" 4K - Risoluzione: 3840 x 2160 pixel Tuner Digitale Terrestre: DVB-T2 HEVCe Satellitare DVB-S2 WiFi + Ethernet - DLNA - Casse integrate - Potenza in uscita: 40 W',
+            'prezzo' => '2199.00',
+            'foto' => '/994152.jpg',
+            'percentualeSconto' => '10',
+            'inPromozione' => '0',
+            'categoria' => '02',
+            'sottocategoria' => '07'
+        ]);
+
           DB::table('prodotto')->insert([
             'nome' => 'APPLE iPhone 11 64GB',
             'descrizioneBreve' => 'Smartphone',
@@ -280,6 +297,19 @@ class seeder_prodotti extends Seeder
             'categoria' => '03',
             'sottocategoria' => '10'
         ]);
+              
+                        DB::table('prodotto')->insert([
+            'nome' => 'APPLE iPad Pro 11',
+            'descrizioneBreve' => 'Tablet 11" 4G-LTE',
+            'descrizioneEstesa' => 'Processore Apple A12Z Bionic con architettura a 64 bit Coprocessore M12 8-Core Display Liquid Retina 11" LED - Risoluzione: 2388x1668 pixel memoria interna: 128 GB - 4G-LTE - WiFi - GPS - Bluetooth 5.0',
+            'prezzo' => '1069.00',
+            'foto' => '/127804.jpg',
+            'percentualeSconto' => '1',
+            'inPromozione' => '0',
+            'categoria' => '03',
+            'sottocategoria' => '11'
+        ]);
+                        
               DB::table('prodotto')->insert([
             'nome' => 'APPLE iPad 10.2',
             'descrizioneBreve' => 'Tablet 10,2" Wi-Fi + Cellular',
@@ -292,17 +322,7 @@ class seeder_prodotti extends Seeder
             'sottocategoria' => '11'
         ]);
                                                 
-             DB::table('prodotto')->insert([
-            'nome' => 'APPLE iPad Pro 11',
-            'descrizioneBreve' => 'Tablet 11" 4G-LTE',
-            'descrizioneEstesa' => 'Processore Apple A12Z Bionic con architettura a 64 bit Coprocessore M12 8-Core Display Liquid Retina 11" LED - Risoluzione: 2388x1668 pixel memoria interna: 128 GB - 4G-LTE - WiFi - GPS - Bluetooth 5.0',
-            'prezzo' => '1069.00',
-            'foto' => '/127804.jpg',
-            'percentualeSconto' => '1',
-            'inPromozione' => '0',
-            'categoria' => '03',
-            'sottocategoria' => '11'
-        ]);
+   
              
               DB::table('prodotto')->insert([
             'nome' => 'SONY MDRZX110B Black',
@@ -312,6 +332,18 @@ class seeder_prodotti extends Seeder
             'foto' => '/684537.jpg',
             'percentualeSconto' => '1',
             'inPromozione' => '0',
+            'categoria' => '03',
+            'sottocategoria' => '12'
+        ]);
+              
+                     DB::table('prodotto')->insert([
+            'nome' => 'SAMSUNG GALAXY BUDS',
+            'descrizioneBreve' => 'Auricolari Bluetooth',
+            'descrizioneEstesa' => 'Bluetooth 5.0 - Uscita Audio Stereo Controllo Volume sugli Auricolari Autonomia in conversazione: 11 h Colore: Neroz',
+            'prezzo' => '169.99',
+            'foto' => '/123075.jpg',
+            'percentualeSconto' => '10',
+            'inPromozione' => '1',
             'categoria' => '03',
             'sottocategoria' => '12'
         ]);
@@ -381,7 +413,7 @@ class seeder_prodotti extends Seeder
             'descrizioneBreve' => 'Scheda Video',
             'descrizioneEstesa' => 'Memoria dedicata: 8 GB DDR6 DirectX: 12 - Tecnologia SLI HDMI - DisplayPort',
             'prezzo' => '800',
-            'foto' => '/.jpg',
+            'foto' => '/128966.jpg',
             'percentualeSconto' => '20',
             'inPromozione' => '1',
             'categoria' => '04',
@@ -412,6 +444,20 @@ class seeder_prodotti extends Seeder
             'sottocategoria' => '15'
         ]);
                               
+                                   DB::table('prodotto')->insert([
+            'nome' => 'SAMSUNG SSD 500 GB',
+            'descrizioneBreve' => 'Hard disk Interno SSD',
+            'descrizioneEstesa' => 'Hard disk Interno SSD - Formato: 2,5" Capacità 500 GB - Alimentazione Interna',
+            'prezzo' => '80.00',
+            'foto' => '/753861.jpg',
+            'percentualeSconto' => '10',
+            'inPromozione' => '1',
+            'categoria' => '04',
+            'sottocategoria' => '16'
+        ]);
+                                   
+                                   
+                              
             DB::table('prodotto')->insert([
             'nome' => 'SanDisk Plus SSD 240 GB',
             'descrizioneBreve' => 'Hard Disk Interni',
@@ -423,17 +469,7 @@ class seeder_prodotti extends Seeder
             'categoria' => '04',
             'sottocategoria' => '16'
         ]);
-        DB::table('prodotto')->insert([
-            'nome' => 'SAMSUNG SSD 500 GB',
-            'descrizioneBreve' => 'Hard disk Interno SSD',
-            'descrizioneEstesa' => 'Hard disk Interno SSD - Formato: 2,5" Capacità 500 GB - Alimentazione Interna',
-            'prezzo' => '80.00',
-            'foto' => '/753861.jpg',
-            'percentualeSconto' => '10',
-            'inPromozione' => '1',
-            'categoria' => '04',
-            'sottocategoria' => '16'
-        ]);
+   
                 DB::table('prodotto')->insert([
             'nome' => 'WD RED 2TB ',
             'descrizioneBreve' => 'Hard Disk interno per NAS',
