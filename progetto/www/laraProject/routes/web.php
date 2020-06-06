@@ -36,6 +36,8 @@ Route::view('/dovesiamo', 'dovesiamo') -> name('Dove Siamo');
 
 Route::view('/chisiamo', 'chisiamo') -> name('Chi Siamo');
 
+Route::get('/catalog/search', 'PublicController@Search') -> name('search');
+
 
 
 

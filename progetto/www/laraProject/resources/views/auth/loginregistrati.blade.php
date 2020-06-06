@@ -1,6 +1,6 @@
 @extends('layouts.public')
-
 @section('title', 'Login Registrati')
+
 @section('content')
 <div>
 <section id="form">
@@ -10,7 +10,7 @@
                     <div class="login-form"><!--login form-->
                         @csrf
 						<h2>Collegati al tuo account!</h2>
-                        {{ Form::open(array('route' => 'loginregistrati', 'class' => 'contact-form')) }}
+                        {{ Form::open(array('route' => 'loginregistrati', 'id' => 'login', 'class' => 'contact-form')) }}
                         {{ csrf_field() }}
                         <div>
                             {{ Form::label('username', 'Username')}}

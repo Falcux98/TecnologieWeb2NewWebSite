@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Http\Request;
 
 class PublicController extends Controller{
 
@@ -51,6 +52,18 @@ class PublicController extends Controller{
             ->with('categories', $this->_categories)
             ->with('subCategories', $this->_subCategories);
 
+    }
+
+    public function Search(Request $request){
+        $query = $request->input('cerca');
+        $products = Product::where('nome', 'like', "%$query%")
+            ->orWhere('descrizioneEstesa', 'like', "%$query%" )
+            ->orWhere('descrizioneBreve', 'like', "%$query%")->paginate(4);
+
+        return view('catalog')
+            ->with('prods', $products)
+            ->with('categories', $this->_categories)
+            ->with('subCategories', $this->_subCategories);
     }
 }
 

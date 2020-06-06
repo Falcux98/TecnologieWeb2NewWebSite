@@ -68,6 +68,15 @@
                     </ul>
                 </div>
             </div>
+            @if(Request::route()->getName() == 'subCategory' || Request::route()->getName() == 'Catalog' || Request::route()->getName() == 'search')
+            <div class="col-sm-3">
+                <div class="search_box pull-right">
+                    {{ Form::open(array('route' => 'search', 'method' => 'GET'))}}
+                    {{ Form::text('cerca', Request::input('cerca'), ['id' => 'cerca'])}}
+                    {{ Form::close()}}
+                </div>
+            </div>   
+            @endif 
         </div>
     </div>
 </div><!--/header-bottom-->
