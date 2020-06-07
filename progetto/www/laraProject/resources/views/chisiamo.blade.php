@@ -28,7 +28,7 @@
                                             <hr>
                                             <p>TWeb è un sito di E-commerce che opera sul mercato dal 2008. Si propone come leader della rivendita di prodotti tecnologici e all'avanguardia.</p>
                                             <p>Grazie alla sua notevole organizzazione è in grado di rispondere alle richieste degli utenti in tempi ristretti e di evolversi di pari passo con le esigenze del mercato maturando significative esperienze nell'ambito dell'evoluzione tecnologica.</p>
-                                            <p></p>
+                                            <p>Organizzazione, professionalità e preparazione di tutto il personale e dei collaboratori esterni, sono i punti fondamentali della filosofia commerciale TecnologieWeb shop.</p>
                                         </div>
                                         
                                         
