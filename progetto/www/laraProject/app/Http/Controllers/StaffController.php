@@ -113,6 +113,7 @@ class StaffController extends Controller
         }
         
         } else {
+            $image = null;
             $imageName = $request->foto;
         }
 
@@ -137,7 +138,7 @@ class StaffController extends Controller
                       'categoria' =>$subCategory->categoria,
                       'sottocategoria' =>$subCategory->codSottocategoria]);
 
-        if(strcmp($imageName, 'noImage.jpg') != 0){
+        if(strcmp($imageName, 'noImage.jpg') != 0 && $image!=null){
             $path = public_path() . '/images/products';
             $image->move($path, $imageName);
         }
