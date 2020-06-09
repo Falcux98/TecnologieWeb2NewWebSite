@@ -91,7 +91,7 @@
                     </select>
                 </div>
             </div>
-                <button  type="submit" class="btn btn-default add-to-cart" href="{{route ('Catalog')}}">Annulla</button>
+                <a  type="submit" class="btn btn-default add-to-cart" onclick="window.history.go(-1)">Annulla</a>
                 <button type="submit" class="btn btn-default add-to-cart">Modifica Prodotto</button>
                 {{ Form::close()}}
     </div>

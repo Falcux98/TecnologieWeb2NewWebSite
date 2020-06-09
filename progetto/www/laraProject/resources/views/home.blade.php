@@ -62,7 +62,7 @@
 									<h1><span>Tecnologie</span>-WEB</h1>
 									<h2>Elettronics Store Online</h2>
 									<p>Acquista i tuoi prodotti preferiti scegliendo tra una vasta gamma di computer, laptop, smartphone, tablet...</p>
-									<button type="button" class="btn btn-default get" href="{{route('Catalog') }}">Acquista ora</button>
+									<a class="btn btn-default get" href="{{route('Catalog') }}" >Acquista ora</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/store1.jpg" class="store img-responsive" alt="" />
@@ -73,7 +73,7 @@
 									<h1><span>Tecnologie</span>-WEB</h1>
 									<h2>100% Certificati</h2>
 									<p>I nostri prodotti sono sicuri e certificati, diffida dalle imitazioni. </p>
-									<button type="button" class="btn btn-default get" class="title text-center">Acquista ora</button>
+									<a class="btn btn-default get" href="{{route('Catalog') }}" >Acquista ora</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/store2.jpg" class="store img-responsive" alt="" />
@@ -86,7 +86,7 @@
 									<h1><span>Tecnologie</span>-WEB</h1>
 									<h2>Assistenza 7 giorni su 7</h2>
 									<p>Solo da noi riceverai fin dal momento dell'acquisto un'assistenza dei nostri operatori che ti seguirà finchè ne avrai bisogno. </p>
-									<button type="button" class="btn btn-default get" href="{{route('Catalog') }}" >Acquista ora</button>
+									<a class="btn btn-default get" href="{{route('Catalog') }}" >Acquista ora</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/store3.png" class="store img-responsive" alt="" />

@@ -32,6 +32,7 @@
         <div class="signup-form">
             {{ Form::model($staff, array('route' => 'modificaStaff.modifica', 'id' => 'editStaff'))}}
             @csrf
+            
 
             {{ Form::hidden('username', old('username'))}}
 
@@ -60,11 +61,12 @@
                 {{ Form::text('residenza', old('residenza'), ['id' => 'residenza']) }}
             </div>
 
-            <p>* campi obbligatori</p>
-
+            <p>* campi obbligatori</p>           
+            
+        </div>
+        <a  type="submit" class="btn btn-default add-to-cart" onclick="window.history.go(-1)">Annulla</a>
             <button  type="submit" class="btn btn-default add-to-cart">Modifica</button>
             {{ Form::close() }}
-        </div>
     </div>
 </div>
 
