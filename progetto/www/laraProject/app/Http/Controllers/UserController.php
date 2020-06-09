@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\SubCategory;
 use App\User;
 use App\Http\Requests\EditStaffRequest;
+use App\Models\Occupazione;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -26,38 +27,21 @@ class UserController extends Controller {
         return view('home');
     }
 
-   public function showAreaPersonale(){
-   return view('viewsUser.areapersonale');
-
- }
-
-
-
-    public function showMainCatalog(){
-        $selectedProducts = Product::paginate(2);
-        return view('catalog')
-            ->with('prods', $selectedProducts)
-            ->with('categories', $this->_categories)
-            ->with('subCategories', $this->_subCategories);
+    public function showAreaPersonale(){
+        return view('viewsUser.areapersonale');
     }
 
-    public function showSubCatCatalog($categoryID, $subCategoryID){
-        $selectedCategory = Category::where('codCategoria', $categoryID)->get();
-        $selectedProducts = Product::where('sottoCategoria', $subCategoryID)->paginate(2);
-        $selectedSubCategory = SubCategory::where('codSottoCategoria', $subCategoryID)->get();
-
-        return view('viewsStaff.staffCat')
-            ->with('prods', $selectedProducts)
-            ->with('categories', $this->_categories)
-            ->with('subCategories', $this->_subCategories);
-
-    }
 
     public function showModificaUser($username){
 
         $user = User::where('username', $username)->first();
+        $occupations = Occupazione::all();
+        foreach($occupations as $occ){
+            $occupation[$occ->nome] = $occ->nome;
+        }
         return view('viewsUser.modificaProfilo')
-            ->with('user', $user);
+            ->with('user', $user)
+            ->with('occupations', $occupation);
 
     }
 

@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="{{ asset('css\price-range.css') }}">
     <link rel="stylesheet" href="{{ asset('css\price-range.css') }}">
     <link rel="stylesheet" href="{{ asset('css\responsive.css') }}">
-    <title>TecWeb | @yield('title', 'Area User')</title>
+	<title>TecWeb | @yield('title', 'Area User')</title>
+	
+	@section('scripts')
+	@show
 </head>
 <body>
     
