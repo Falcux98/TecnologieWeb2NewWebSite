@@ -17,7 +17,7 @@ class seeder_utenti extends Seeder
             'cognome' => 'Mori',
             'role' => 'admin',
             'username' => 'adminadmin',
-            'password' => Hash::make('adminadmin'),
+            'password' => Hash::make('dzqH2PMx'),
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);
@@ -27,7 +27,7 @@ class seeder_utenti extends Seeder
             'cognome' => 'Rossi',
             'role' => 'staff',
             'username' => 'staffstaff',
-            'password' => Hash::make('staffstaff'),
+            'password' => Hash::make('dzqH2PMx'),
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);
@@ -39,7 +39,7 @@ class seeder_utenti extends Seeder
             'residenza' => 'Ancona',
             'username' => 'useruser',
             'role' => 'user',
-            'password' => Hash::make('useruser'),
+            'password' => Hash::make('dzqH2PMx'),
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);

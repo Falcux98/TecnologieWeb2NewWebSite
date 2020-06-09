@@ -11,23 +11,23 @@
     <link rel="stylesheet" href="{{ asset('css\price-range.css') }}">
     <link rel="stylesheet" href="{{ asset('css\responsive.css') }}">
 	<title>TecWeb | @yield('title', 'Area User')</title>
-	
+
 	@section('scripts')
 	@show
 </head>
 <body>
-    
+
     @include('layoutsUser._navuser')
 
     <section>
         <div class="container">
             <div class="row">
                 @yield ('content')
-            </div>            
+            </div>
         </div>
     </section>
-    
-    
+
+
     	<footer id="footer"><!--Footer-->
 		<div class="footer-widget">
 			<div class="container">
@@ -38,16 +38,17 @@
 							<h2>Policies</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Termini di servizio</a></li>
-								<li><a href="{{ route('Privacy Policy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ route('Privacy Policy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ route('Relazione') }}">Relazione</a></li>
 							</ul>
 						</div>
 					</div>
 
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
@@ -55,11 +56,11 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer><!--/Footer-->
 
 	<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>	
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquey.prettyPhoto.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
