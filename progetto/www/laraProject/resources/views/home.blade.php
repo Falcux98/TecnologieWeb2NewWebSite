@@ -73,7 +73,7 @@
 									<h1><span>Tecnologie</span>-WEB</h1>
 									<h2>100% Certificati</h2>
 									<p>I nostri prodotti sono sicuri e certificati, diffida dalle imitazioni. </p>
-									<button type="button" class="btn btn-default get" class="title text-center">Acquista ora</button>
+									<button type="button" class="btn btn-default get" class="title text-center" href="{{route('Catalog') }}">Acquista ora</button>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/store2.jpg" class="store img-responsive" alt="" />

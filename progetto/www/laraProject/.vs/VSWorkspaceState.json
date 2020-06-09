@@ -3,14 +3,14 @@
     "",
     "\\app",
     "\\app\\Http",
-    "\\app\\Http\\Controllers",
+    "\\app\\Http\\Requests",
+    "\\database",
+    "\\database\\seeds",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\helpers",
-    "\\resources\\views\\layoutsStaff",
-    "\\resources\\views\\viewsAdmin",
-    "\\resources\\views\\viewsUser"
+    "\\resources\\views\\auth",
+    "\\resources\\views\\viewsStaff"
   ],
-  "SelectedNode": "\\resources\\views\\viewsAdmin\\areaAdmin.blade.php",
+  "SelectedNode": "\\app\\Http\\Controllers\\StaffController.php",
   "PreviewInSolutionExplorer": false
 }

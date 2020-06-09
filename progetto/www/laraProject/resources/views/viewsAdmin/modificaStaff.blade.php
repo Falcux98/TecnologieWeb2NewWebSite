@@ -2,7 +2,7 @@
 @section('title', 'Modifica Staff')
 
 @section('scripts')
-@parent 
+@parent
 <script src="{{ asset('js/validation.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -22,7 +22,7 @@
         });
     });
 </script>
-    
+
 @endsection
 @section('content')
 
@@ -61,10 +61,12 @@
             </div>
 
             <p>* campi obbligatori</p>
-
+        </div>
+            <button  type="submit" class="btn btn-default add-to-cart" href="{{route ('AdminArea')}}">Annulla</button>
             <button  type="submit" class="btn btn-default add-to-cart">Modifica</button>
             {{ Form::close() }}
-        </div>
+
+
     </div>
 </div>
 
