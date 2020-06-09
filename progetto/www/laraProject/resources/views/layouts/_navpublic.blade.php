@@ -78,9 +78,9 @@
                     {{ Form::text('cerca', Request::input('cerca'), ['id' => 'cerca'])}}
                     {{ Form::close()}}
                 </div>
-            </div>   
-            @endif                 
-     
+            </div>
+            @endif
+
         </div>
     </div>
 </div><!--/header-bottom-->

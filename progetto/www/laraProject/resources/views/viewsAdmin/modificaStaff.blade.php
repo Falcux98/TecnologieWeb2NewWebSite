@@ -2,7 +2,7 @@
 @section('title', 'Modifica Staff')
 
 @section('scripts')
-@parent 
+@parent
 <script src="{{ asset('js/validation.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -22,7 +22,7 @@
         });
     });
 </script>
-    
+
 @endsection
 @section('content')
 
@@ -63,8 +63,8 @@
 
             <p>* campi obbligatori</p>           
             
-        </div>
-        <a  type="submit" class="btn btn-default add-to-cart" onclick="window.history.go(-1)">Annulla</a>
+            </div>
+            <a class="btn btn-default add-to-cart" onclick="window.history.go(-1)">Annulla</a>
             <button  type="submit" class="btn btn-default add-to-cart">Modifica</button>
             {{ Form::close() }}
     </div>

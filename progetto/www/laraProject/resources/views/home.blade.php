@@ -74,6 +74,7 @@
 									<h2>100% Certificati</h2>
 									<p>I nostri prodotti sono sicuri e certificati, diffida dalle imitazioni. </p>
 									<a class="btn btn-default get" href="{{route('Catalog') }}" >Acquista ora</a>
+
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/store2.jpg" class="store img-responsive" alt="" />
