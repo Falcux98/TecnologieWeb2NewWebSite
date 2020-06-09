@@ -34,7 +34,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('AreaPersonale') }}" title="AreaPersonale" class="{{ (Request::route()->getName() === 'AreaPersonale') ? 'active': '' }}"><i class="fa fa-user" ></i> Area Personale</a></li>
                         @auth
-                        <li><a href="" class="fa fa-lock" title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <li><a title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-lock"></i>Logout</a></li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -75,8 +75,8 @@
                     {{ Form::text('cerca', Request::input('cerca'), ['id' => 'cerca'])}}
                     {{ Form::close()}}
                 </div>
-            </div>   
-            @endif 
+            </div>
+            @endif
         </div>
     </div>
 </div><!--/header-bottom-->

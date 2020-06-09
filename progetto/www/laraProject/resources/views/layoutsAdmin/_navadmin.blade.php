@@ -34,7 +34,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('AdminArea') }}" title="Area Amministratore" class="{{ (Request::route()->getName() === 'AdminArea') ? 'active': '' }}"><i class="fa fa-user"></i> Area Amministratore</a></li>
                         @auth
-                        <li><a href="" class="fa fa-lock" title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <li><a title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-lock"></i>Logout</a></li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
