@@ -39,7 +39,7 @@
 						<div class="single-widget">
 							<h2>Policies</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Termini di servizio</a></li>
+								
                                 <li><a href="{{ route('Privacy Policy') }}">Privacy Policy</a></li>
                                 <li><a href="{{ route('Relazione')}}">Relazione</a></li>
 							</ul>
