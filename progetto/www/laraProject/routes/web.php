@@ -121,13 +121,3 @@ Route::post('logout', 'Auth\LoginController@logout')
 
 Route::post('register', 'Auth\RegisterController@register');
 
-
-//Route::post('/accesso/gestiscilogin', 'AccessoController@gestisciLogin');
-//Route::get('/accesso/loginok', 'AccessoController@loginok');
-
-
-
-//Rotte inseritee dal comando artisan "ui vue --auth"
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
